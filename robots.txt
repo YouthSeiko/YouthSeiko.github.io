@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://youthseiko.github.io/sitemap.xml
