@@ -78,6 +78,31 @@
     });
   });
 
+  // Lightbox for gameplay gallery
+  var lightbox = document.getElementById("lightbox");
+  var lightboxImg = document.getElementById("lightboxImg");
+
+  document.querySelectorAll("[data-lightbox]").forEach(function (item) {
+    item.addEventListener("click", function () {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = item.getAttribute("data-lightbox");
+      lightboxImg.alt = item.getAttribute("data-alt") || "";
+      if (typeof lightbox.showModal === "function") lightbox.showModal();
+    });
+  });
+
+  document.querySelectorAll("[data-lightbox-close]").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      if (lightbox) lightbox.close();
+    });
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox) lightbox.close();
+    });
+  }
+
   // Scroll reveal
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
