@@ -587,6 +587,32 @@ ul { margin: 0; padding: 0; list-style: none; }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.9rem; margin: 1.8rem 0 1.2rem; }
 .contact-note { font-family: var(--font-display); font-weight: 700; color: var(--rose-vif); }
 
+/* ---------- Support / Ko-fi ---------- */
+.support-card {
+  max-width: 860px;
+  margin: 1.5rem auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.2rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+  box-shadow: var(--shadow-sm);
+}
+.support-text { max-width: 560px; }
+.support-text h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+.support-text p { color: var(--ink-soft); font-size: 0.98rem; }
+.btn-kofi {
+  color: #fff;
+  background: linear-gradient(135deg, #FF5E5B, #ff8a72);
+  box-shadow: 0 12px 26px rgba(255, 94, 91, 0.35);
+  white-space: nowrap;
+}
+.btn-kofi:hover { transform: translateY(-3px); box-shadow: 0 18px 34px rgba(255, 94, 91, 0.45); }
+
 /* ---------- Footer ---------- */
 .site-footer {
   border-top: 1px solid var(--line);
