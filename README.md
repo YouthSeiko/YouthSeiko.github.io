@@ -25,6 +25,8 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
   l’ouverture, même si la voix était activée. Les sons s’arrêtent à la fermeture
   de la bulle, lors d’un changement d’onglet ou à l’ouverture d’une fiche projet.
   Une seule réplique est chargée au clic ; les voix ne se superposent pas.
+  Le petit bouton **−** réduit Yuki à un bouton discret et coupe la réplique.
+  Le bouton **Yuki ✦** la fait revenir ; cette réduction ne persiste pas au rechargement.
 - Voix préenregistrées : `assets/voice/yuki/*.mp3`, environ 810 Kio au total.
   Crédit affiché dans le pied de page : **VOICEVOX:春日部つむぎ**, même bibliothèque
   qu’Akari, avec un réglage plus posé. Le site n’utilise aucun service de synthèse
@@ -35,6 +37,13 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
   restent hors dépôt ; les clips inchangés sont conservés.
 - `assets/img/studio-mascot.jpg` : image fournie par le studio, conservée telle quelle.
 - `assets/img/project-mirai-keyart.png` : illustration d’accueil du prototype MIRAI.
+- Les PNG sources des deux projets sont conservés. Le site affiche leurs variantes
+  WebP en 600 et 1200 pixels pour charger moins de données sur mobile. Conversion
+  avec FFmpeg, `-vf scale=600:600 -c:v libwebp -quality 85` pour MIRAI ; 600:400
+  pour HEART. Même principe en 1200 pixels. Ne pas employer l’ancienne illustration
+  comportant le titre interne de HEART.
+- L’accueil présente directement les deux prototypes. Les visuels de BABYLONE et
+  CENTURY sont des compositions CSS, sans nouvelles images ni dépendances.
 
 ## Vérifier avant publication
 

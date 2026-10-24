@@ -106,6 +106,7 @@
   // Scroll reveal
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
+    document.documentElement.classList.add("has-reveal");
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
@@ -120,6 +121,23 @@
     reveals.forEach(function (el) { observer.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
+  }
+
+  // Keep the current section visible in the navigation without hiding content.
+  if ("IntersectionObserver" in window && nav) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        nav.querySelectorAll("a").forEach(function (link) {
+          if (link.getAttribute("href") === "#" + entry.target.id) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      });
+    }, { rootMargin: "-15% 0px -65% 0px", threshold: 0 });
+    document.querySelectorAll("main > section[id]").forEach(function (section) { sectionObserver.observe(section); });
   }
 
   // Yuki: pre-generated Japanese voice, French subtitles, explicit audio opt-in.
@@ -214,6 +232,20 @@
     }
     mascot.hidden = false;
     updateVoiceButton();
+    var reduceYuki = document.getElementById("mascotReduce");
+    var restoreYuki = document.getElementById("mascotRestore");
+    if (reduceYuki && restoreYuki) {
+      reduceYuki.addEventListener("click", function () {
+        hideBubble();
+        mascot.classList.add("is-compact");
+        restoreYuki.focus({ preventScroll: true });
+      });
+      restoreYuki.addEventListener("click", function () {
+        mascot.classList.remove("is-compact");
+        sayHello(true);
+        talk.focus({ preventScroll: true });
+      });
+    }
     talk.addEventListener("click", function () { sayHello(true); });
     voiceToggle.addEventListener("click", function () {
       if (voiceEnabled && !needsGesture) {

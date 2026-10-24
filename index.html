@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024-2">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024-3">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -89,16 +89,28 @@
         <span class="shape shape-flower shape-flower-2">🌸</span>
       </div>
       <div class="hero-inner">
+        <div class="hero-copy">
         <p class="hero-kicker"><span aria-hidden="true">✦</span> Studio indépendant de jeux vidéo</p>
         <h1 class="hero-title">YOUTHSEIKO <span class="hero-star" aria-hidden="true">✦</span></h1>
-        <p class="hero-tagline">Des mondes étranges, des histoires humaines.</p>
-        <p class="hero-text">Bienvenue chez Youthseiko, un studio indépendant où les idées un peu folles deviennent des univers à explorer. Romance, mystère, aventure ou simulation : chaque projet est une nouvelle histoire à découvrir.</p>
-        <a class="hero-update" href="#project-mirai"><span aria-hidden="true">✦</span> En ce moment : MIRAI, notre prototype arcade sur Android <span aria-hidden="true">↗</span></a>
+        <p class="hero-tagline">Des mondes étranges.<br>Des histoires humaines.</p>
+        <p class="hero-text">Des gardiennes au cœur de l’action, des rencontres qui bousculent le quotidien. Nous créons des jeux anime avec du caractère, de l’émotion et une bonne dose de curiosité.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projets">Découvrir nos projets</a>
-          <a class="btn btn-ghost" href="#studio">À propos du studio</a>
+          <a class="btn btn-ghost" href="#actualites">Les nouvelles du studio <span aria-hidden="true">↗</span></a>
         </div>
-        <p class="hero-motto">Imaginer. Expérimenter. Créer.</p>
+        <ul class="hero-status" aria-label="Le studio en ce moment"><li><span class="status-dot" aria-hidden="true"></span> Deux prototypes en développement</li><li>Deux univers en conception</li></ul>
+        </div>
+        <div class="hero-showcase" aria-label="À découvrir au studio">
+          <a class="showcase-card showcase-mirai" href="#project-mirai">
+            <img src="assets/img/project-mirai-600.webp" alt="Mirai, sourire dans un tourbillon lumineux" width="600" height="600" fetchpriority="high">
+            <span class="showcase-caption"><span class="showcase-label">Le prototype arcade</span><strong>MIRAI <span aria-hidden="true">↗</span></strong><span>Android · Gardiennes · Phonk</span></span>
+          </a>
+          <a class="showcase-card showcase-heart" href="#project-heart">
+            <img src="assets/img/project-heart-600.webp" alt="PROJECT HEART, les quatre héroïnes réunies sous les néons" width="600" height="400">
+            <span class="showcase-caption"><span class="showcase-label">Le visual novel</span><strong>PROJECT HEART <span aria-hidden="true">↗</span></strong></span>
+          </a>
+          <p class="showcase-note"><span aria-hidden="true">✦</span> Deux façons d’entrer dans notre univers.</p>
+        </div>
       </div>
       <a class="scroll-hint" href="#projets" aria-label="Descendre vers les projets">
         <span>Découvrir nos projets</span>
@@ -110,15 +122,15 @@
       <div class="container">
         <header class="section-head reveal">
           <p class="eyebrow">Nos projets 🎮</p>
-          <h2>Quatre projets. Quatre univers.</h2>
-          <p class="section-sub">Une infinité de possibilités ! Chaque jeu possède son ambiance, ses personnages et son univers visuel.</p>
+          <h2>Trouvez votre prochaine aventure.</h2>
+          <p class="section-sub">Arcade ou récit, nos deux prototypes prennent forme. Plus loin, deux autres univers attendent leur tour.</p>
         </header>
 
         <div class="projects-grid">
           <article class="project-card project--mirai reveal" id="project-mirai">
             <div class="project-badge">Prototype en test</div>
             <figure class="project-cover">
-              <img src="assets/img/project-mirai-keyart.png" alt="Mirai sourit au milieu d’un tourbillon lumineux dans un univers organique" width="1254" height="1254" loading="lazy">
+              <img src="assets/img/project-mirai-1200.webp" srcset="assets/img/project-mirai-600.webp 600w, assets/img/project-mirai-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) 620px, 560px" alt="Mirai sourit au milieu d’un tourbillon lumineux dans un univers organique" width="1200" height="1200" loading="lazy">
             </figure>
             <h3>PROJECT MIRAI</h3>
             <p class="project-sub">Première injection.</p>
@@ -126,14 +138,15 @@
               <li>Shooter vertical</li><li>Arcade</li><li>Mobile</li><li>Anime</li>
             </ul>
             <p class="project-hook">Une gardienne. Un corps devenu champ de bataille. Un espoir à protéger.</p>
-            <p class="project-desc">Plongez dans le corps de Mirai aux côtés d’Akari, une gardienne équipée pour affronter des menaces organiques fictives. Esquives, explosions, Neuro Burst et boss à deux phases : un shooter nerveux, porté par une musique phonk et des voix japonaises sous-titrées en français.</p>
+            <p class="project-desc">Esquivez, déclenchez le Neuro Burst et affrontez un boss à deux phases aux côtés d’Akari. Un shooter mobile rythmé par la phonk et des voix japonaises sous-titrées en français.</p>
+            <p class="project-meta">Android en test <span aria-hidden="true">·</span> Format portrait</p>
             <button class="btn btn-card" type="button" data-modal="modal-mirai">Découvrir MIRAI</button>
           </article>
 
-          <article class="project-card project--heart reveal">
-            <div class="project-badge">En développement</div>
+          <article class="project-card project--heart reveal" id="project-heart">
+            <div class="project-badge">Prototype narratif</div>
             <figure class="project-cover">
-              <img src="assets/img/project-heart-keyart.png" alt="Project HEART — illustration officielle du projet" width="1536" height="1024" loading="lazy">
+              <img src="assets/img/project-heart-1200.webp" srcset="assets/img/project-heart-600.webp 600w, assets/img/project-heart-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) 620px, 560px" alt="Project HEART — illustration officielle du projet" width="1200" height="800" loading="lazy">
             </figure>
             <span class="project-emoji" aria-hidden="true">💗</span>
             <h3>PROJECT HEART</h3>
@@ -142,34 +155,37 @@
               <li>Visual Novel</li><li>Romance</li><li>Comédie</li><li>Mystère</li>
             </ul>
             <p class="project-hook">Quatre filles. Un garçon. Beaucoup trop de problèmes de cœur.</p>
-            <p class="project-desc">Bienvenue au lycée Aozora ! Incarnez Masaru, un lycéen qui espérait passer une année tranquille. Mais entre une gothique au caractère explosif, une sportive qui transforme tout en compétition, une intellectuelle brillante et une jeune fille réservée passionnée de littérature, sa vie risque de devenir bien plus mouvementée que prévu.</p>
-            <button class="btn btn-card" type="button" data-modal="modal-heart">Découvrir le projet</button>
+            <p class="project-desc">Masaru espérait une année tranquille au lycée Aozora. Quatre rencontres, des réparties affûtées et des choix de cœur vont en décider autrement.</p>
+            <p class="project-meta">Premier chapitre <span aria-hidden="true">·</span> Visual novel sur PC</p>
+            <button class="btn btn-card" type="button" data-modal="modal-heart">Découvrir HEART</button>
           </article>
 
           <article class="project-card project--babylone reveal">
             <div class="project-badge">En conception</div>
-            <span class="project-emoji" aria-hidden="true">🧊</span>
+            <div class="project-cover concept-cover concept-babylone" aria-hidden="true"><span class="concept-number">03 /</span><span class="concept-cube"></span><span class="concept-word">FIND THE EXIT.</span></div>
             <h3>PROJECT BABYLONE</h3>
             <p class="project-sub">Somewhere, there is an exit.</p>
             <ul class="tags">
               <li>Action-RPG</li><li>Metroidvania</li><li>Exploration</li><li>Mystère</li>
             </ul>
             <p class="project-hook">Un complexe gigantesque. Des milliers de cubes. Une seule obsession : trouver la sortie.</p>
-            <p class="project-desc">Vous vous réveillez dans un lieu inconnu. Autour de vous, des murs blancs, des salles géométriques et des structures cubiques qui semblent s'étendre à l'infini. Aucune fenêtre. Aucun paysage. Une seule certitude : il doit bien exister un moyen de sortir.</p>
-            <button class="btn btn-card" type="button" data-modal="modal-babylone">Découvrir le projet</button>
+            <p class="project-desc">Explorez un labyrinthe de salles géométriques. Chaque passage ouvre une nouvelle question : jusqu’où faut-il aller pour trouver la sortie ?</p>
+            <p class="project-meta">Univers en conception</p>
+            <button class="btn btn-card" type="button" data-modal="modal-babylone">Explorer BABYLONE</button>
           </article>
 
           <article class="project-card project--century reveal">
             <div class="project-badge">En conception</div>
-            <span class="project-emoji" aria-hidden="true">🌼</span>
+            <div class="project-cover concept-cover concept-century" aria-hidden="true"><span class="concept-number">04 /</span><span class="concept-flower">✿</span><span class="concept-word">TAKE CARE.</span></div>
             <h3>PROJECT CENTURY</h3>
             <p class="project-sub">Take care of me, okay?</p>
             <ul class="tags">
               <li>Visual Novel</li><li>Simulation</li><li>Gestion</li><li>Drame psychologique</li>
             </ul>
             <p class="project-hook">Votre meilleur ami compte sur vous. Peut-être un peu trop.</p>
-            <p class="project-desc">La vie quotidienne n'est pas toujours simple. Entre les courses, les factures, les imprévus et les petites attentions, il faut apprendre à gérer son temps et son argent. Et lorsque votre meilleur ami dépend de vous pour avancer, chaque décision devient un peu plus compliquée.</p>
-            <button class="btn btn-card" type="button" data-modal="modal-century">Découvrir le projet</button>
+            <p class="project-desc">Du temps, un budget, des petites attentions. Une histoire de quotidien et de liens où prendre soin de l’autre demande aussi de trouver son équilibre.</p>
+            <p class="project-meta">Univers en conception</p>
+            <button class="btn btn-card" type="button" data-modal="modal-century">Rencontrer CENTURY</button>
           </article>
         </div>
       </div>
@@ -320,7 +336,7 @@
     <div class="modal-body">
       <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
       <figure class="modal-cover">
-        <img src="assets/img/project-mirai-keyart.png" alt="Mirai, sourire dans le tourbillon" width="1254" height="1254" loading="lazy">
+        <img src="assets/img/project-mirai-1200.webp" alt="Mirai, sourire dans le tourbillon" width="1200" height="1200" loading="lazy">
       </figure>
       <p class="modal-status">Prototype de combat · Essais Android</p>
       <h2 id="modal-mirai-title">PROJECT MIRAI</h2>
@@ -342,7 +358,7 @@
     <div class="modal-body">
       <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
       <figure class="modal-cover">
-        <img src="assets/img/project-heart-keyart.png" alt="Project HEART — illustration officielle du projet" width="1536" height="1024">
+        <img src="assets/img/project-heart-1200.webp" alt="Project HEART — illustration officielle du projet" width="1200" height="800" loading="lazy">
       </figure>
       <p class="modal-status">En développement</p>
       <h2 id="modal-heart-title">PROJECT HEART</h2>
@@ -444,10 +460,12 @@
       <span class="mascot-ping" aria-hidden="true">✦</span>
     </button>
     <button class="mascot-voice" id="mascotVoice" type="button" aria-label="Activer la voix japonaise de Yuki" aria-pressed="false">Voix : OFF</button>
+    <button class="mascot-reduce" id="mascotReduce" type="button" aria-label="Réduire Yuki pour dégager la page" title="Réduire Yuki">−</button>
+    <button class="mascot-restore" id="mascotRestore" type="button" aria-label="Retrouver Yuki et ses répliques">Yuki ✦</button>
     <audio id="mascotAudio" preload="none" hidden></audio>
   </aside>
 
   <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
-  <script src="assets/js/main.js?v=20261024-2" defer></script>
+  <script src="assets/js/main.js?v=20261024-3" defer></script>
 </body>
 </html>
