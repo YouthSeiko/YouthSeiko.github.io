@@ -1,0 +1,107 @@
+{
+  "engine": "0.26.0",
+  "credit": "VOICEVOX:春日部つむぎ",
+  "speaker_id": 8,
+  "files": {
+    "welcome": {
+      "input_sha256": "92d86f4be6986cf22f3c32d3e56d890d44350286c2eb523510a111af8b66066c",
+      "sha256": "8d63de2703667da300da756537141dd6caad05cb16b4fbe66afeccc911463535",
+      "bytes": 47276
+    },
+    "notebook": {
+      "input_sha256": "7b7d0d13e4f5eb448e73ac46203f2456ab7eac0b80dd6718a588854ef0e6103d",
+      "sha256": "dfba45c54d0cd933c7b8300fa7d9e62219590cb4cd58c8017a1f564b2c72233a",
+      "bytes": 35564
+    },
+    "bat": {
+      "input_sha256": "6ceacbeca00230b9196b6d9563c6e41d12fc8db6c9bdf0e05bd840f1c4bba990",
+      "sha256": "35a1f0c11c2bfed21207bfebfaad59fceef467e38e3305f4fee1081be5a54b30",
+      "bytes": 35180
+    },
+    "return": {
+      "input_sha256": "66f2f56bb54c2f45c29eff269eebff35e48d29cc2af4b740497a87d88f4fe2a1",
+      "sha256": "9cbbd3e54d8656c7a010f8132e54f6e30a2ce2f1d3025c8f7f79697e7b8057d7",
+      "bytes": 45932
+    },
+    "cookies": {
+      "input_sha256": "a7fba22fb566c18d295f7bd1498aaf12a028daca37a4916c871877f4f756af9b",
+      "sha256": "4ea837807f825b35565fac7e29022ed7c2f0532d340cbcadda87d636be625295",
+      "bytes": 40172
+    },
+    "burst": {
+      "input_sha256": "065b184c489ba393c125f38e8fe5332aa24328f8ef4d883857b55df2c524d713",
+      "sha256": "f9c4b5d3bb68ea204905d102b42c6625f8cfa6086c823ba654b1aab149f77869",
+      "bytes": 38636
+    },
+    "emotions": {
+      "input_sha256": "c54f84716ef0384f8918222ea25913338704f92f5dd6a3d8874e0e0a35c2bbae",
+      "sha256": "545559fcf93c4b3c18035368cdd24f9bad7777a7b75d8e37719159ac810534fb",
+      "bytes": 36140
+    },
+    "notes": {
+      "input_sha256": "bb437bd31ebac6034d9ea0d13a8a733e4a3287b3e6fdf5622e2ab2fbd4133581",
+      "sha256": "938efa2a000eb7a4c2c5fc4c32e678ddc933920babbba532eea1cac227ef6eaa",
+      "bytes": 37676
+    },
+    "phonk": {
+      "input_sha256": "cd5f2585a07f8ccf19ce04c8b07982c5d5dea0d6384683037ed0808b4a9d8682",
+      "sha256": "8b1b298218f31012c02470a8fa06629a1dedd838a7d81da0fdf4d17250e40831",
+      "bytes": 41132
+    },
+    "boss": {
+      "input_sha256": "059f12caffe7e5f2794c419e870ccafa9c0a70c202a53544e3b4e63a200e0852",
+      "sha256": "9fd1710fec7152bd87ecb1b2ba285f55b0fc3bdab7d48ed7815d838c5c3ae808",
+      "bytes": 35180
+    },
+    "explore": {
+      "input_sha256": "f6a04f9aa18714ac03479320be8907d2549f64002f4c297e6549566d64c44505",
+      "sha256": "f4614cfcffb21fd4ce10c80e357c633ff7a2adcfe4c72f5f99e1bfe6736a87d2",
+      "bytes": 45164
+    },
+    "chocolate": {
+      "input_sha256": "ba251341766804c0d2e46495cd78b319fe49c6f0f596bb18bd2949ac46ccc1d5",
+      "sha256": "88e69ad83d43a1a77f532e9550d6b00f5c5f25a095eeaa9d4b748bae171ed73f",
+      "bytes": 45356
+    },
+    "ideas": {
+      "input_sha256": "24328757fbe522585b49549fbc2a0e8423aa586baea62a59dd6565166a4f379f",
+      "sha256": "325193cd68cc125665297c3c70862ecf2180432ac6bbed1734400b2b7ca12077",
+      "bytes": 50924
+    },
+    "bookmark": {
+      "input_sha256": "e77ab9c8ef0b31f4983ce21a2644ee50d1e18e2f15f8bd2e33b92e3f1fb79392",
+      "sha256": "29f3423a21d0dc973be3c4cfca10b6681e9324c4be22fbd9aa0a1b31e379f0c9",
+      "bytes": 33068
+    },
+    "save": {
+      "input_sha256": "f3cf2a201b07ab2a83428876e9e47110e7952692ccabe4a655d82b72eaf0532c",
+      "sha256": "14f128bd68945aab39875f4abc9644408ffc05d828147ea49327642f36ffae82",
+      "bytes": 38828
+    },
+    "main_character": {
+      "input_sha256": "5ce09dc28a3998dd3dfee857bab136ac8a99aeab321637a5895ed8709db01344",
+      "sha256": "7ac321b891ce265061ea671fd573a6ff28477a8f45d7ad6fac6a874c121f3dd5",
+      "bytes": 35756
+    },
+    "goth": {
+      "input_sha256": "16db11d003b1907c993e2bfe403e25d3d3783a53de81f41cce47d99a0fcf70f9",
+      "sha256": "81c2296978145e3be6d073ba4677cba58279e11c7f97ab203e57aa36f6c352ff",
+      "bytes": 49772
+    },
+    "compliment": {
+      "input_sha256": "5338d3d607e5d25c8e2b5f94752bd4519fa82a788461bb4d4ebc24138665d787",
+      "sha256": "29145348a13e4dd4a1b2e10c052df709672f57c0e1b06e9600d8ce39cf8b6c30",
+      "bytes": 44588
+    },
+    "thanks": {
+      "input_sha256": "3d83bf9cea7594b0a90e209caabf91d00374cabaa5eeeb3cb9e02dff4cb6434e",
+      "sha256": "a921fe5efc70087374272a887d5c278026aea8d94e5a243df1cb629aec123418",
+      "bytes": 44780
+    },
+    "secret": {
+      "input_sha256": "6646263f1e66878a8d04d46b9d6982f045b3f27b6bdf9dcc20c7c0aae3f511d9",
+      "sha256": "6dcbf32cbf83b02a808f8ee9838ae4daa41d81fb20f9122b7615374604e86f9b",
+      "bytes": 47852
+    }
+  }
+}

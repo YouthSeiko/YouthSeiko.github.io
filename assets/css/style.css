@@ -447,7 +447,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mascot-bubble {
   position: absolute;
   right: 0;
-  bottom: 110px;
+  bottom: 152px;
   width: min(300px, calc(100vw - 2.5rem));
   max-height: min(300px, 55vh);
   overflow-y: auto;
@@ -462,6 +462,29 @@ ul { margin: 0; padding: 0; list-style: none; }
 }
 .mascot-kicker { margin-bottom: 0.45rem; color: #813e63; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
 .mascot-line { font-size: 0.95rem; line-height: 1.5; font-weight: 700; }
+.mascot-voice-status { font-size: 0.74rem; line-height: 1.4; color: var(--ink-soft); margin-top: 0.7rem; }
+.mascot-voice {
+  display: block;
+  width: 100%;
+  min-height: 36px;
+  margin-top: 6px;
+  padding: 0.25rem 0;
+  border: 1px solid #bc7b9e;
+  border-radius: 12px;
+  background: #fffafd;
+  color: #743453;
+  font: 800 0.75rem var(--font-body);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  pointer-events: auto;
+}
+.mascot-voice[aria-pressed="true"] { background: #743453; color: #fff; }
+.mascot-voice:focus-visible { outline: 3px solid #813e63; outline-offset: 4px; }
+.studio-mascot.is-speaking .mascot-avatar { animation: yuki-speaking 0.55s ease-in-out infinite alternate; }
+@keyframes yuki-speaking {
+  from { transform: translateY(0); box-shadow: 0 8px 28px rgba(104, 40, 80, 0.24); }
+  to { transform: translateY(-3px); box-shadow: 0 0 0 5px rgba(255, 92, 154, 0.16), 0 8px 28px rgba(104, 40, 80, 0.24); }
+}
 .mascot-dismiss {
   position: absolute;
   right: 4px;
@@ -483,7 +506,8 @@ ul { margin: 0; padding: 0; list-style: none; }
   .studio-mascot { width: 64px; right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
   .mascot-avatar { width: 64px; height: 64px; border-radius: 20px; }
   .mascot-avatar img { border-radius: 17px; }
-  .mascot-bubble { bottom: 78px; width: min(270px, calc(100vw - 24px)); }
+  .mascot-bubble { bottom: 120px; width: min(270px, calc(100vw - 24px)); }
+  .mascot-voice { min-height: 44px; font-size: 0.68rem; }
   .mascot-ping { width: 24px; height: 24px; font-size: 0.8rem; line-height: 24px; }
   .mascot-dismiss { width: 44px; height: 44px; }
   .mascot-bubble { padding-right: 3rem; }

@@ -1,0 +1,29 @@
+{
+  "speaker": "春日部つむぎ",
+  "style": "ノーマル",
+  "credit": "VOICEVOX:春日部つむぎ",
+  "direction": "Yuki, tsundere gothique : fausse indifférence, réparties sèches mais bienveillantes. Même bibliothèque vocale qu’Akari ; hauteur légèrement plus basse et débit plus posé.",
+  "settings": {"speedScale": 1.08, "pitchScale": -0.015, "intonationScale": 1.28},
+  "lines": [
+    {"id":"welcome", "french":"Moi, c’est Yuki. Je ne t’attendais pas… J’avais juste ouvert le site, voilà !", "japanese":"私はユキ。べ、別に待ってたわけじゃないから！たまたまサイトを開いてただけ！"},
+    {"id":"notebook", "french":"Ne touche pas à mon carnet à croix. Même les bugs n’ont pas le droit de le lire.", "japanese":"十字架のノートに触らないで。バグだって、読むのは禁止よ。"},
+    {"id":"bat", "french":"Mon porte-clés chauve-souris monte la garde. Oui, il est plus mignon que toi.", "japanese":"コウモリのキーホルダーが見張ってるの。あんたより、かわいいでしょ。"},
+    {"id":"return", "french":"Tu es revenu ? Hmph… J’ai gardé ta place. Par pur hasard, évidemment.", "japanese":"また来たの？ふん、席は空けておいたけど。もちろん、偶然よ。"},
+    {"id":"cookies", "french":"Akari sauve la partie. Moi, je sauve les biscuits. Chacun ses responsabilités.", "japanese":"アカリはゲームを救う。私はクッキーを守る。役割分担ってやつよ。"},
+    {"id":"burst", "french":"MIRAI a un Neuro Burst. Moi, j’ai un regard noir. Les deux font des dégâts.", "japanese":"ミライにはニューロバースト。私にはにらみつける目。どっちも効くわよ。"},
+    {"id":"emotions", "french":"Je ne boude pas. Je compile mes émotions. Ça prend du temps, d’accord ?", "japanese":"すねてないわよ。感情をコンパイルしてるだけ。時間がかかるの！"},
+    {"id":"notes", "french":"Les noms dans mon carnet ? Des idées de jeux. Arrête de faire cette tête.", "japanese":"ノートに書いてある名前？ゲームのアイデアよ。そんな顔しないで。"},
+    {"id":"phonk", "french":"Si tu entends de la phonk dans le couloir, c’est Akari. Moi, je préfère le silence dramatique.", "japanese":"廊下でフォンクが聞こえたら、アカリよ。私は意味深な沈黙のほうが好き。"},
+    {"id":"boss", "french":"Le boss final du studio ? Celui qui emprunte mon stylo et ne le rend pas.", "japanese":"スタジオのラスボス？私のペンを借りて、返さないやつよ。"},
+    {"id":"explore", "french":"Tu peux regarder les projets. Ce n’est pas comme si j’avais préparé la visite pour toi…", "japanese":"プロジェクトを見ていけば？べ、別にあんたのために案内を用意したわけじゃないけど。"},
+    {"id":"chocolate", "french":"Je surveille le studio. Enfin… surtout le stock de chocolat. C’est stratégique.", "japanese":"スタジオを見張ってるの。まあ、主にチョコの在庫だけど。大事な任務よ。"},
+    {"id":"ideas", "french":"Une idée de jeu à trois heures du matin ? Note-la. Sur ton carnet, pas le mien.", "japanese":"夜中の三時にゲームのアイデア？書いておきなさい。自分のノートによ。私のじゃないから。"},
+    {"id":"bookmark", "french":"La chauve-souris, c’est mon porte-clés. Pas un boss secret. Enfin… normalement.", "japanese":"このコウモリはキーホルダーよ。隠しボスじゃないわ。たぶんね。"},
+    {"id":"save", "french":"Non, je ne suis pas un bouton de sauvegarde. Mais tu peux quand même cliquer.", "japanese":"私はセーブボタンじゃないわよ。まあ、クリックくらいはしてもいいけど。"},
+    {"id":"main_character", "french":"Un jour, je serai le personnage principal. Aujourd’hui, je garde le coin de l’écran.", "japanese":"いつか私が主人公になるんだから。今日は画面の隅を守ってあげる。"},
+    {"id":"goth", "french":"Du noir, une croix, une chauve-souris… et un chocolat chaud. Le gothique a ses priorités.", "japanese":"黒い服、十字架、コウモリ。それからホットチョコ。ゴスにも優先順位があるの。"},
+    {"id":"compliment", "french":"Ton score est plutôt bon. Ne souris pas comme ça, c’était une observation scientifique.", "japanese":"あんたのスコア、悪くないわね。そんなに笑わないで。科学的な観察よ。"},
+    {"id":"thanks", "french":"Merci d’être passé… Quoi ? Oui, j’ai dit merci. Ne m’oblige pas à le répéter.", "japanese":"来てくれて、ありがと。なによ。お礼くらい言うわ。二度は言わないからね。"},
+    {"id":"secret", "french":"Le studio secret est ouvert. Essuie tes pieds et ne plie pas les pages de mon carnet.", "japanese":"秘密のスタジオへようこそ。靴を拭いて。あと、私のノートのページを折らないでよ。"}
+  ]
+}

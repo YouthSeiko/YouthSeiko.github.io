@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024-1">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261024-2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -311,6 +311,7 @@
     <div class="container footer-legal">
       <p>© 2026 Youthseiko. Tous droits réservés.</p>
       <p class="footer-disclaimer">Project MIRAI, Project HEART, Project BABYLONE et Project CENTURY sont des projets en développement. Les visuels, fonctionnalités et informations présentés sont susceptibles d'évoluer.</p>
+      <p class="footer-disclaimer">Voix japonaise de Yuki : <a href="https://voicevox.hiroshiba.jp/product/kasukabe_tsumugi/" target="_blank" rel="noopener">VOICEVOX:春日部つむぎ</a></p>
     </div>
   </footer>
 
@@ -431,18 +432,22 @@
     <img id="lightboxImg" src="" alt="">
   </dialog>
 
-  <aside class="studio-mascot" id="studioMascot" aria-label="La mascotte du studio" hidden>
+  <aside class="studio-mascot" id="studioMascot" aria-label="Yuki, la mascotte gothique du studio" hidden>
     <div class="mascot-bubble" id="mascotBubble" hidden>
-      <button class="mascot-dismiss" id="mascotDismiss" type="button" aria-label="Fermer la bulle de la mascotte">×</button>
-      <p class="mascot-kicker">Le mot de la mascotte ✦</p>
+      <button class="mascot-dismiss" id="mascotDismiss" type="button" aria-label="Fermer la bulle de Yuki">×</button>
+      <p class="mascot-kicker">Yuki ✦ Gardienne du studio</p>
       <p class="mascot-line" id="mascotLine" role="status" aria-live="polite" aria-atomic="true"></p>
+      <p class="mascot-voice-status" id="mascotVoiceStatus">Japonais à l’écoute · texte français</p>
     </div>
-    <button class="mascot-avatar" id="mascotTalk" type="button" aria-label="Faire parler la mascotte" aria-controls="mascotBubble" aria-expanded="false" title="Une autre réplique ? Clique sur moi !">
+    <button class="mascot-avatar" id="mascotTalk" type="button" aria-label="Une autre réplique de Yuki" aria-controls="mascotBubble" aria-expanded="false" title="Yuki — tsundere gothique, carnet à croix et porte-clés chauve-souris">
       <img src="assets/img/studio-mascot.jpg" alt="" width="1024" height="768" decoding="async">
       <span class="mascot-ping" aria-hidden="true">✦</span>
     </button>
+    <button class="mascot-voice" id="mascotVoice" type="button" aria-label="Activer la voix japonaise de Yuki" aria-pressed="false">Voix : OFF</button>
+    <audio id="mascotAudio" preload="none" hidden></audio>
   </aside>
 
-  <script src="assets/js/main.js?v=20261024-1" defer></script>
+  <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
+  <script src="assets/js/main.js?v=20261024-2" defer></script>
 </body>
 </html>

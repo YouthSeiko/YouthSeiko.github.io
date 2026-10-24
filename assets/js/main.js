@@ -122,68 +122,114 @@
     reveals.forEach(function (el) { el.classList.add("is-visible"); });
   }
 
-  // Text only: no microphone, audio autoplay or account needed.
+  // Yuki: pre-generated Japanese voice, French subtitles, explicit audio opt-in.
   var mascot = document.getElementById("studioMascot");
   var bubble = document.getElementById("mascotBubble");
   var mascotLine = document.getElementById("mascotLine");
   var talk = document.getElementById("mascotTalk");
   var dismiss = document.getElementById("mascotDismiss");
-  if (mascot && bubble && mascotLine && talk && dismiss) {
-    var lines = [
-      "Bienvenue ! J’ai rangé les bugs sous le tapis. Ne soulève pas le tapis.",
-      "Tu viens pour les jeux ou pour mon incroyable sens de l’accueil ?",
-      "Akari sauve la partie. Moi, je sauve les biscuits.",
-      "MIRAI a un Neuro Burst. Moi, j’ai un café et beaucoup d’espoir.",
-      "Ce studio fonctionne au talent, à la curiosité et aux nouilles instantanées.",
-      "Je ne boude pas. Je compile mes émotions.",
-      "Quatre projets, un studio, et toujours pas de bouton pour faire la vaisselle.",
-      "Tu peux explorer. J’ai désactivé les rencontres aléatoires dans le menu.",
-      "Si tu entends de la phonk dans le couloir, c’est probablement Akari.",
-      "Le boss de fin du site ? Trouver où j’ai posé mon goûter.",
-      "Bienvenue dans notre univers. Les chaussures sont facultatives, la curiosité recommandée.",
-      "Je surveille le studio. Enfin… surtout le stock de chocolat.",
-      "Attention : regarder nos projets peut provoquer des idées de jeu à 3 heures du matin.",
-      "Mon pouvoir spécial ? Transformer cinq minutes de pause en quête secondaire.",
-      "Non, je ne suis pas un bouton de sauvegarde. Mais tu peux quand même cliquer.",
-      "Un jour, je serai le personnage principal. Aujourd’hui, je garde le coin de l’écran.",
-      "Les explosions de MIRAI sont prévues. Les miennes arrivent quand il n’y a plus de thé.",
-      "Je voulais dire un truc profond… mais j’ai pensé aux raviolis.",
-      "Chaque visite nous donne un point de motivation. Merci pour le combo !",
-      "Tu as trouvé le studio secret. Récompense : mon regard très impressionnant."
-    ];
+  var voiceToggle = document.getElementById("mascotVoice");
+  var voiceStatus = document.getElementById("mascotVoiceStatus");
+  if (mascot && bubble && mascotLine && talk && dismiss && voiceToggle && voiceStatus) {
+    var lines = window.YUKI_LINES || [{ french: "Moi, c’est Yuki. Je ne t’attendais pas… Enfin, entre quand même !" }];
     var previous = -1;
     var hideTimer;
+    var currentLine;
+    var voiceEnabled = false;
+    var needsGesture = true;
+    var playToken = 0;
+    var speech = document.getElementById("mascotAudio");
+    speech.preload = "none";
+    speech.volume = 0.8;
     try { previous = Number(sessionStorage.getItem("youthseiko.mascot.last") || -1); } catch (e) { /* Storage is optional. */ }
+    try { voiceEnabled = localStorage.getItem("youthseiko.yuki.voice") === "on"; } catch (e) { /* Storage is optional. */ }
+
+    function updateVoiceButton() {
+      voiceToggle.textContent = voiceEnabled && needsGesture ? "Écouter" : voiceEnabled ? "Voix : ON" : "Voix : OFF";
+      voiceToggle.setAttribute("aria-pressed", String(voiceEnabled));
+      voiceToggle.setAttribute("aria-label", voiceEnabled && needsGesture ? "Écouter Yuki en japonais" : voiceEnabled ? "Couper la voix de Yuki" : "Activer la voix japonaise de Yuki");
+    }
+    function stopVoice() {
+      playToken += 1;
+      speech.pause();
+      speech.currentTime = 0;
+      mascot.classList.remove("is-speaking");
+    }
+    function playVoice() {
+      stopVoice();
+      if (!voiceEnabled) return;
+      if (!currentLine.audio) {
+        voiceStatus.textContent = "Voix indisponible ; le texte reste en français.";
+        return;
+      }
+      var token = playToken;
+      needsGesture = false;
+      updateVoiceButton();
+      speech.src = currentLine.audio;
+      voiceStatus.textContent = "Voix japonaise · sous-titre français";
+      var attempt = speech.play();
+      if (attempt) attempt.catch(function (error) {
+        if (token !== playToken) return;
+        mascot.classList.remove("is-speaking");
+        needsGesture = true;
+        voiceStatus.textContent = error.name === "NotAllowedError" ? "Clique sur Écouter pour entendre Yuki." : "Voix indisponible. Tu peux réessayer ; le texte reste lisible.";
+        updateVoiceButton();
+      });
+    }
+    speech.addEventListener("playing", function () { mascot.classList.add("is-speaking"); });
+    speech.addEventListener("pause", function () { mascot.classList.remove("is-speaking"); });
+    speech.addEventListener("ended", function () { mascot.classList.remove("is-speaking"); });
 
     function hideBubble() {
       clearTimeout(hideTimer);
+      stopVoice();
       bubble.hidden = true;
       talk.setAttribute("aria-expanded", "false");
     }
     function scheduleHide() {
       clearTimeout(hideTimer);
       hideTimer = setTimeout(function () {
-        if (bubble.contains(document.activeElement) || bubble.matches(":hover")) {
+        if (bubble.contains(document.activeElement) || bubble.matches(":hover") || !speech.paused) {
           scheduleHide();
         } else {
           hideBubble();
         }
       }, 14000);
     }
-    function sayHello() {
+    function sayHello(userGesture) {
+      stopVoice();
       // Select from all the other lines: no immediate repeat, even on reload.
-      var hasPrevious = previous >= 0 && previous < lines.length;
+      var hasPrevious = lines.length > 1 && previous >= 0 && previous < lines.length;
       var index = Math.floor(Math.random() * (lines.length - (hasPrevious ? 1 : 0)));
       if (hasPrevious && index >= previous) index += 1;
       previous = index;
       try { sessionStorage.setItem("youthseiko.mascot.last", String(index)); } catch (e) { /* No cookies required. */ }
       bubble.hidden = false;
-      mascotLine.textContent = lines[index];
+      currentLine = lines[index];
+      mascotLine.textContent = currentLine.french;
+      voiceStatus.textContent = voiceEnabled ? "Clique sur Yuki ou Écouter pour sa voix japonaise." : "Active la voix pour entendre Yuki en japonais.";
       talk.setAttribute("aria-expanded", "true");
+      if (userGesture && voiceEnabled) playVoice();
       scheduleHide();
     }
     mascot.hidden = false;
-    talk.addEventListener("click", sayHello);
+    updateVoiceButton();
+    talk.addEventListener("click", function () { sayHello(true); });
+    voiceToggle.addEventListener("click", function () {
+      if (voiceEnabled && !needsGesture) {
+        voiceEnabled = false;
+        stopVoice();
+        voiceStatus.textContent = "Voix coupée · le texte reste en français";
+      } else {
+        voiceEnabled = true;
+        bubble.hidden = false;
+        talk.setAttribute("aria-expanded", "true");
+        playVoice();
+        scheduleHide();
+      }
+      try { localStorage.setItem("youthseiko.yuki.voice", voiceEnabled ? "on" : "off"); } catch (e) { /* Optional preference. */ }
+      updateVoiceButton();
+    });
     dismiss.addEventListener("click", function () {
       talk.focus({ preventScroll: true });
       hideBubble();
@@ -195,8 +241,23 @@
       }
     });
     window.addEventListener("pageshow", function (event) {
-      if (event.persisted) sayHello();
+      if (event.persisted) {
+        needsGesture = true;
+        updateVoiceButton();
+        sayHello(false);
+      }
     });
-    sayHello();
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopVoice();
+        needsGesture = true;
+        updateVoiceButton();
+      }
+    });
+    window.addEventListener("pagehide", stopVoice);
+    document.addEventListener("click", function (event) {
+      if (event.target.closest("[data-modal]")) stopVoice();
+    });
+    sayHello(false);
   }
 })();
