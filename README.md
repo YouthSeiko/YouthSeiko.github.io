@@ -3,6 +3,9 @@
 Site statique HTML/CSS/JavaScript, publié par GitHub Pages depuis `main`.
 Aucune dépendance de compilation ni compte visiteur.
 
+Le titre public du visual novel reste **PROJECT HEART**. Ne pas révéler son titre
+interne ou ses retournements narratifs dans les images ou les textes du site.
+
 ## Modifier
 
 - `index.html` : projets, fiches détaillées, actualités et informations publiques.
