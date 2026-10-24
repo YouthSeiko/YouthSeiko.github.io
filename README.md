@@ -24,5 +24,7 @@ mobile, les bulles et leur fermeture au clavier. Tester aussi un écran étroit
 (320–390 px), la navigation au clavier et le réglage de réduction des animations.
 
 Une modification envoyée sur `main` déclenche la publication GitHub Pages.
+Lors d’une mise à jour CSS ou JavaScript, changer aussi leur paramètre `v=` dans
+`index.html` pour que les visiteurs récupèrent ces fichiers sans ancien cache.
 Les APK de développement et la documentation interne de MIRAI ne sont pas publiés
 sur ce site. Ne pas ajouter de lien de téléchargement avant une décision de diffusion.
