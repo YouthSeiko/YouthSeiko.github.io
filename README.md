@@ -3,6 +3,20 @@
 Site statique HTML/CSS/JavaScript, publié par GitHub Pages depuis `main`.
 Aucune dépendance de compilation ni compte visiteur.
 
+## Icônes du site et de Google
+
+`favicon.ico` (16 à 256 px), `favicon-96x96.png` et `apple-touch-icon.png` sont
+les variantes de l’étoile rose du studio, sur fond prune. Le logo carré en 512 px
+est aussi déclaré dans les données structurées. Le dessin source est
+`assets/img/studio-mark.svg`. Pour régénérer : `python tools/generate_favicons.py`
+(Pillow requis uniquement pour cet outil).
+
+Conserver ces URL stables et accessibles à Googlebot/Googlebot-Image dans
+`robots.txt`. Après une modification, demander éventuellement une indexation de
+`https://youthseiko.github.io/` dans Search Console. La prise en compte dépend de
+Google, peut demander plusieurs jours à plusieurs semaines et ne garantit pas
+l’affichage. Référence : https://developers.google.com/search/docs/appearance/favicon-in-search
+
 Le titre public du visual novel reste **PROJECT HEART**. Ne pas révéler son titre
 interne ou ses retournements narratifs dans les images ou les textes du site.
 
