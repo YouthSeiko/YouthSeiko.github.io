@@ -22,6 +22,17 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
 
 ## Modifier
 
+- **Espace YU** : section `#yu` dans `index.html`, accessible depuis les deux menus.
+  `#carnet-yu` contient trois premiers billets et leurs annotations éditoriales de
+  Yuki ; `#yu-repond` contient cinq questions en accordéons HTML natifs, utilisables
+  sans JavaScript. Textes de lancement écrits dans la voix du personnage public
+  de YU ; ce ne sont pas des commentaires envoyés par des visiteurs.
+  Garder les billets datés et les liens vers les projets. Ajouter les nouvelles
+  entrées en tête du carnet avec un identifiant unique.
+- **Derrière le masque** : emplacement de présentation en préparation. Attendre
+  la vidéo YouTube fournie par YU avant d’ajouter un lecteur et son URL. Aucun
+  portrait, entretien filmé ou lecteur factice n’a été créé.
+
 - `index.html` : projets, fiches détaillées, actualités et informations publiques.
 - `assets/css/style.css` : identité pastel, cartes et adaptation mobile.
 - `assets/js/main.js` : navigation, fenêtres de projets, galerie et mascotte.
