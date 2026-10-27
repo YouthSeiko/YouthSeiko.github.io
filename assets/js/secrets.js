@@ -65,6 +65,7 @@
   });
 
   function render() {
+    byId("glitch-enter").disabled = !archiveReady(ARCHIVES[0]);
     document.querySelectorAll("[data-fragment-count]").forEach(function (node) { node.textContent = fragments.size + " / " + FRAGMENTS.length; });
     byId("archive-progress").textContent = fragments.size + " / " + FRAGMENTS.length + " fragments retrouvés";
     document.querySelectorAll("[data-fragment]").forEach(function (slot) {
@@ -226,6 +227,22 @@
       byId(archive.document).hidden = false;
       byId(archive.document).querySelector("h3").focus({ preventScroll: false });
     });
+  });
+  // A voluntary visual reward. Never restored automatically on a later visit.
+  byId("glitch-enter").addEventListener("click", function () {
+    if (!archiveReady(ARCHIVES[0]) || byId("archive-000").hidden) return;
+    document.body.classList.add("is-glitched");
+    byId("glitch-controls").hidden = false;
+    Array.from(document.querySelectorAll("dialog[open]")).reverse().forEach(function (dialog) { dialog.close(); });
+    byId("glitch-status").textContent = "Version glitch activée. Le bouton Revenir au site normal reste disponible en bas de l’écran.";
+    window.scrollTo({ top: 0, behavior: "instant" });
+    byId("glitch-exit").focus({ preventScroll: true });
+  });
+  byId("glitch-exit").addEventListener("click", function () {
+    document.body.classList.remove("is-glitched");
+    byId("glitch-controls").hidden = true;
+    byId("glitch-status").textContent = "Version normale rétablie. Tes fragments sont conservés.";
+    document.querySelector(".site-header .brand").focus({ preventScroll: true });
   });
   window.addEventListener("storage", function (event) {
     if (event.key !== STORAGE_KEY || !event.newValue) return;

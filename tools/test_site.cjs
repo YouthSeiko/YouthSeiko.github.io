@@ -117,6 +117,9 @@ async function noOverflow(page, selector = 'html') {
     await page.locator('[data-claim]').evaluateAll(buttons=>buttons.forEach(b=>b.click()));
     assert.deepEqual(await saved(page),[]);
     assert.equal(await page.locator('#archive-unlock').isDisabled(),true);
+    assert.equal(await page.locator('#glitch-enter').isDisabled(),true);
+    await page.locator('#glitch-enter').evaluate(e=>e.click());
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),false);
   });
   await check('HEART: seven interactions, three pages, fragment, nested dialog and focus return', async () => {
     await heart(page);
@@ -157,6 +160,41 @@ async function noOverflow(page, selector = 'html') {
     assert.equal(await page.locator('#archive-unlock').isDisabled(),false);
     await page.locator('#archive-unlock').click();
     await close(page,'#secret-archives');
+  });
+  await check('Archive 000: voluntary glitch theme, mobile exit, working dialogs and reset on reload', async () => {
+    await page.reload();
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),false);
+    await open(page,'.archive-entry','#secret-archives');
+    await page.locator('#glitch-enter').evaluate(e=>e.click());
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),false);
+    await page.locator('#archive-unlock').click();
+    await page.locator('#glitch-enter').click();
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),true);
+    assert.equal(await page.locator('dialog[open]').count(),0);
+    assert.equal(await page.evaluate(()=>document.activeElement.id),'glitch-exit');
+    assert.equal(await page.locator('#mascotAudio').evaluate(e=>e.paused),true);
+    assert.equal(await page.locator('.hero-title').evaluate(e=>getComputedStyle(e).animationName),'none');
+    if (screenshotDir) await page.screenshot({path:path.join(screenshotDir,'glitch-desktop.png'),animations:'disabled'});
+    await open(page,'.project-card [data-modal="modal-heart"]','#modal-heart');
+    await close(page,'#modal-heart');
+    await open(page,'.medical-trigger','#secret-mirai');
+    await close(page,'#secret-mirai');
+    await page.setViewportSize({width:320,height:740});
+    await page.evaluate(()=>window.scrollTo(0,0));
+    await noOverflow(page);
+    const boxes = await page.evaluate(()=>({exit:document.getElementById('glitch-controls').getBoundingClientRect().toJSON(),yuki:document.getElementById('mascotTalk').getBoundingClientRect().toJSON()}));
+    assert.ok(boxes.exit.left>=0 && boxes.exit.right<=boxes.yuki.left+1,JSON.stringify(boxes));
+    if (screenshotDir) await page.screenshot({path:path.join(screenshotDir,'glitch-mobile.png'),animations:'disabled'});
+    await page.locator('#glitch-exit').focus(); await page.keyboard.press('Enter');
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),false);
+    assert.equal(await page.locator('#glitch-controls').isVisible(),false);
+    assert.equal((await saved(page)).length,4);
+    await page.setViewportSize({width:1440,height:1000});
+    await open(page,'.archive-entry','#secret-archives');
+    await page.locator('#glitch-enter').click();
+    await page.reload();
+    assert.equal(await page.locator('body').evaluate(e=>e.classList.contains('is-glitched')),false);
+    assert.equal((await saved(page)).length,4);
   });
   await check('Existing project dialogs, HEART lightbox, FAQ and Yuki audio opt-in', async () => {
     for(const id of ['mirai','heart','babylone','century']) {

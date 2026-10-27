@@ -1,5 +1,27 @@
 # Refonte éditoriale et découvertes — 27 octobre 2026
 
+## Ajout : la fréquence de l’Archive 000
+
+Sur `feat/archive-glitch-mode`, le document 000 propose désormais **Basculer le
+site en version glitch**. Il faut les quatre fragments et avoir ouvert le document ;
+leur simple présence en stockage n’active jamais le thème. L’activation ferme les
+fenêtres, remonte à l’accueil et place le focus sur le bouton de retour permanent.
+La version alternative conserve les contenus, liens et interactions du même site,
+avec palette sombre, images désaturées, trame fixe et léger décalage chromatique.
+Le décalage animé est rare et supprimé avec `prefers-reduced-motion` ; aucun flash
+rapide ni son ajouté. Retour immédiat possible, sans perdre les fragments.
+Le thème lui-même ne persiste pas au rechargement.
+
+Styles dans `assets/css/glitch.css`, interaction dans `assets/js/secrets.js`.
+La suite passe maintenant 18 scénarios, dont l’activation volontaire, le refus avant
+déverrouillage, la sortie clavier à 320 px, l’absence de chevauchement avec l’avatar
+de Yuki, l’utilisation des fenêtres et le retour au thème normal après rechargement.
+Captures hors dépôt dans `studio-site-preview/glitch-mode`.
+Publication de cet ajout autorisée par YU, avec le lien de contact mis à jour vers
+`youthseiko@gmail.com`.
+
+## Refonte initiale
+
 Travail local sur `feat/editorial-secrets`, à partir de `cd3d686`.
 Le dépôt était propre au démarrage. Aucun envoi sur `main`, aucune publication.
 

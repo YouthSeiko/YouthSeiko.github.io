@@ -1,0 +1,72 @@
+/* Archive 000 cosmetic reward. No flashing, sound, new assets or copied page. */
+.glitch-status { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.glitch-controls { position: fixed; left: max(1rem, env(safe-area-inset-left)); bottom: max(1rem, env(safe-area-inset-bottom)); z-index: 110; max-width: calc(100% - 145px); padding: 0.6rem; border: 1px solid #83c7c0; border-radius: 10px; background: #101319f5; color: #e3f3ed; box-shadow: 0 6px 30px #0008; }
+.glitch-controls > span { display: block; font: 0.62rem/1.6 Consolas, monospace; letter-spacing: 0.12em; padding: 0 0.4rem 0.4rem; color: #c5d6ce; }
+.glitch-controls button { min-height: 44px; padding: 0.6rem 0.8rem; border: 1px solid #a5d7cc; border-radius: 5px; background: #d7e9de; color: #142324; font: 800 0.85rem/1.4 var(--font-body); cursor: pointer; }
+.glitch-controls button:focus-visible { outline: 3px solid #ffc6d8; outline-offset: 4px; }
+.archive-document .glitch-invitation { font-size: 0.75rem; margin-top: 0.7rem; }
+
+body.is-glitched {
+  color-scheme: dark;
+  --cream: #111319;
+  --ink: #e3e8e1;
+  --ink-soft: #b9c6c4;
+  --rose-vif: #f4a9c8;
+  --line: #9db4bb36;
+  --shadow-sm: 0 6px 18px #0005;
+  --shadow-md: 0 18px 40px #0007;
+  --shadow-lg: 0 30px 70px #0009;
+  background: radial-gradient(ellipse at 15% 8%, #492b4438, transparent 45%), radial-gradient(ellipse at 90% 70%, #1e5b5730, transparent 50%), #0b0e13;
+}
+body.is-glitched::before { content: ""; position: fixed; inset: 0; z-index: 105; pointer-events: none; background: repeating-linear-gradient(0deg, transparent 0 3px, #0002 3px 4px); opacity: 0.5; }
+body.is-glitched::after { content: ""; position: fixed; inset: 0; z-index: 60; pointer-events: none; box-shadow: inset 0 0 100px #0005; }
+.is-glitched .site-header, .is-glitched .site-header.scrolled, .is-glitched .nav.open { background: #10151aef; border-color: #5b74755c; }
+.is-glitched .site-footer { background: #101319; }
+.is-glitched .nav-toggle { background: #25343b; border-color: #819a9c; }
+.is-glitched .nav-toggle span { background: #e6ede6; }
+.is-glitched .hero-star { color: #b0bcc0; -webkit-text-fill-color: #b0bcc0; }
+.is-glitched .hero-title { background: none; color: #dbe6df; -webkit-text-fill-color: currentColor; text-shadow: -2px 0 #be5c83, 2px 1px #4caba8; animation: signal-drift 13s steps(1, end) infinite; }
+.is-glitched .hero-kicker, .is-glitched .hero-worlds a { color: #d6e5dc; border-color: #758b8d; background: #1b252b; }
+.is-glitched .hero-worlds a:hover, .is-glitched .nav a:hover, .is-glitched .nav a[aria-current] { background: #344149; color: #f3d7e3; }
+.is-glitched .hero-showcase img, .is-glitched .project-cover img, .is-glitched .yu-note-cover, .is-glitched .mascot-avatar img { filter: saturate(0.18) contrast(1.2) brightness(0.74); }
+.is-glitched .showcase-card { border-color: #687579; box-shadow: -3px 1px 0 #b95d7f66, 4px -1px 0 #52b5ae55, var(--shadow-md); }
+.is-glitched .shape { filter: grayscale(1) drop-shadow(2px 1px #a2496b); opacity: 0.55; }
+.is-glitched .hero::after { content: "SIGNAL 000 / LA VITRINE A CHANGÉ DE FRÉQUENCE"; display: block; margin: 2rem auto 0; max-width: 100%; color: #9db9b2; font: 0.62rem/1.8 Consolas, monospace; letter-spacing: 0.12em; text-align: center; }
+.is-glitched .project-card { background: #151d24; border-color: #65787e66; }
+.is-glitched .project--mirai, .is-glitched .project--heart { --accent: #e7a4bf; --accent-soft: #49323e; }
+.is-glitched .project--babylone { --accent: #a5d9e7; --accent-soft: #243b46; }
+.is-glitched .project--century { --accent: #dfd4a8; --accent-soft: #3d382b; }
+.is-glitched .project-card::before { opacity: 0.2; }
+.is-glitched .project-cover::after { content: "000 / TRANSMISSION INCOMPLÈTE"; position: absolute; left: 0; right: 0; bottom: 0; padding: 0.5rem; color: #c4ddd7; background: #0b1018e6; font: 0.6rem/1.5 Consolas, monospace; letter-spacing: 0.12em; pointer-events: none; }
+.is-glitched .concept-cover { filter: saturate(0.15) brightness(0.65); }
+.is-glitched .project-badge, .is-glitched .tags li, .is-glitched .modal-status { background: #273238; color: #dae4dd; }
+.is-glitched .btn-card, .is-glitched .btn-ghost { background: #233139; color: #e0e9e2; border-color: #819a9c; }
+.is-glitched .btn-primary, .is-glitched .btn-kofi { background: #653349; color: #fff0f4; box-shadow: 0 8px 24px #0005; }
+.is-glitched .studio-section, .is-glitched .yu-section { background: linear-gradient(180deg, #1a232444, #2a202b55, transparent); }
+.is-glitched .value-card, .is-glitched .ost-player, .is-glitched .yu-note, .is-glitched .news-card, .is-glitched .contact-card { background: #171f27; border-color: #65787e66; box-shadow: var(--shadow-md); }
+.is-glitched .yu-note-featured { background: linear-gradient(130deg, #251d29, #19262c); }
+.is-glitched .yu-margin { background: #2c2432; border-color: #b27a99; }
+.is-glitched .yu-margin span, .is-glitched .yu-margin p, .is-glitched .yu-note-link, .is-glitched .yu-subhead .eyebrow, .is-glitched .yu-questions-intro .eyebrow, .is-glitched .yu-faq .yu-faq-aside, .is-glitched .yu-faq details[open] summary { color: #e4b3cb; }
+.is-glitched .yu-note-meta { color: #b5c6c5; }
+.is-glitched .yu-question-mark { color: #77657f; }
+.is-glitched .yu-faq details, .is-glitched .news-history { border-color: #778b8c; }
+.is-glitched .mascot-bubble { background: #20212b; border-color: #936d88; box-shadow: -2px 0 #aa5d8040, 2px 0 #7bcbc540, var(--shadow-md); }
+.is-glitched .mascot-bubble::after { background: #20212b; border-color: #936d88; }
+.is-glitched .mascot-line, .is-glitched .mascot-kicker, .is-glitched .mascot-voice-status { color: #e0c9da; }
+.is-glitched .mascot-dismiss, .is-glitched .mascot-voice, .is-glitched .mascot-reduce, .is-glitched .mascot-restore, .is-glitched .notebook-entry { background: #302534; color: #f0dae7; border-color: #bd8dad; }
+.is-glitched .archive-entry { color: #d8b4ce; }
+.is-glitched dialog.modal:not(.secret-dialog) .modal-body { background: radial-gradient(ellipse at top right, #344046, transparent), #151c23; }
+.is-glitched dialog.modal:not(.secret-dialog) .modal-hook { color: #d6e5de; background: #25343b; }
+.is-glitched :where(a, button, summary):focus-visible { outline-color: #f2b3d1; }
+@keyframes signal-drift {
+  0%, 92%, 94%, 100% { transform: none; text-shadow: -2px 0 #be5c83, 2px 1px #4caba8; }
+  93% { transform: translateX(1px); text-shadow: -4px 1px #be5c83, 3px -1px #4caba8; }
+}
+@media (max-width: 460px) {
+  .glitch-controls { padding: 0.4rem; max-width: calc(100% - 130px); }
+  .glitch-controls > span { display: none; }
+  .glitch-controls button { font-size: 0.75rem; padding-inline: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .is-glitched .hero-title { animation: none; }
+}

@@ -38,6 +38,12 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
 - `assets/js/main.js` : navigation, fenêtres de projets, galerie et mascotte.
 - `assets/js/secrets.js` et `assets/css/secrets.css` : expériences facultatives,
   fragments et archives. Parcours, architecture et audit dans [REFONTE.md](REFONTE.md).
+- **Version glitch** : l’Archive 000 révèle un bouton d’activation après les quatre
+  fragments. Le même site utilise alors `assets/css/glitch.css` et la classe
+  `body.is-glitched` : palette sombre, images désaturées, trame et décalages légers.
+  Le bouton fixe **Revenir au site normal** restaure l’apparence habituelle.
+  Aucun son supplémentaire ni clignotement rapide. Le thème ne se réactive pas
+  automatiquement après rechargement ; les fragments restent acquis.
 - **Actualités** : ajouter les annonces datées, de la plus récente à la plus ancienne,
   comme articles `.news-entry` dans `#latest-news`. Le script conserve les trois
   premières et déplace les suivantes dans `#anciennes-actualites`, sans changer leurs

@@ -30,6 +30,7 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=20261027-2">
   <link rel="stylesheet" href="assets/css/secrets.css?v=20261027-2">
+  <link rel="stylesheet" href="assets/css/glitch.css?v=20261027-1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -344,7 +345,7 @@
           <h2>Faisons grandir ces univers ensemble !</h2>
           <p class="contact-text">Une question, un retour, un petit mot ? La porte du studio est ouverte.</p>
           <div class="contact-actions">
-            <a class="btn btn-primary" href="mailto:contact@youthseiko.studio">Nous écrire</a>
+            <a class="btn btn-primary" href="mailto:youthseiko@gmail.com">Nous écrire</a>
             <a class="btn btn-ghost" href="#actualites">Suivre les nouvelles</a>
             <a class="btn btn-kofi" href="https://ko-fi.com/youthseiko" target="_blank" rel="noopener"><span aria-hidden="true">☕</span> Soutenir sur Ko-fi</a>
           </div>
@@ -595,6 +596,9 @@
         <p>Inventaire : un bout de papier, un signal, un angle mort, une date impossible.</p>
         <p>Aucun de ces objets ne devrait ouvrir une porte.<br>Nous avons laissé la poignée quand même.</p>
         <p class="archive-stamp">Contenu expérimental du studio · sans révélation canonique. Cette archive pourra être enrichie.</p>
+        <p>Le signal traverse aussi la vitrine. Tu peux regarder de l’autre côté.</p>
+        <button class="secret-action" id="glitch-enter" type="button" disabled>Basculer le site en version glitch ↗</button>
+        <p class="glitch-invitation">Une autre ambiance pour le même site. Tu peux revenir à tout moment.</p>
       </section>
     </div>
   </dialog>
@@ -622,8 +626,14 @@
     <audio id="mascotAudio" preload="none" hidden></audio>
   </aside>
 
+  <aside class="glitch-controls" id="glitch-controls" aria-label="Version alternative du site" hidden>
+    <span aria-hidden="true">000 / SIGNAL ALTÉRÉ</span>
+    <button id="glitch-exit" type="button">Revenir au site normal</button>
+  </aside>
+  <p class="glitch-status" id="glitch-status" role="status" aria-live="polite"></p>
+
   <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
   <script src="assets/js/main.js?v=20261027-2" defer></script>
-  <script src="assets/js/secrets.js?v=20261027-2" defer></script>
+  <script src="assets/js/secrets.js?v=20261027-3" defer></script>
 </body>
 </html>
