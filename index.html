@@ -28,7 +28,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=20261024-4">
+  <link rel="stylesheet" href="assets/css/style.css?v=20261027-2">
+  <link rel="stylesheet" href="assets/css/secrets.css?v=20261027-2">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -90,29 +91,31 @@
         <span class="shape shape-heart shape-heart-2">💙</span>
         <span class="shape shape-star shape-star-2">✨</span>
         <span class="shape shape-flower shape-flower-2">🌸</span>
+        <span class="shape shape-syringe">💉</span>
       </div>
       <div class="hero-inner">
         <div class="hero-copy">
         <p class="hero-kicker"><span aria-hidden="true">✦</span> Studio indépendant de jeux vidéo</p>
         <h1 class="hero-title">YOUTHSEIKO <span class="hero-star" aria-hidden="true">✦</span></h1>
         <p class="hero-tagline">Des mondes étranges.<br>Des histoires humaines.</p>
-        <p class="hero-text">Des gardiennes au cœur de l’action, des rencontres qui bousculent le quotidien. Nous créons des jeux anime avec du caractère, de l’émotion et une bonne dose de curiosité.</p>
+        <p class="hero-text">Des jeux anime, des émotions et quelques idées qui refusent de rester sages.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#projets">Découvrir nos projets</a>
           <a class="btn btn-ghost" href="#actualites">Les nouvelles du studio <span aria-hidden="true">↗</span></a>
         </div>
+        <nav class="hero-worlds" aria-label="Les quatre univers"><a href="#project-mirai"><span aria-hidden="true">💉</span> MIRAI</a><a href="#project-heart"><span aria-hidden="true">💗</span> HEART</a><a href="#project-babylone"><span aria-hidden="true">🧊</span> BABYLONE</a><a href="#project-century"><span aria-hidden="true">🌼</span> CENTURY</a></nav>
         <ul class="hero-status" aria-label="Le studio en ce moment"><li><span class="status-dot" aria-hidden="true"></span> Deux prototypes en développement</li><li>Deux univers en conception</li></ul>
         </div>
         <div class="hero-showcase" aria-label="À découvrir au studio">
           <a class="showcase-card showcase-mirai" href="#project-mirai">
             <img src="assets/img/project-mirai-600.webp" alt="Mirai, sourire dans un tourbillon lumineux" width="600" height="600" fetchpriority="high">
-            <span class="showcase-caption"><span class="showcase-label">Le prototype arcade</span><strong>MIRAI <span aria-hidden="true">↗</span></strong><span>Android · Gardiennes · Phonk</span></span>
+            <span class="showcase-caption"><span class="showcase-label">Le prototype arcade</span><strong><span><span aria-hidden="true">💉</span> MIRAI</span> <span aria-hidden="true">↗</span></strong><span>Android · Gardiennes · Phonk</span></span>
           </a>
           <a class="showcase-card showcase-heart" href="#project-heart">
             <img src="assets/img/project-heart-600.webp" alt="PROJECT HEART, les quatre héroïnes réunies sous les néons" width="600" height="400">
-            <span class="showcase-caption"><span class="showcase-label">Le visual novel</span><strong>PROJECT HEART <span aria-hidden="true">↗</span></strong></span>
+            <span class="showcase-caption"><span class="showcase-label">Le visual novel</span><strong><span><span aria-hidden="true">💗</span> PROJECT HEART</span> <span aria-hidden="true">↗</span></strong></span>
           </a>
-          <p class="showcase-note"><span aria-hidden="true">✦</span> Deux façons d’entrer dans notre univers.</p>
+          <p class="showcase-note"><span aria-hidden="true">✦</span> Choisis une porte. Garde ta curiosité.</p>
         </div>
       </div>
       <a class="scroll-hint" href="#projets" aria-label="Descendre vers les projets">
@@ -126,7 +129,7 @@
         <header class="section-head reveal">
           <p class="eyebrow">Nos projets 🎮</p>
           <h2>Trouvez votre prochaine aventure.</h2>
-          <p class="section-sub">Arcade ou récit, nos deux prototypes prennent forme. Plus loin, deux autres univers attendent leur tour.</p>
+          <p class="section-sub">Quatre portes. À toi de voir laquelle entrouvrir.</p>
         </header>
 
         <div class="projects-grid">
@@ -135,13 +138,12 @@
             <figure class="project-cover">
               <img src="assets/img/project-mirai-1200.webp" srcset="assets/img/project-mirai-600.webp 600w, assets/img/project-mirai-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) 620px, 560px" alt="Mirai sourit au milieu d’un tourbillon lumineux dans un univers organique" width="1200" height="1200" loading="lazy">
             </figure>
-            <h3>PROJECT MIRAI</h3>
+            <h3><button class="secret-trigger medical-trigger project-title-mark" type="button" data-modal="secret-mirai" aria-label="Examiner la seringue de MIRAI" title="Un signal persiste…" hidden data-secret-control><span aria-hidden="true">💉</span></button><noscript><span class="project-title-mark" aria-hidden="true">💉</span></noscript><span>PROJECT MIRAI</span></h3>
             <p class="project-sub">Première injection.</p>
             <ul class="tags">
               <li>Shooter vertical</li><li>Arcade</li><li>Mobile</li><li>Anime</li>
             </ul>
             <p class="project-hook">Une gardienne. Un corps devenu champ de bataille. Un espoir à protéger.</p>
-            <p class="project-desc">Esquivez, déclenchez le Neuro Burst et affrontez un boss à deux phases aux côtés d’Akari. Un shooter mobile rythmé par la phonk et des voix japonaises sous-titrées en français.</p>
             <p class="project-meta">Android en test <span aria-hidden="true">·</span> Format portrait</p>
             <button class="btn btn-card" type="button" data-modal="modal-mirai">Découvrir MIRAI</button>
           </article>
@@ -151,44 +153,44 @@
             <figure class="project-cover">
               <img src="assets/img/project-heart-1200.webp" srcset="assets/img/project-heart-600.webp 600w, assets/img/project-heart-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) 620px, 560px" alt="Project HEART — illustration officielle du projet" width="1200" height="800" loading="lazy">
             </figure>
-            <span class="project-emoji" aria-hidden="true">💗</span>
-            <h3>PROJECT HEART</h3>
+            <h3><span class="project-title-mark" aria-hidden="true">💗</span><span>PROJECT HEART</span></h3>
             <p class="project-sub">Love is complicated!</p>
             <ul class="tags">
               <li>Visual Novel</li><li>Romance</li><li>Comédie</li><li>Mystère</li>
             </ul>
             <p class="project-hook">Quatre filles. Un garçon. Beaucoup trop de problèmes de cœur.</p>
-            <p class="project-desc">Masaru espérait une année tranquille au lycée Aozora. Quatre rencontres, des réparties affûtées et des choix de cœur vont en décider autrement.</p>
             <p class="project-meta">Premier chapitre <span aria-hidden="true">·</span> Visual novel sur PC</p>
             <button class="btn btn-card" type="button" data-modal="modal-heart">Découvrir HEART</button>
           </article>
 
-          <article class="project-card project--babylone reveal">
+          <article class="project-card project--babylone reveal" id="project-babylone">
             <div class="project-badge">En conception</div>
             <div class="project-cover concept-cover concept-babylone" aria-hidden="true"><span class="concept-number">03 /</span><span class="concept-cube"></span><span class="concept-word">FIND THE EXIT.</span></div>
-            <h3>PROJECT BABYLONE</h3>
+            <h3><span class="project-title-mark" aria-hidden="true">🧊</span><span>PROJECT BABYLONE</span></h3>
             <p class="project-sub">Somewhere, there is an exit.</p>
             <ul class="tags">
               <li>Action-RPG</li><li>Metroidvania</li><li>Exploration</li><li>Mystère</li>
             </ul>
             <p class="project-hook">Un complexe gigantesque. Des milliers de cubes. Une seule obsession : trouver la sortie.</p>
-            <p class="project-desc">Explorez un labyrinthe de salles géométriques. Chaque passage ouvre une nouvelle question : jusqu’où faut-il aller pour trouver la sortie ?</p>
             <p class="project-meta">Univers en conception</p>
             <button class="btn btn-card" type="button" data-modal="modal-babylone">Explorer BABYLONE</button>
           </article>
 
-          <article class="project-card project--century reveal">
+          <article class="project-card project--century reveal" id="project-century">
             <div class="project-badge">En conception</div>
             <div class="project-cover concept-cover concept-century" aria-hidden="true"><span class="concept-number">04 /</span><span class="concept-flower">✿</span><span class="concept-word">TAKE CARE.</span></div>
-            <h3>PROJECT CENTURY</h3>
+            <h3><span class="project-title-mark" aria-hidden="true">🌼</span><span>PROJECT CENTURY</span><button class="secret-trigger" type="button" data-modal="secret-century" aria-label="Consulter les messages oubliés de CENTURY" title="Une conversation attend." hidden data-secret-control>✉</button></h3>
             <p class="project-sub">Take care of me, okay?</p>
             <ul class="tags">
               <li>Visual Novel</li><li>Simulation</li><li>Gestion</li><li>Drame psychologique</li>
             </ul>
             <p class="project-hook">Votre meilleur ami compte sur vous. Peut-être un peu trop.</p>
-            <p class="project-desc">Du temps, un budget, des petites attentions. Une histoire de quotidien et de liens où prendre soin de l’autre demande aussi de trouver son équilibre.</p>
             <p class="project-meta">Univers en conception</p>
             <button class="btn btn-card" type="button" data-modal="modal-century">Rencontrer CENTURY</button>
+            <aside class="century-notice" id="century-notice" aria-label="Message fictif de CENTURY" hidden>
+              <button type="button" data-modal="secret-century">✉ Message oublié <span>« Salut ! Tu es là ? »</span></button>
+              <button type="button" id="century-dismiss" aria-label="Masquer la notification de CENTURY">×</button>
+            </aside>
           </article>
         </div>
       </div>
@@ -221,34 +223,33 @@
         <header class="section-head reveal">
           <p class="eyebrow">Notre philosophie 🌈</p>
           <h2>Chaque idée mérite son propre univers.</h2>
-          <p class="section-sub">Chez Youthseiko, nous ne voulons pas nous limiter à un seul genre. Un jour une comédie romantique scolaire, le lendemain un gigantesque labyrinthe blanc, une aventure intimiste ou un shooter arcade au cœur d’un univers organique.</p>
+          <p class="section-sub">Une idée peut devenir une romance, un labyrinthe ou une pluie de projectiles. On lui laisse choisir sa forme.</p>
         </header>
 
-        <p class="studio-lead reveal">Ce qui nous passionne, ce sont les possibilités offertes par le jeu vidéo : raconter, surprendre, faire réfléchir, émerveiller et surtout donner envie de continuer.</p>
 
         <div class="values-grid">
           <article class="value-card reveal">
             <span class="value-icon" aria-hidden="true">✨</span>
             <h3>Créativité</h3>
-            <p>Nous aimons expérimenter avec des concepts originaux et explorer des directions inattendues.</p>
+            <p>Essayer les idées un peu trop bizarres.</p>
           </article>
           <article class="value-card reveal">
             <span class="value-icon" aria-hidden="true">🎨</span>
             <h3>Identité</h3>
-            <p>Chaque projet possède son ambiance, ses personnages et son univers visuel.</p>
+            <p>Un monde, son caractère, ses couleurs.</p>
           </article>
           <article class="value-card reveal">
             <span class="value-icon" aria-hidden="true">💛</span>
             <h3>Émotions</h3>
-            <p>Nous croyons que les jeux peuvent faire rire, intriguer, émouvoir et laisser des souvenirs durables.</p>
+            <p>Rire. Douter. S’attacher un peu trop.</p>
           </article>
           <article class="value-card reveal">
             <span class="value-icon" aria-hidden="true">🎮</span>
             <h3>Découverte</h3>
-            <p>Nous voulons encourager les joueurs à explorer, à faire leurs propres choix et à découvrir ce qui se cache derrière les apparences.</p>
+            <p>Laisser une porte entrouverte. À toi de pousser.</p>
           </article>
         </div>
-        <p class="studio-motto reveal">Notre règle ? Ne jamais manquer de curiosité.</p>
+        <p class="studio-motto reveal">Notre règle ? Ne jamais manquer de curiosité. <button class="secret-trigger cube-trigger" type="button" data-modal="secret-babylone" aria-label="Examiner le petit cube blanc" title="Ce cube n’était pas là… si ?" hidden data-secret-control><span aria-hidden="true">□</span></button></p>
       </div>
     </section>
 
@@ -269,29 +270,29 @@
           </div>
           <aside class="yu-video-soon" aria-labelledby="yu-video-title">
             <span class="yu-video-number" aria-hidden="true">REC / —</span>
-            <p class="yu-small-label">Bientôt sur YouTube</p>
+            <p class="yu-small-label">Vidéo / à venir</p>
             <h3 id="yu-video-title">Derrière le masque</h3>
-            <p>Une rencontre avec YU, ses jeux et les idées qui les font naître. La vidéo de présentation arrive prochainement.</p>
+            <p>La place est prête. La vidéo, encore en préparation.</p>
             <span class="yu-video-state">Présentation en préparation</span>
           </aside>
         </div>
 
         <div class="yu-subhead reveal" id="carnet-yu">
           <div><p class="eyebrow">Notes de développement / 01—03</p><h3>Le Carnet de YU</h3></div>
-          <p>Des nouvelles à la première personne.<br>Des annotations pas toujours sollicitées.</p>
+          <p>Des réflexions, des hésitations.<br>Yuki écrit dans la marge.</p>
         </div>
         <div class="yu-journal">
           <article class="yu-note yu-note-featured reveal" id="note-yu-bienvenue">
             <div class="yu-note-meta"><time datetime="2026-10-24">24 octobre 2026</time><span>YU / Le studio</span></div>
             <h4>Un masque, plusieurs univers.</h4>
-            <p class="yu-quote">« Moi, c’est YU. Derrière le masque d’oni, il y a le dev de Youthseiko. Ici, je partagerai les étapes des jeux, les petits progrès et les idées qui refusent de rester dans un carnet. Le café fait partie du décor. Les jeux restent le sujet. »</p>
+            <p class="yu-quote">« Le plus difficile avec plusieurs univers en tête ? Accepter qu’une idée attende son tour. Je garde ce carnet pour les petits progrès et les questions encore ouvertes. »</p>
             <aside class="yu-margin"><img src="assets/img/studio-mascot.jpg" alt="" width="1024" height="768" loading="lazy"><div><span>Yuki, en marge</span><p>« J’ai mon propre carnet. Et contrairement à lui, je sais où il est. »</p></div></aside>
           </article>
           <article class="yu-note reveal" id="note-yu-mirai">
             <img class="yu-note-cover" src="assets/img/project-mirai-600.webp" alt="Mirai, illustration du prototype arcade" width="600" height="600" loading="lazy">
             <div class="yu-note-meta"><time datetime="2026-10-24">24 octobre 2026</time><span>YU / MIRAI</span></div>
             <h4>Le meilleur juge tient dans une poche.</h4>
-            <p class="yu-quote">« MIRAI tourne maintenant sur Android. Le prototype garde Akari, le Neuro Burst, la phonk et les voix japonaises. Mon sujet du moment : le confort tactile et le format portrait. Une explosion peut être spectaculaire ; il faut aussi que les doigts trouvent les boutons. »</p>
+            <p class="yu-quote">« Une explosion peut être spectaculaire ; il faut aussi que les doigts trouvent les boutons. C’est ce qui m’occupe avec MIRAI : trouver le bon confort en portrait. Le téléphone ramène vite les grandes idées à la taille d’un pouce. »</p>
             <aside class="yu-margin"><div><span>Yuki, en marge</span><p>« Le bouton café n’est pas prévu. J’ai vérifié. »</p></div></aside>
             <a class="yu-note-link" href="#project-mirai">Voir MIRAI <span aria-hidden="true">↗</span></a>
           </article>
@@ -299,7 +300,7 @@
             <img class="yu-note-cover" src="assets/img/project-heart-600.webp" alt="PROJECT HEART, illustration publique des quatre héroïnes" width="600" height="400" loading="lazy">
             <div class="yu-note-meta"><time datetime="2026-10-24">24 octobre 2026</time><span>YU / HEART</span></div>
             <h4>Quatre rencontres, beaucoup de répartie.</h4>
-            <p class="yu-quote">« HEART a son premier chapitre en prototype. Masaru, quatre héroïnes et une journée au lycée Aozora : le point de départ est posé. Ici, je peux parler des personnages et de l’écriture. Pour le reste, je préfère vous laisser découvrir. »</p>
+            <p class="yu-quote">« Avec HEART, j’ai envie qu’une réplique donne envie de lire la suivante. Combien en dire, combien laisser deviner ? C’est la question que je veux garder en tête en parlant des personnages. Yuki, elle, a déjà un avis. »</p>
             <aside class="yu-margin"><div><span>Yuki, en marge</span><p>« Mes répliques sont excellentes. Je tenais à ce que ce soit écrit quelque part. »</p></div></aside>
             <a class="yu-note-link" href="#project-heart">Voir HEART <span aria-hidden="true">↗</span></a>
           </article>
@@ -308,11 +309,8 @@
         <div class="yu-questions reveal" id="yu-repond">
           <div class="yu-questions-intro"><p class="eyebrow">Questions au dev</p><h3>YU répond.</h3><p>Version courte. La tasse est encore chaude.</p><span class="yu-question-mark" aria-hidden="true">?</span></div>
           <div class="yu-faq">
-            <details open><summary>Qui est YU ?</summary><p>« C’est moi, le développeur derrière Youthseiko, dans ma version publique : masque d’oni, veste Adidas, café ou Monster à portée de main. Un personnage pour vous parler des jeux et montrer ce qui se passe au studio. »</p></details>
-            <details><summary>Pourquoi des jeux aussi différents ?</summary><p>« Toutes les idées ne demandent pas le même jeu. MIRAI veut de l’action immédiate. HEART laisse de la place aux dialogues et aux choix. BABYLONE et CENTURY sont encore en conception. Pour l’instant, je travaille sur les prototypes. »</p></details>
-            <details><summary>On peut déjà jouer aux jeux&nbsp;?</summary><p>« MIRAI est en essais sur Android et HEART possède un premier chapitre en prototype. Ce sont des versions de travail ; aucune démo publique n’est annoncée pour le moment. Les nouvelles seront partagées ici. »</p></details>
+            <details><summary>Une démo ou une date de sortie ?</summary><p>Aucune démo publique ni date de sortie annoncée. Les versions actuelles sont des prototypes de travail. Les annonces confirmées seront dans les <a href="#actualites">actualités</a>.</p></details>
             <details><summary>Et Yuki, elle fait quoi ici ?</summary><p>« Elle accueille les visiteurs, protège son carnet à croix et commente mon travail. Son porte-clés chauve-souris est probablement mieux organisé que moi. »</p><p class="yu-faq-aside">Yuki : « Probablement ? »</p></details>
-            <details><summary>Quand sortent les jeux ?</summary><p>« Pas de date annoncée pour le moment. Le carnet servira à montrer les étapes concrètes : ce qui fonctionne, ce qu’on essaie et ce qui vient ensuite. »</p></details>
           </div>
         </div>
       </div>
@@ -322,29 +320,20 @@
       <div class="container">
         <header class="section-head reveal">
           <p class="eyebrow">Actualités 📣</p>
-          <h2>L'aventure ne fait que commencer !</h2>
-          <p class="section-sub">Bienvenue sur le site officiel de Youthseiko. Nous travaillons actuellement sur nos premiers projets et partagerons progressivement leur développement.</p>
+          <h2>Les dernières nouvelles.</h2>
+          <p class="section-sub">Les avancées concrètes, au fil du développement.</p>
         </header>
 
-        <article class="news-card news-update reveal">
+        <div id="latest-news">
+        <article class="news-card news-update news-entry reveal" id="news-mirai-android">
           <p class="eyebrow"><time datetime="2026-10-24">24 octobre 2026</time> · MIRAI</p>
           <h3>Premières parties sur Android !</h3>
-          <p>Le prototype de combat de MIRAI passe aux essais sur téléphone : commandes tactiles, boss, effets, musique phonk et voix japonaises. Nous travaillons maintenant sur le confort de jeu en portrait et l’adaptation aux écrans mobiles.</p>
+          <p>Le prototype de MIRAI passe aux essais sur Android. Prochaine étape : affiner les commandes tactiles et le confort en portrait.</p>
           <a class="btn btn-ghost" href="#project-mirai">Rencontrer MIRAI <span aria-hidden="true">↗</span></a>
         </article>
 
-        <div class="news-card reveal">
-          <p class="news-intro">Au fil du temps, vous pourrez découvrir :</p>
-          <ul class="news-list">
-            <li><span aria-hidden="true">🎨</span> Des illustrations et concepts artistiques.</li>
-            <li><span aria-hidden="true">👤</span> Des présentations de personnages.</li>
-            <li><span aria-hidden="true">🎮</span> Des aperçus de gameplay.</li>
-            <li><span aria-hidden="true">🎵</span> Des musiques originales.</li>
-            <li><span aria-hidden="true">📝</span> Des journaux de développement.</li>
-            <li><span aria-hidden="true">🚀</span> Des annonces et de futures démos.</li>
-          </ul>
-          <p class="news-outro">Restez curieux, la suite arrive !</p>
         </div>
+        <details class="news-history" id="anciennes-actualites"><summary>Les actualités plus anciennes</summary><div id="older-news"><p id="news-empty">Aucune actualité plus ancienne pour le moment.</p></div></details>
       </div>
     </section>
 
@@ -353,24 +342,13 @@
         <div class="contact-card reveal">
           <p class="eyebrow">Suivez Youthseiko 💌</p>
           <h2>Faisons grandir ces univers ensemble !</h2>
-          <p class="contact-text">Youthseiko est un studio indépendant en construction, porté par l'envie de donner vie à des idées originales. Chaque visite, chaque retour et chaque personne intéressée par nos projets nous encouragent à poursuivre cette aventure.</p>
-          <p class="contact-text">Merci de faire partie des premières personnes à découvrir notre univers ! <strong>Suivez le développement de nos jeux et ne manquez pas les prochaines annonces.</strong></p>
+          <p class="contact-text">Une question, un retour, un petit mot ? La porte du studio est ouverte.</p>
           <div class="contact-actions">
             <a class="btn btn-primary" href="mailto:contact@youthseiko.studio">Nous écrire</a>
-            <a class="btn btn-ghost" href="#projets">Revoir les projets</a>
+            <a class="btn btn-ghost" href="#actualites">Suivre les nouvelles</a>
+            <a class="btn btn-kofi" href="https://ko-fi.com/youthseiko" target="_blank" rel="noopener"><span aria-hidden="true">☕</span> Soutenir sur Ko-fi</a>
           </div>
-          <p class="contact-note">De nouvelles histoires arrivent bientôt…</p>
-        </div>
-
-        <div class="support-card reveal">
-          <div class="support-text">
-            <p class="eyebrow">Soutenir Youthseiko ☕</p>
-            <h3>Envie de nous aider à donner vie à ces univers ?</h3>
-            <p>Youthseiko est un studio indépendant. Si vous aimez nos projets, vous pouvez nous soutenir financièrement sur Ko-fi — chaque coup de pouce compte !</p>
-          </div>
-          <a class="btn btn-kofi" href="https://ko-fi.com/youthseiko" target="_blank" rel="noopener">
-            <span aria-hidden="true">☕</span> Soutenir sur Ko-fi
-          </a>
+          <p class="contact-note">Le café est facultatif. La curiosité, vivement conseillée.</p>
         </div>
       </div>
     </section>
@@ -391,7 +369,7 @@
         <a href="#yu">Le Carnet de YU</a>
         <a href="#actualites">Actualités</a>
         <a href="#contact">Contact</a>
-        <a href="https://ko-fi.com/youthseiko" target="_blank" rel="noopener">Soutenir ☕</a>
+        <button class="archive-entry" type="button" data-modal="secret-archives" hidden data-secret-control aria-label="Consulter les archives de Youthseiko">✧ Archives <span data-fragment-count>0 / 4</span></button>
       </nav>
     </div>
     <div class="container footer-legal">
@@ -409,7 +387,7 @@
         <img src="assets/img/project-mirai-1200.webp" alt="Mirai, sourire dans le tourbillon" width="1200" height="1200" loading="lazy">
       </figure>
       <p class="modal-status">Prototype de combat · Essais Android</p>
-      <h2 id="modal-mirai-title">PROJECT MIRAI</h2>
+      <h2 id="modal-mirai-title"><span class="project-title-mark" aria-hidden="true">💉</span> PROJECT MIRAI</h2>
       <p class="modal-sub">Première injection.</p>
       <ul class="tags"><li>Shooter vertical</li><li>Arcade</li><li>Mobile en portrait</li><li>Anime</li></ul>
       <p class="modal-hook">Un tout petit monde. Une immense raison de se battre.</p>
@@ -431,7 +409,7 @@
         <img src="assets/img/project-heart-1200.webp" alt="Project HEART — illustration officielle du projet" width="1200" height="800" loading="lazy">
       </figure>
       <p class="modal-status">En développement</p>
-      <h2 id="modal-heart-title">PROJECT HEART</h2>
+      <h2 id="modal-heart-title"><span class="project-title-mark" aria-hidden="true">💗</span> PROJECT HEART</h2>
       <p class="modal-sub">Love is complicated!</p>
       <ul class="tags">
         <li>Visual Novel</li><li>Romance</li><li>Comédie</li><li>Mystère</li>
@@ -467,9 +445,8 @@
   <dialog class="modal project--babylone" id="modal-babylone" aria-labelledby="modal-babylone-title">
     <div class="modal-body">
       <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
-      <span class="modal-emoji" aria-hidden="true">🧊</span>
       <p class="modal-status">En conception</p>
-      <h2 id="modal-babylone-title">PROJECT BABYLONE</h2>
+      <h2 id="modal-babylone-title"><span class="project-title-mark" aria-hidden="true">🧊</span> PROJECT BABYLONE</h2>
       <p class="modal-sub">Somewhere, there is an exit.</p>
       <ul class="tags">
         <li>Action-RPG</li><li>Metroidvania</li><li>Exploration</li><li>Mystère</li>
@@ -491,9 +468,8 @@
   <dialog class="modal project--century" id="modal-century" aria-labelledby="modal-century-title">
     <div class="modal-body">
       <button class="modal-close" type="button" data-close aria-label="Fermer">✕</button>
-      <span class="modal-emoji" aria-hidden="true">🌼</span>
       <p class="modal-status">En conception</p>
-      <h2 id="modal-century-title">PROJECT CENTURY</h2>
+      <h2 id="modal-century-title"><span class="project-title-mark" aria-hidden="true">🌼</span> PROJECT CENTURY</h2>
       <p class="modal-sub">Take care of me, okay?</p>
       <ul class="tags">
         <li>Visual Novel</li><li>Simulation</li><li>Gestion</li><li>Drame psychologique</li>
@@ -513,6 +489,116 @@
     </div>
   </dialog>
 
+  <!-- Optional studio experiments: fictional, non-canonical material. -->
+  <dialog class="modal secret-dialog notebook" id="secret-heart" aria-labelledby="secret-heart-title">
+    <div class="modal-body secret-body">
+      <button class="modal-close" type="button" data-close aria-label="Fermer le carnet" autofocus>✕</button>
+      <p class="secret-label">HEART / Objet trouvé</p>
+      <h2 id="secret-heart-title">Ce carnet n’est pas à toi.</h2>
+      <p class="secret-context">Une fantaisie de Yuki, dans la marge du studio.</p>
+      <div class="notebook-spread">
+        <div class="notebook-binding" aria-hidden="true">✝</div>
+        <section class="notebook-page" data-notebook-page="0" aria-label="Première page">
+          <p class="handwritten">À faire :<br>— retrouver mon stylo.<br>— compter les biscuits.<br>— ne laisser PERSONNE lire ça.</p>
+          <svg class="notebook-doodle" viewBox="0 0 240 90" role="img" aria-label="Dessin au stylo d’une chauve-souris avec un petit nœud"><path d="M120 50 Q100 8 28 14 L44 47 L70 37 L80 63 L105 52 Q120 82 135 52 L160 63 L170 37 L196 47 L212 14 Q140 8 120 50 M109 37 L113 24 L120 32 L127 24 L131 37 M116 47 L117 47 M123 47 L124 47"/><path d="M120 65 L107 76 L107 63 L120 65 L133 76 L133 63 Z"/></svg>
+          <p class="handwritten note-small">La chauve-souris est chargée de la sécurité.<br>Elle réclame une augmentation.</p>
+        </section>
+        <section class="notebook-page" data-notebook-page="1" aria-label="Deuxième page" hidden>
+          <p class="handwritten">Ce que je voulais écrire :</p>
+          <p class="erased-note" aria-label="Plusieurs lignes effacées">░░░░░ ░░░░░░░<br>░░░ ░░░░░ ░░░░</p>
+          <p class="handwritten">Ce que j’ai écrit :<br>« Ça ne me fait absolument rien. »</p>
+          <p class="handwritten note-small">C’est très différent. Ne commente pas.</p>
+        </section>
+        <section class="notebook-page torn-page" data-notebook-page="2" aria-label="Troisième page, partiellement arrachée" hidden>
+          <p class="handwritten">Il manque un morceau.</p>
+          <svg class="broken-heart" viewBox="0 0 180 140" role="img" aria-label="Un cœur dessiné dont le trait reste inachevé"><path d="M90 116 C-15 46 39 -4 90 40 C137 -4 185 37 146 74"/></svg>
+          <p class="handwritten note-small">La page a été arrachée.<br>Le petit bout dans la reliure, tu peux le garder.</p>
+          <button class="secret-action" type="button" data-claim="HEART">Garder le fragment HEART</button>
+        </section>
+      </div>
+      <div class="secret-controls"><button class="secret-action" id="notebook-prev" type="button" disabled>← Revenir</button><span id="notebook-position" role="status">Page 1 / 3</span><button class="secret-action" id="notebook-next" type="button">Tourner la page →</button></div>
+      <p class="fragment-feedback" data-feedback="HEART" role="status"></p>
+      <button class="secret-link" type="button" data-modal="secret-archives">Consulter les archives ↗</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal secret-dialog terminal" id="secret-mirai" aria-labelledby="secret-mirai-title">
+    <div class="modal-body secret-body">
+      <button class="modal-close" type="button" data-close aria-label="Fermer le terminal" autofocus>✕</button>
+      <p class="secret-label">MIRAI / Station expérimentale</p>
+      <h2 id="secret-mirai-title">Un signal de trop.</h2>
+      <p class="secret-context">Terminal fictif du studio · dossier expérimental, hors récit du jeu.</p>
+      <div class="terminal-readout"><span>PROTOCOLE : MIRAI / EX-004</span><span>SUJET : [CONFIDENTIEL]</span><span>CANAL : VECTRICES</span><span>STATUT : INSTABLE</span><span>INTÉGRITÉ : 87 %</span><span class="terminal-anomaly">ANOMALIE DÉTECTÉE / 01</span></div>
+      <p class="terminal-prompt">Deux relevés. Un identifiant qui ne devrait pas se répéter.</p>
+      <button class="secret-action" id="terminal-inspect" type="button">Ouvrir le dossier V-04</button>
+      <section id="terminal-report" hidden aria-label="Rapport Vectrices">
+        <h3>Vectrices / Relevé V-04</h3>
+        <p>Signal enregistré. Origine non renseignée. Aucune conclusion autorisée.</p>
+        <div class="terminal-readout"><span>RELEVÉ A — V-04 / 08:14 / 87 %</span><span>RELEVÉ B — V-04 / 08:14 / ▒▒ %</span><span>DONNÉES : 0x██ · [PAQUET MANQUANT]</span></div>
+        <button class="secret-action" id="terminal-compare" type="button">Comparer les deux relevés</button>
+      </section>
+      <div id="terminal-result" hidden><p>Le second relevé contient un fragment sans origine. Aucun sujet identifié.</p><button class="secret-action" type="button" data-claim="MIRAI">Isoler le fragment MIRAI</button></div>
+      <p class="fragment-feedback" data-feedback="MIRAI" role="status"></p>
+      <button class="secret-link" type="button" data-modal="secret-archives">Consulter les archives ↗</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal secret-dialog white-room" id="secret-babylone" aria-labelledby="secret-babylone-title">
+    <div class="modal-body secret-body">
+      <button class="modal-close" type="button" data-close aria-label="Quitter la pièce blanche" autofocus>✕</button>
+      <p class="secret-label">BABYLONE / Espace impossible</p>
+      <h2 id="secret-babylone-title">Cette pièce a un autre côté.</h2>
+      <p class="secret-context">Une maquette d’exploration du studio, hors récit du jeu.</p>
+      <div class="room-scene" id="room-scene" role="group" aria-label="Pièce blanche, vue de face">
+        <span class="room-seam" aria-hidden="true"></span>
+        <span class="room-architecture" aria-hidden="true"></span>
+        <button class="room-inscription" id="room-inscription" type="button" aria-label="Examiner l’inscription sur le mur">I &nbsp; ⊔ &nbsp; I<br><span>lire le mur</span></button>
+        <button class="room-object" id="room-object" type="button" aria-label="Examiner l’objet cubique"><span aria-hidden="true">□</span><span class="room-object-label">examiner</span></button>
+      </div>
+      <p class="room-description" id="room-description" role="status">Un cube, une inscription. Rien ne fait de bruit.</p>
+      <div class="secret-controls"><button class="secret-action" id="room-turn" type="button">Voir l’autre côté ↻</button><button class="secret-action" data-claim="BABYLONE" type="button" hidden>Prendre le fragment BABYLONE</button></div>
+      <p class="fragment-feedback" data-feedback="BABYLONE" role="status"></p>
+      <button class="secret-link" type="button" data-modal="secret-archives">Consulter les archives ↗</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal secret-dialog forgotten-chat" id="secret-century" aria-labelledby="secret-century-title">
+    <div class="modal-body secret-body">
+      <button class="modal-close" type="button" data-close aria-label="Fermer les messages" autofocus>✕</button>
+      <p class="secret-label">CENTURY / Messages oubliés</p>
+      <h2 id="secret-century-title">Tu es là ?</h2>
+      <p class="secret-context">Conversation fictive · une expérience du studio, hors récit du jeu.</p>
+      <ol class="chat-messages" id="chat-messages" aria-label="Conversation retrouvée"><li>Salut ! Tu es là ?<span>18:02</span></li></ol>
+      <p class="chat-status" id="chat-status" role="status">Un premier message retrouvé.</p>
+      <button class="secret-action" id="chat-next" type="button">Lire la suite</button>
+      <div id="chat-date" hidden><button class="chat-date" id="chat-inspect-date" type="button">Horodatage : 32 / 13 / 0000 · Examiner</button></div>
+      <div id="chat-result" hidden><p>Cette date n’existe pas. Quelqu’un a laissé un fragment à sa place.</p><button class="secret-action" type="button" data-claim="CENTURY">Conserver le fragment CENTURY</button></div>
+      <p class="fragment-feedback" data-feedback="CENTURY" role="status"></p>
+      <button class="secret-link" type="button" data-modal="secret-archives">Consulter les archives ↗</button>
+    </div>
+  </dialog>
+
+  <dialog class="modal secret-dialog archives" id="secret-archives" aria-labelledby="secret-archives-title">
+    <div class="modal-body secret-body">
+      <button class="modal-close" type="button" data-close aria-label="Fermer les archives" autofocus>✕</button>
+      <p class="secret-label">Une porte sous la surface</p>
+      <h2 id="secret-archives-title">ARCHIVES — YOUTHSEIKO</h2>
+      <p>Quatre traces égarées. Un endroit où les réunir.</p>
+      <p class="archive-progress" id="archive-progress" role="status">0 / 4 fragments retrouvés</p>
+      <ul class="fragment-slots" id="fragment-slots" aria-label="Fragments retrouvés"></ul>
+      <p class="storage-note" id="storage-note">Les fragments sont conservés dans ce navigateur. Aucun compte nécessaire.</p>
+      <button class="secret-action" id="archive-unlock" type="button" disabled>Archive 000 · verrouillée</button>
+      <section class="archive-document" id="archive-000" aria-labelledby="archive-000-title" hidden>
+        <div class="archive-sigil" aria-hidden="true">✧<span>000</span></div>
+        <p class="secret-label">Document 000 / État : inachevé</p>
+        <h3 id="archive-000-title" tabindex="-1">Tu n’étais pas censé trouver cet endroit.</h3>
+        <p>Inventaire : un bout de papier, un signal, un angle mort, une date impossible.</p>
+        <p>Aucun de ces objets ne devrait ouvrir une porte.<br>Nous avons laissé la poignée quand même.</p>
+        <p class="archive-stamp">Contenu expérimental du studio · sans révélation canonique. Cette archive pourra être enrichie.</p>
+      </section>
+    </div>
+  </dialog>
+
   <dialog class="lightbox" id="lightbox" aria-label="Aperçu de la capture">
     <button class="lightbox-close" type="button" data-lightbox-close aria-label="Fermer">✕</button>
     <img id="lightboxImg" src="" alt="">
@@ -523,6 +609,7 @@
       <button class="mascot-dismiss" id="mascotDismiss" type="button" aria-label="Fermer la bulle de Yuki">×</button>
       <p class="mascot-kicker">Yuki ✦ Gardienne du studio</p>
       <p class="mascot-line" id="mascotLine" role="status" aria-live="polite" aria-atomic="true"></p>
+      <button class="notebook-entry" type="button" id="notebook-entry" data-modal="secret-heart" hidden>Ouvrir le carnet à croix ↗</button>
       <p class="mascot-voice-status" id="mascotVoiceStatus">Japonais à l’écoute · texte français</p>
     </div>
     <button class="mascot-avatar" id="mascotTalk" type="button" aria-label="Une autre réplique de Yuki" aria-controls="mascotBubble" aria-expanded="false" title="Yuki — tsundere gothique, carnet à croix et porte-clés chauve-souris">
@@ -536,6 +623,7 @@
   </aside>
 
   <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
-  <script src="assets/js/main.js?v=20261024-4" defer></script>
+  <script src="assets/js/main.js?v=20261027-2" defer></script>
+  <script src="assets/js/secrets.js?v=20261027-2" defer></script>
 </body>
 </html>

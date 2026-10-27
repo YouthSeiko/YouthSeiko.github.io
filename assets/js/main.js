@@ -55,6 +55,7 @@
       if (typeof dialog.showModal === "function") {
         dialog.showModal();
         document.body.classList.add("modal-open");
+        document.dispatchEvent(new CustomEvent("youthseiko:dialog-open", { detail: { id: dialog.id } }));
       }
     });
   });
@@ -66,14 +67,30 @@
     });
   });
 
-  document.querySelectorAll("dialog.modal").forEach(function (dialog) {
+  document.querySelectorAll("dialog").forEach(function (dialog) {
+    dialog.addEventListener("keydown", function (event) {
+      if (event.key !== "Tab") return;
+      var focusable = Array.from(dialog.querySelectorAll('a[href], button:not(:disabled), input:not(:disabled), select:not(:disabled), textarea:not(:disabled), summary, [tabindex="0"]')).filter(function (node) {
+        return node.getClientRects().length > 0;
+      });
+      if (!focusable.length) return;
+      var first = focusable[0];
+      var last = focusable[focusable.length - 1];
+      if (event.shiftKey && (document.activeElement === first || document.activeElement === dialog)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    });
     // Close when clicking outside the modal body
     dialog.addEventListener("click", function (event) {
       if (event.target === dialog) dialog.close();
     });
     // Remove scroll lock when any modal closes
     dialog.addEventListener("close", function () {
-      var anyOpen = document.querySelector("dialog.modal[open]");
+      var anyOpen = document.querySelector("dialog[open]");
       if (!anyOpen) document.body.classList.remove("modal-open");
     });
   });
@@ -104,6 +121,17 @@
   }
 
   // Scroll reveal
+  // Author news newest first in HTML. Older entries stay accessible without JS.
+  var olderNews = document.getElementById("older-news");
+  if (olderNews) {
+    document.querySelectorAll("#latest-news .news-entry").forEach(function (entry, index) {
+      if (index < 3) return;
+      entry.classList.remove("reveal");
+      olderNews.appendChild(entry);
+    });
+    document.getElementById("news-empty").hidden = !!olderNews.querySelector(".news-entry");
+  }
+
   var reveals = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && reveals.length) {
     document.documentElement.classList.add("has-reveal");
@@ -149,7 +177,10 @@
   var voiceToggle = document.getElementById("mascotVoice");
   var voiceStatus = document.getElementById("mascotVoiceStatus");
   if (mascot && bubble && mascotLine && talk && dismiss && voiceToggle && voiceStatus) {
-    var lines = window.YUKI_LINES || [{ french: "Moi, c’est Yuki. Je ne t’attendais pas… Enfin, entre quand même !" }];
+    // Keep the original recordings intact; avoid project summaries in random greetings.
+    var lines = (window.YUKI_LINES || [{ french: "Moi, c’est Yuki. Je ne t’attendais pas… Enfin, entre quand même !" }]).filter(function (line) {
+      return ["burst", "phonk", "explore"].indexOf(line.id) === -1;
+    });
     var previous = -1;
     var hideTimer;
     var currentLine;
@@ -207,7 +238,7 @@
     function scheduleHide() {
       clearTimeout(hideTimer);
       hideTimer = setTimeout(function () {
-        if (bubble.contains(document.activeElement) || bubble.matches(":hover") || !speech.paused) {
+        if (bubble.contains(document.activeElement) || bubble.matches(":hover") || !speech.paused || document.querySelector("dialog[open]")) {
           scheduleHide();
         } else {
           hideBubble();
@@ -216,6 +247,7 @@
     }
     function sayHello(userGesture) {
       stopVoice();
+      voiceToggle.disabled = false;
       // Select from all the other lines: no immediate repeat, even on reload.
       var hasPrevious = lines.length > 1 && previous >= 0 && previous < lines.length;
       var index = Math.floor(Math.random() * (lines.length - (hasPrevious ? 1 : 0)));
@@ -246,7 +278,20 @@
         talk.focus({ preventScroll: true });
       });
     }
-    talk.addEventListener("click", function () { sayHello(true); });
+    function saySecret(text) {
+      stopVoice();
+      currentLine = { french: text };
+      mascotLine.textContent = text;
+      bubble.hidden = false;
+      talk.setAttribute("aria-expanded", "true");
+      voiceToggle.disabled = true;
+      voiceStatus.textContent = "Yuki a glissé un mot écrit. Cette réplique est silencieuse.";
+      scheduleHide();
+    }
+    talk.addEventListener("click", function () {
+      var interaction = new CustomEvent("youthseiko:yuki-interaction", { cancelable: true, detail: { say: saySecret } });
+      if (document.dispatchEvent(interaction)) sayHello(true);
+    });
     voiceToggle.addEventListener("click", function () {
       if (voiceEnabled && !needsGesture) {
         voiceEnabled = false;
@@ -267,7 +312,7 @@
       hideBubble();
     });
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && !bubble.hidden) {
+      if (event.key === "Escape" && !bubble.hidden && !document.querySelector("dialog[open]")) {
         if (bubble.contains(document.activeElement)) talk.focus({ preventScroll: true });
         hideBubble();
       }
@@ -287,6 +332,7 @@
       }
     });
     window.addEventListener("pagehide", stopVoice);
+    document.addEventListener("youthseiko:dialog-open", stopVoice);
     document.addEventListener("click", function (event) {
       if (event.target.closest("[data-modal]")) stopVoice();
     });
