@@ -34,6 +34,10 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
   portrait, entretien filmé ou lecteur factice n’a été créé.
 
 - `index.html` : projets, fiches détaillées, actualités et informations publiques.
+  Le repère **W1 — Wave 1 · Première salve · 2026–2027** au-dessus des quatre
+  cartes identifie la première vague du studio : MIRAI, HEART, BABYLONE et CENTURY.
+  La période désigne cette vague de projets ; les états des fiches et l’absence
+  de dates de sortie annoncées sont conservés.
 - `assets/css/style.css` : identité pastel, cartes et adaptation mobile.
 - `assets/js/main.js` : navigation, fenêtres de projets, galerie et mascotte.
 - `assets/js/secrets.js` et `assets/css/secrets.css` : expériences facultatives,

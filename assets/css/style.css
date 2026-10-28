@@ -352,6 +352,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .section { padding: clamp(4.5rem, 9vw, 8rem) 0; position: relative; }
 
 .section-head { max-width: 720px; margin: 0 auto 3rem; text-align: center; }
+.wave-label { display: inline-flex; align-items: center; gap: 0.8rem; max-width: 100%; margin: 0 0 1.5rem; padding: 0.65rem 1.05rem 0.65rem 0.65rem; border: 1px solid #bda0c8; border-radius: 18px; background: linear-gradient(120deg, #fce4f1, #e8e4ff); text-align: left; color: #653c68; box-shadow: 0 6px 18px #9b75b012; }
+.wave-badge { display: grid; place-items: center; flex-shrink: 0; width: 54px; height: 54px; border: 1px solid #d7a8cb; border-radius: 12px; background: #fff9fc; font: 800 1.35rem/1 var(--font-display); transform: rotate(-5deg); }
+.wave-label strong { display: block; font: 800 0.84rem/1.5 var(--font-display); }
+.wave-dates { display: block; margin-top: 0.15rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; }
+.is-glitched .wave-label { color: #e7c5de; border-color: #8e7498; background: linear-gradient(120deg, #302435, #1e2e37); }
+.is-glitched .wave-badge { background: #172027; border-color: #92758e; }
 .eyebrow {
   font-family: var(--font-display);
   font-weight: 700;
