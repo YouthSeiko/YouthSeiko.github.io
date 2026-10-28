@@ -22,6 +22,47 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
 
 ## Modifier
 
+### Langues du site
+
+Les boutons de drapeaux **FR / EN / JP** dans l’en-tête changent le texte du site
+sur place, y compris les noms accessibles, les métadonnées, les fiches, les
+réactions de Yuki, les secrets et les archives. Les illustrations et les noms
+publics des jeux restent les mêmes. Les voix préenregistrées de Yuki restent
+japonaises ; en japonais, le texte reprend la transcription du catalogue vocal.
+
+- Le français reste la version HTML de référence, utilisable sans JavaScript.
+  Le choix est enregistré si possible dans `youthseiko.language` (`fr`, `en`, `ja`).
+  Un stockage bloqué n’empêche pas de changer de langue pendant la visite.
+- `?lang=en` ou `?lang=ja` ouvre directement une version. Ce paramètre prend
+  priorité sur la préférence enregistrée et conserve les ancres. Les changements
+  de langue ne rechargent pas la page et ne réinitialisent ni scènes ni fragments.
+- `assets/i18n/catalogue.json` contient des entrées `[français, anglais, japonais]`.
+  Conserver les apostrophes et ponctuations de la source ; les espaces sont normalisés.
+  Une traduction peut être vide si la grammaire japonaise l’exige. Les traductions
+  sont des textes, jamais du HTML. Aucun service de traduction distant n’est utilisé.
+- Après modification : `python tools/build_i18n.py`. Le catalogue navigateur
+  `assets/js/i18n-catalogue.js` est généré. `python tools/build_i18n.py --check`
+  vérifie qu’il correspond à la source. Mettre à jour les paramètres `v=` concernés.
+- `assets/js/i18n.js` observe les textes et attributs accessibles des composants
+  existants, conserve leur source française, et traduit les nouveaux messages
+  d’interface. Les messages avec nombres et identifiants utilisent des motifs
+  explicites. Ajouter de nouveaux cas dans `patterns` si ces formats changent.
+- `assets/css/i18n.css` gère les drapeaux SVG, le menu et la typographie japonaise.
+  Les drapeaux fonctionnent sur Windows sans dépendre des emojis de pays.
+- Le script de maintenance `tools/test_i18n.cjs` vérifie la couverture des textes,
+  les trois langues, leur persistance, les URL, les menus mobiles et les quatre
+  secrets. Il utilise Playwright et Edge comme la suite existante. Un dossier de
+  captures peut être passé en argument ; le conserver hors dépôt.
+
+Les versions anglaise et japonaise sont rendues dans le navigateur, avec `lang`,
+titre et métadonnées adaptés. Il ne s’agit pas de pages HTML statiques séparées.
+Un nouveau texte sans entrée conserve le français ; la vérification de couverture
+le signale pour éviter un mélange de langues lors des prochaines mises à jour.
+La relecture a porté sur les textes et rendus, sans validation par un réviseur
+japonophone externe. Les scripts et crédits restent sous leur nom d’origine.
+
+### Contenus et composants
+
 - **Espace YU** : section `#yu` dans `index.html`, accessible depuis les deux menus.
   `#carnet-yu` contient trois premiers billets et leurs annotations éditoriales de
   Yuki ; `#yu-repond` contient deux questions utiles en accordéons HTML natifs, utilisables

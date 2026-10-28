@@ -31,7 +31,7 @@ body.is-glitched::after { content: ""; position: fixed; inset: 0; z-index: 60; p
 .is-glitched .hero-showcase img, .is-glitched .project-cover img, .is-glitched .yu-note-cover, .is-glitched .mascot-avatar img { filter: saturate(0.18) contrast(1.2) brightness(0.74); }
 .is-glitched .showcase-card { border-color: #687579; box-shadow: -3px 1px 0 #b95d7f66, 4px -1px 0 #52b5ae55, var(--shadow-md); }
 .is-glitched .shape { filter: grayscale(1) drop-shadow(2px 1px #a2496b); opacity: 0.55; }
-.is-glitched .hero::after { content: "SIGNAL 000 / LA VITRINE A CHANGÉ DE FRÉQUENCE"; display: block; margin: 2rem auto 0; max-width: 100%; color: #9db9b2; font: 0.62rem/1.8 Consolas, monospace; letter-spacing: 0.12em; text-align: center; }
+.is-glitched .hero::after { content: var(--glitch-caption, "SIGNAL 000 / LA VITRINE A CHANGÉ DE FRÉQUENCE"); display: block; margin: 2rem auto 0; max-width: 100%; color: #9db9b2; font: 0.62rem/1.8 Consolas, monospace; letter-spacing: 0.12em; text-align: center; }
 .is-glitched .project-card { background: #151d24; border-color: #65787e66; }
 .is-glitched .project--mirai, .is-glitched .project--heart { --accent: #e7a4bf; --accent-soft: #49323e; }
 .is-glitched .project--babylone { --accent: #a5d9e7; --accent-soft: #243b46; }

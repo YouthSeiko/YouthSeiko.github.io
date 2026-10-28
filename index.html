@@ -30,7 +30,8 @@
   <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=20261028-3">
   <link rel="stylesheet" href="assets/css/secrets.css?v=20261027-2">
-  <link rel="stylesheet" href="assets/css/glitch.css?v=20261027-1">
+  <link rel="stylesheet" href="assets/css/glitch.css?v=20261028-1">
+  <link rel="stylesheet" href="assets/css/i18n.css?v=20261028-1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -79,6 +80,17 @@
         <a href="#actualites">Actualités</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="language-switcher" id="language-switcher" role="group" aria-label="Choisir la langue" hidden>
+        <button type="button" data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="true" data-no-i18n>
+          <svg viewBox="0 0 30 20" aria-hidden="true"><path fill="#fff" d="M0 0h30v20H0z"/><path fill="#002395" d="M0 0h10v20H0z"/><path fill="#ed2939" d="M20 0h10v20H20z"/></svg><span>FR</span>
+        </button>
+        <button type="button" data-language="en" lang="en" aria-label="English" title="English" aria-pressed="false" data-no-i18n>
+          <svg viewBox="0 0 30 20" aria-hidden="true"><path fill="#012169" d="M0 0h30v20H0z"/><path stroke="#fff" stroke-width="5" d="m0 0 30 20M30 0 0 20"/><path stroke="#c8102e" stroke-width="2" d="m0 0 30 20M30 0 0 20"/><path stroke="#fff" stroke-width="7" d="M15 0v20M0 10h30"/><path stroke="#c8102e" stroke-width="4" d="M15 0v20M0 10h30"/></svg><span>EN</span>
+        </button>
+        <button type="button" data-language="ja" lang="ja" aria-label="日本語" title="日本語" aria-pressed="false" data-no-i18n>
+          <svg viewBox="0 0 30 20" aria-hidden="true"><path fill="#fff" d="M0 0h30v20H0z"/><circle cx="15" cy="10" r="6" fill="#bc002d"/></svg><span>JP</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -667,9 +679,12 @@
     <button id="glitch-exit" type="button">Revenir au site normal</button>
   </aside>
   <p class="glitch-status" id="glitch-status" role="status" aria-live="polite"></p>
+  <p class="language-status" id="language-status" role="status" aria-live="polite" data-no-i18n></p>
 
   <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
   <script src="assets/js/main.js?v=20261028-1" defer></script>
   <script src="assets/js/secrets.js?v=20261027-3" defer></script>
+  <script src="assets/js/i18n-catalogue.js?v=20261028-1" defer></script>
+  <script src="assets/js/i18n.js?v=20261028-1" defer></script>
 </body>
 </html>
