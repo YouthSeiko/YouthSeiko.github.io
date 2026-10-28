@@ -9,7 +9,7 @@ const {execFileSync} = require('node:child_process');
 const {chromium} = require('playwright');
 const root = path.resolve(__dirname, '..');
 const screenshotDir = process.argv[2];
-const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.mp3':'audio/mpeg','.ico':'image/x-icon'};
+const types = {'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.webp':'image/webp','.jpg':'image/jpeg','.png':'image/png','.svg':'image/svg+xml','.mp3':'audio/mpeg','.mp4':'video/mp4','.ico':'image/x-icon'};
 const baseline = {};
 for (const name of ['index.html', 'assets/css/style.css', 'assets/js/main.js']) {
   baseline[name] = execFileSync('git', ['show', 'cd3d686:' + name], {cwd:root});
@@ -326,6 +326,35 @@ async function noOverflow(page, selector = 'html') {
     assert.deepEqual(await saved(p),['HEART','MIRAI']);
     await c.close();
   });
+  await check('Yuki workshop: deferred videos, playback, exclusive audio, close and responsive layout', async () => {
+    const c = await context(); const p = await load(c);
+    assert.equal(await p.locator('#latest-news .news-entry').first().getAttribute('id'),'news-yuki-life');
+    const initial = await p.locator('[data-studio-video]').evaluateAll(videos=>videos.every(v=>v.paused && v.preload==='none' && !v.autoplay));
+    assert.equal(initial,true);
+    assert.equal(await p.evaluate(()=>performance.getEntriesByType('resource').some(e=>e.name.includes('.mp4'))),false);
+    await p.locator('#yuki-hors-ecran summary').click();
+    await p.locator('#mascotVoice').click();
+    await p.waitForFunction(()=>!document.getElementById('mascotAudio').paused);
+    const animation = p.locator('[data-studio-video]').first();
+    const desktop = p.locator('[data-studio-video]').last();
+    await animation.evaluate(v=>v.play());
+    await p.waitForFunction(()=>document.querySelector('[data-studio-video]').currentTime>0);
+    assert.equal(await p.locator('#mascotAudio').evaluate(v=>v.paused),true);
+    await desktop.evaluate(v=>v.play());
+    await p.waitForFunction(()=>document.querySelector('[data-studio-video]').paused);
+    assert.equal(await desktop.evaluate(v=>v.videoWidth),460);
+    assert.equal(await desktop.evaluate(v=>v.videoHeight),250);
+    await p.locator('#yuki-hors-ecran summary').click();
+    await p.waitForFunction(()=>Array.from(document.querySelectorAll('[data-studio-video]')).every(v=>v.paused));
+    await p.locator('#yuki-hors-ecran summary').focus(); await p.keyboard.press('Enter');
+    assert.equal(await p.locator('#yuki-hors-ecran').getAttribute('open'),'');
+    for (const width of [1440,390,320]) {
+      await p.setViewportSize({width,height:900});
+      await noOverflow(p,'.yuki-workshop');
+      await snap(p,'yuki-workshop-'+width,'#news-yuki-life');
+    }
+    await c.close();
+  });
   await check('Only the latest three news entries stay expanded (synthetic fixtures)', async () => {
     const c = await context();
     await c.route(base+'/',async route=>{
@@ -334,15 +363,15 @@ async function noOverflow(page, selector = 'html') {
     });
     const p = await load(c);
     assert.equal(await p.locator('#latest-news .news-entry').count(),3);
-    assert.equal(await p.locator('#older-news .news-entry').count(),2);
-    await p.locator('#anciennes-actualites summary').click();
+    assert.equal(await p.locator('#older-news .news-entry').count(),3);
+    await p.locator('#anciennes-actualites > summary').click();
     assert.equal(await p.locator('#older-news .news-entry').last().isVisible(),true);
     await c.close();
   });
   await check('Without JavaScript: projects, news, FAQ remain readable, secret controls hidden', async () => {
     const c = await context({javaScriptEnabled:false}); const p = await load(c);
     assert.equal(await p.locator('.project-hook:visible').count(),4);
-    assert.equal(await p.locator('.news-entry:visible').count(),1);
+    assert.equal(await p.locator('.news-entry:visible').count(),2);
     assert.equal(await p.locator('[data-secret-control]:visible').count(),0);
     await p.locator('#yu-repond summary').first().click();
     assert.equal(await p.locator('#yu-repond details[open]').count(),1);

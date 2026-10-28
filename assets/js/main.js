@@ -120,6 +120,24 @@
     });
   }
 
+  // Studio demonstrations are opt-in and stop when their workshop is closed.
+  var studioVideos = Array.from(document.querySelectorAll("video[data-studio-video]"));
+  function pauseStudioVideos(except) {
+    studioVideos.forEach(function (video) { if (video !== except) video.pause(); });
+  }
+  studioVideos.forEach(function (video) {
+    video.addEventListener("play", function () {
+      pauseStudioVideos(video);
+      document.dispatchEvent(new CustomEvent("youthseiko:media-play"));
+    });
+  });
+  document.querySelectorAll("details.yuki-workshop").forEach(function (workshop) {
+    workshop.addEventListener("toggle", function () { if (!workshop.open) pauseStudioVideos(); });
+  });
+  document.addEventListener("youthseiko:dialog-open", function () { pauseStudioVideos(); });
+  document.addEventListener("visibilitychange", function () { if (document.hidden) pauseStudioVideos(); });
+  window.addEventListener("pagehide", function () { pauseStudioVideos(); });
+
   // Scroll reveal
   // Author news newest first in HTML. Older entries stay accessible without JS.
   var olderNews = document.getElementById("older-news");
@@ -207,6 +225,7 @@
     function playVoice() {
       stopVoice();
       if (!voiceEnabled) return;
+      pauseStudioVideos();
       if (!currentLine.audio) {
         voiceStatus.textContent = "Voix indisponible ; le texte reste en français.";
         return;
@@ -332,6 +351,7 @@
       }
     });
     window.addEventListener("pagehide", stopVoice);
+    document.addEventListener("youthseiko:media-play", stopVoice);
     document.addEventListener("youthseiko:dialog-open", stopVoice);
     document.addEventListener("click", function (event) {
       if (event.target.closest("[data-modal]")) stopVoice();

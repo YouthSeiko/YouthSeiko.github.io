@@ -1145,6 +1145,28 @@ body.modal-open { overflow: hidden; }
 #latest-news { display: grid; gap: 1rem; }
 #latest-news .news-card { width: 100%; margin-bottom: 0; }
 #older-news .news-entry { margin-top: 1rem; box-shadow: none; }
+.news-yuki { background: linear-gradient(140deg, #f9e8f4, #eeebff); }
+.yuki-workshop { margin-top: 1.2rem; border: 1px solid #bea5c1; border-radius: 15px; background: #fffafc80; }
+.yuki-workshop > summary { padding: 0.85rem 1rem; cursor: pointer; font-family: var(--font-display); font-weight: 800; color: #713e65; }
+.yuki-workshop > summary:focus-visible { outline: 3px solid #813e63; outline-offset: 3px; border-radius: 15px; }
+.yuki-workshop-content { padding: 0 1rem 1rem; }
+.yuki-workshop-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.yuki-workshop figure { min-width: 0; margin: 0; border-radius: 12px; overflow: hidden; background: #22232b; color: #f7edf5; }
+.yuki-workshop-grid img, .yuki-workshop-grid video { display: block; width: 100%; height: 390px; object-fit: contain; background: #17181c; }
+.yuki-workshop figcaption { padding: 0.9rem; font-size: 0.8rem; line-height: 1.6; }
+.yuki-workshop figcaption strong, .yuki-workshop figcaption span { display: block; }
+.yuki-workshop figcaption strong { margin-bottom: 0.3rem; }
+.yuki-workshop figcaption span { color: #d1c6d7; }
+.yuki-workshop .yuki-desktop-demo { margin-top: 1rem; }
+.yuki-desktop-demo video { width: 100%; height: auto; display: block; background: #17181c; }
+.yuki-workshop-note { margin-top: 1rem; font-size: 0.75rem; color: var(--ink-soft); }
+.is-glitched .yuki-workshop { background: #151b24; border-color: #778b8c; }
+.is-glitched .yuki-workshop > summary { color: #e4b3cb; }
+@media (max-width: 460px) {
+  .yuki-workshop-grid { grid-template-columns: 1fr; }
+  .yuki-workshop-grid img, .yuki-workshop-grid video { height: 350px; }
+  .yuki-workshop-content { padding-inline: 0.65rem; }
+}
 .yu-faq a { text-decoration: underline; }
 @media (max-width: 460px) {
   .values-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.7rem; }

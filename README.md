@@ -50,6 +50,14 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
   identifiants. Sans JavaScript, toutes restent lisibles. Une seule annonce existait
   lors de cette refonte ; les billets personnels de YU ne sont pas des annonces.
 - **Yuki** est la mascotte tsundere gothique : carnet à croix, porte-clés chauve-souris.
+  L’actualité du 28 octobre `#news-yuki-life` présente ses études 3D et son application
+  desktop dans un atelier dépliable `#yuki-hors-ecran`. Le lien se trouve aussi dans
+  la question « Et Yuki, elle fait quoi ici ? ». Les médias fournis par YU sont dans
+  `assets/media/yuki/` (provenance et conversions dans son `README.md`). Aucun
+  téléchargement de l’application n’est proposé : il s’agit d’aperçus du travail en cours.
+  Les vidéos utilisent les contrôles natifs, sans autoplay et avec `preload="none"`.
+  Elles se mettent en pause à la fermeture de l’atelier, au changement d’onglet et
+  à l’ouverture d’une fenêtre ; leurs lectures et la voix de Yuki s’excluent.
   Ses 20 répliques françaises et japonaises sont dans `tools/yuki-lines.json`.
   Le catalogue navigateur `assets/js/yuki-lines.js` est généré à partir de ce fichier.
   Les 20 enregistrements sont conservés ; 17 alimentent le tirage aléatoire. Les trois
