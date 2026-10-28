@@ -36,6 +36,8 @@ interne ou ses retournements narratifs dans les images ou les textes du site.
 - `index.html` : projets, fiches détaillées, actualités et informations publiques.
   Le repère **W1 — Wave 1 · Première salve · 2026–2027** au-dessus des quatre
   cartes identifie la première vague du studio : MIRAI, HEART, BABYLONE et CENTURY.
+  Sur l’accueil, sa version compacte **W1 · Première salve · 4 jeux · 2026–2027**
+  regroupe les raccourcis de ces quatre univers et mène à la section Projets.
   La période désigne cette vague de projets ; les états des fiches et l’absence
   de dates de sortie annoncées sont conservés.
 - `assets/css/style.css` : identité pastel, cartes et adaptation mobile.

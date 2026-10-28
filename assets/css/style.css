@@ -356,6 +356,11 @@ ul { margin: 0; padding: 0; list-style: none; }
 .wave-badge { display: grid; place-items: center; flex-shrink: 0; width: 54px; height: 54px; border: 1px solid #d7a8cb; border-radius: 12px; background: #fff9fc; font: 800 1.35rem/1 var(--font-display); transform: rotate(-5deg); }
 .wave-label strong { display: block; font: 800 0.84rem/1.5 var(--font-display); }
 .wave-dates { display: block; margin-top: 0.15rem; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.12em; }
+.hero-wave-group { margin-top: 1.3rem; }
+.wave-label.hero-wave { margin-bottom: 0; padding: 0.5rem 0.9rem 0.5rem 0.5rem; }
+.hero-wave .wave-badge { width: 44px; height: 44px; font-size: 1.1rem; }
+.hero-wave:hover { box-shadow: 0 6px 20px #9b75b030; }
+.hero-wave-group .hero-worlds { margin-top: 0.65rem; }
 .is-glitched .wave-label { color: #e7c5de; border-color: #8e7498; background: linear-gradient(120deg, #302435, #1e2e37); }
 .is-glitched .wave-badge { background: #172027; border-color: #92758e; }
 .eyebrow {
