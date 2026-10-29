@@ -101,7 +101,8 @@ japonophone externe. Les scripts et crédits restent sous leur nom d’origine.
   desktop dans un atelier dépliable `#yuki-hors-ecran`. Le lien se trouve aussi dans
   la question « Et Yuki, elle fait quoi ici ? ». Les médias fournis par YU sont dans
   `assets/media/yuki/` (provenance et conversions dans son `README.md`). Aucun
-  téléchargement de l’application n’est proposé : il s’agit d’aperçus du travail en cours.
+  paquet d’application n’est inclus dans ces aperçus. L’annonce Halloween du 31 octobre
+  propose séparément l’installation depuis Microsoft Store (voir ci-dessous).
   Les vidéos utilisent les contrôles natifs, sans autoplay et avec `preload="none"`.
   Elles se mettent en pause à la fermeture de l’atelier, au changement d’onglet et
   à l’ouverture d’une fenêtre ; leurs lectures et la voix de Yuki s’excluent.
@@ -145,6 +146,26 @@ japonophone externe. Les scripts et crédits restent sous leur nom d’origine.
   CENTURY sont des compositions CSS, sans nouvelles images ni dépendances.
 
 ## Vérifier avant publication
+
+### Lancement Halloween de Yuki Desktop 2D
+
+L’annonce `#news-yuki-halloween` et la barre au-dessus de la navigation sont préparées
+pour le **31 octobre 2026 à 00 h 00, Europe/Paris**. Leur publication est programmée
+dans le chat ; aucun changement d’état n’est caché derrière l’horloge du navigateur.
+Le contenu reste hors de `main` jusqu’à cette échéance. L’application est gratuite,
+sans achats intégrés, et la fiche Store porte l’identifiant `9NXR6J4HHC0K`.
+
+Le composant officiel `ms-store-badge` est chargé à l’approche de la zone d’installation,
+en `window-mode="direct"`. Il récupère l’installateur Microsoft à la demande du visiteur.
+Aucun binaire n’est copié dans le site et aucun téléchargement ne démarre à l’arrivée.
+Le lien web de secours reste visible, y compris sans JavaScript ou si le badge ne charge
+pas. Sa langue, celle du badge et son contraste suivent les réglages du site.
+Le visiteur doit ouvrir l’installateur téléchargé et suivre les étapes de Windows.
+
+Sources, contrôle de la fiche et consignes de publication :
+[`docs/YUKI_HALLOWEEN_2026.md`](docs/YUKI_HALLOWEEN_2026.md).
+
+### Vérifications habituelles
 
 Lancer `python -m http.server 8000 --bind 127.0.0.1`, puis ouvrir
 `http://127.0.0.1:8000/`. Contrôler l’accueil, les quatre fiches projets, le menu

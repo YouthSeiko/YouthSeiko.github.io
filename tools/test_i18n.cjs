@@ -84,6 +84,27 @@ async function journey(p,lang){
   }
  });
  await c.close();
+ await check('Halloween Store badge: lazy official module, direct mode, languages and header layout',async()=>{
+  const c2=await context();let loads=0;const installerRequests=[];
+  await c2.route('https://get.microsoft.com/badge/ms-store-badge.bundled.js',r=>{loads++;return r.fulfill({contentType:'text/javascript',body:'customElements.define("ms-store-badge", class extends HTMLElement {});'});});
+  const q=await load(c2);q.on('request',r=>{if(r.url().includes('/installer/'))installerRequests.push(r.url());});
+  assert.equal(loads,0);assert.equal(await q.locator('#latest-news .news-entry').first().getAttribute('id'),'news-yuki-halloween');
+  await q.locator('.yuki-launch-strip a').click();await q.locator('#yuki-desktop-install').scrollIntoViewIfNeeded();await q.waitForFunction(()=>!!customElements.get('ms-store-badge'));assert.equal(loads,1);
+  const badge=q.locator('ms-store-badge');assert.equal(await badge.getAttribute('productid'),'9NXR6J4HHC0K');assert.equal(await badge.getAttribute('window-mode'),'direct');
+  for(const id of ['fr','en','ja']){
+   await language(q,id);assert.equal(await badge.getAttribute('language'),id);assert.equal(new URL(await q.locator('[data-yuki-store-link]').getAttribute('href')).searchParams.get('hl'),{fr:'fr-fr',en:'en-gb',ja:'ja-jp'}[id]);
+   await coverage(q);
+   for(const width of [1440,390,320]){
+    await q.setViewportSize({width,height:1000});
+    await q.waitForFunction(()=>Math.abs(parseFloat(document.documentElement.style.getPropertyValue('--site-header-height'))-document.getElementById('header').getBoundingClientRect().height)<2);
+    const rect=await q.locator('.yuki-launch-strip-inner').evaluate(e=>({scroll:e.scrollWidth,client:e.clientWidth}));assert.ok(rect.scroll<=rect.client+1,JSON.stringify({id,width,...rect}));
+    await q.evaluate(()=>scrollTo(0,0));await shot(q,id+'-halloween-top-'+width);
+   }
+  }
+  await q.locator('#mascotReduce').click();await q.locator('#news-yuki-halloween').scrollIntoViewIfNeeded();await shot(q,'halloween-news-mobile','#news-yuki-halloween');
+  await q.evaluate(()=>document.body.classList.add('is-glitched'));await q.waitForFunction(()=>document.querySelector('ms-store-badge').getAttribute('theme')==='light');assert.deepEqual(installerRequests,[]);assert.equal(loads,1);
+  await c2.close();
+ });
  for(const id of ['en','ja']){
   await check(id+': four secrets, dynamic messages, collection and glitch reward',async()=>{
    const c2=await context();const q=await load(c2,'/?lang='+id);await journey(q,id);await language(q,'fr');await open(q,'.archive-entry','#secret-archives');assert.match(await q.locator('#archive-progress').textContent(),/4 \/ 4 fragments retrouvés/);await c2.close();

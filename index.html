@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="assets/css/secrets.css?v=20261027-2">
   <link rel="stylesheet" href="assets/css/glitch.css?v=20261028-1">
   <link rel="stylesheet" href="assets/css/i18n.css?v=20261028-1">
+  <link rel="stylesheet" href="assets/css/yuki-launch.css?v=20261029-1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -63,6 +64,13 @@
   <a class="skip-link" href="#accueil">Aller au contenu</a>
 
   <header class="site-header" id="header">
+    <div class="yuki-launch-strip" aria-label="Yuki Desktop 2D pour Halloween">
+      <div class="yuki-launch-strip-inner">
+        <span class="yuki-launch-pumpkin" aria-hidden="true">🎃</span>
+        <p><strong>Halloween avec Yuki Desktop 2D</strong><span>PC Windows · Gratuit · Sans achats intégrés</span></p>
+        <a href="#news-yuki-halloween">Découvrir & installer <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
     <div class="nav-inner">
       <a class="brand" href="#accueil" aria-label="Youthseiko, accueil">
         <span class="brand-mark" aria-hidden="true">✦</span>
@@ -342,6 +350,23 @@
         </header>
 
         <div id="latest-news">
+        <article class="news-card news-update news-entry yuki-launch-news reveal" id="news-yuki-halloween">
+          <p class="eyebrow"><time datetime="2026-10-31">31 octobre 2026</time> · Halloween 🎃</p>
+          <h3>Yuki Desktop 2D : Halloween commence sur ton bureau.</h3>
+          <p>Yuki ne veut plus rester dans son coin du site. Sa petite version 2D se promène maintenant sur ton bureau Windows, grimpe sur les bords de l’écran et vient te tenir compagnie.</p>
+          <figure class="yuki-launch-visual">
+            <img src="assets/media/yuki/desktop-poster.webp" alt="Yuki miniature en noir et rose se promène sur le bureau de YU" width="460" height="250" loading="lazy">
+            <figcaption>Une petite présence. Un caractère qui prend de la place.</figcaption>
+          </figure>
+          <p>Un peu d’attention, des cœurs à entretenir et des lettres à découvrir au fil des jours. Ses menus et ses textes existent en français, anglais et japonais ; sa voix facultative reste japonaise.</p>
+          <p class="yuki-launch-free"><strong>Gratuit, sans achats intégrés.</strong><span>Les cœurs se donnent dans l’application, sans paiement.</span></p>
+          <div class="yuki-store-install" id="yuki-desktop-install" aria-label="Installer Yuki Desktop 2D sur PC Windows">
+            <ms-store-badge productid="9NXR6J4HHC0K" productname="Yuki Desktop 2D" window-mode="direct" language="fr" theme="dark" animation="off" aria-label="Installer Yuki Desktop 2D avec Microsoft" data-no-i18n></ms-store-badge>
+            <a class="yuki-store-fallback" data-yuki-store-link href="https://apps.microsoft.com/detail/9NXR6J4HHC0K?hl=fr-fr" target="_blank" rel="noopener">Ouvrir la fiche Microsoft Store <span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="yuki-install-note">Clique sur le badge pour télécharger l’installateur officiel Microsoft, puis ouvre-le et suis les étapes de Windows. Sur un autre appareil, consulte la fiche Store.</p>
+          <aside class="yu-margin"><div><span>Yuki, en marge</span><p>« Je viens juste surveiller ton bureau. Ce n’est pas une invitation à m’oublier, compris ? »</p></div></aside>
+        </article>
         <article class="news-card news-update news-entry news-yuki reveal" id="news-yuki-life">
           <p class="eyebrow"><time datetime="2026-10-28">28 octobre 2026</time> · Yuki Kurose</p>
           <h3>Yuki sort du cadre.</h3>
@@ -684,7 +709,8 @@
   <script src="assets/js/yuki-lines.js?v=20261024-2" defer></script>
   <script src="assets/js/main.js?v=20261028-1" defer></script>
   <script src="assets/js/secrets.js?v=20261027-3" defer></script>
-  <script src="assets/js/i18n-catalogue.js?v=20261028-1" defer></script>
+  <script src="assets/js/yuki-launch.js?v=20261029-1" defer></script>
+  <script src="assets/js/i18n-catalogue.js?v=20261029-1" defer></script>
   <script src="assets/js/i18n.js?v=20261028-1" defer></script>
 </body>
 </html>

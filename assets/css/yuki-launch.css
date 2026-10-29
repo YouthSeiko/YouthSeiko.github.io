@@ -1,0 +1,36 @@
+/* Halloween release: the announcement is deployed on 31 October, not date-gated in JS. */
+.yuki-launch-strip { background: linear-gradient(110deg, #43233e, #2e263f); color: #fff4e8; border-bottom: 1px solid #f4b68855; }
+.yuki-launch-strip-inner { width: min(100% - 2.5rem, var(--maxw)); min-height: 56px; margin: 0 auto; display: flex; align-items: center; gap: 0.8rem; padding: 0.5rem 0; }
+.yuki-launch-pumpkin { font-size: 1.6rem; flex-shrink: 0; }
+.yuki-launch-strip p { margin: 0; line-height: 1.5; }
+.yuki-launch-strip strong { display: block; font: 800 0.8rem/1.5 var(--font-display); }
+.yuki-launch-strip p span { display: block; font-size: 0.68rem; color: #f4d0ce; }
+.yuki-launch-strip a { margin-left: auto; flex-shrink: 0; border: 1px solid #ffd1a0; border-radius: 999px; min-height: 40px; padding: 0.5rem 0.85rem; color: #ffe3bd; font-size: 0.75rem; font-weight: 800; }
+.yuki-launch-strip a:focus-visible { outline-color: #fff1bc; }
+html { scroll-padding-top: calc(var(--site-header-height, 170px) + 16px); }
+.hero { padding-top: calc(var(--site-header-height, 170px) + 2.5rem); }
+.yuki-launch-news { background: linear-gradient(140deg, #fff0dd, #f8e3f3 65%, #eae4ff); }
+.yuki-launch-visual { margin: 1.2rem 0; overflow: hidden; border-radius: 16px; background: #292638; color: #fff6ed; }
+.yuki-launch-visual img { display: block; width: 100%; max-height: 285px; object-fit: contain; }
+.yuki-launch-visual figcaption { padding: 0.65rem 1rem; font-size: 0.8rem; }
+.yuki-launch-free { padding: 0.9rem 1.1rem; border: 1px solid #c59bb1; border-radius: 12px; background: #fffaf6b3; }
+.yuki-launch-free strong, .yuki-launch-free span { display: block; }
+.yuki-launch-free strong { color: #753a5c; }
+.yuki-launch-free span { margin-top: 0.25rem; font-size: 0.83rem; }
+.yuki-store-install { display: flex; align-items: center; flex-wrap: wrap; gap: 0.7rem 1.2rem; margin: 1.3rem 0 0.7rem; }
+.yuki-store-install ms-store-badge { display: block; min-width: 180px; min-height: 52px; }
+ms-store-badge:not(:defined) { display: none; }
+ms-store-badge::part(img) { max-width: 215px; max-height: 64px; }
+.yuki-store-fallback { display: inline-block; padding: 0.65rem 0; font-weight: 800; font-size: 0.8rem; color: #773f66; text-decoration: underline; text-underline-offset: 4px; }
+.yuki-install-note { font-size: 0.78rem; color: var(--ink-soft); }
+.is-glitched .yuki-launch-strip { background: #161d24; border-color: #899b9e66; }
+.is-glitched .yuki-launch-free { background: #26303b; border-color: #967b95; }
+.is-glitched .yuki-launch-free strong, .is-glitched .yuki-store-fallback { color: #edc0dc; }
+@media (max-width: 600px) {
+  .yuki-launch-strip-inner { display: grid; grid-template-columns: 1.4rem minmax(0, 1fr); gap: 0.4rem 0.6rem; }
+  .yuki-launch-pumpkin { font-size: 1.35rem; grid-column: 1; grid-row: 1; }
+  .yuki-launch-strip p { grid-column: 2; grid-row: 1; min-width: 0; }
+  .yuki-launch-strip strong { font-size: 0.73rem; }
+  .yuki-launch-strip a { grid-column: 2; grid-row: 2; margin-left: 0; justify-self: start; max-width: 100%; min-height: 36px; padding-block: 0.4rem; }
+  .yuki-store-install { align-items: flex-start; flex-direction: column; }
+}

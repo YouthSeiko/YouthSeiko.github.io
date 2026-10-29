@@ -1763,5 +1763,73 @@ window.YOUTHSEIKO_I18N = {
   "Le studio secret est ouvert. Essuie tes pieds et ne plie pas les pages de mon carnet.": [
     "The secret studio is open. Wipe your feet and don’t fold the pages of my notebook.",
     "秘密のスタジオへようこそ。靴を拭いて。あと、私のノートのページを折らないでよ。"
+  ],
+  "Yuki Desktop 2D pour Halloween": [
+    "Yuki Desktop 2D for Halloween",
+    "ハロウィンにYuki Desktop 2Dを"
+  ],
+  "Halloween avec Yuki Desktop 2D": [
+    "Halloween with Yuki Desktop 2D",
+    "Yuki Desktop 2Dとハロウィン"
+  ],
+  "PC Windows · Gratuit · Sans achats intégrés": [
+    "Windows PC · Free · No in-app purchases",
+    "Windows PC · 無料 · アプリ内課金なし"
+  ],
+  "Découvrir & installer": [
+    "Discover & install",
+    "詳しく見る・インストール"
+  ],
+  "31 octobre 2026": [
+    "31 October 2026",
+    "2026年10月31日"
+  ],
+  "· Halloween 🎃": [
+    "· Halloween 🎃",
+    "· ハロウィン 🎃"
+  ],
+  "Yuki Desktop 2D : Halloween commence sur ton bureau.": [
+    "Yuki Desktop 2D: Halloween starts on your desktop.",
+    "Yuki Desktop 2D：ハロウィンは、あなたのデスクトップから。"
+  ],
+  "Yuki ne veut plus rester dans son coin du site. Sa petite version 2D se promène maintenant sur ton bureau Windows, grimpe sur les bords de l’écran et vient te tenir compagnie.": [
+    "Yuki won’t stay in her corner of the site anymore. Her little 2D self now wanders around your Windows desktop, climbs the edges of the screen and keeps you company.",
+    "ユキは、もうサイトの隅だけでは満足できないみたい。小さな2DのユキがWindowsのデスクトップを歩き回り、画面の端を登って、あなたのそばにやって来ます。"
+  ],
+  "Yuki miniature en noir et rose se promène sur le bureau de YU": [
+    "A miniature Yuki in black and pink walks across YU’s desktop",
+    "黒とピンクの小さなユキがYUのデスクトップをお散歩"
+  ],
+  "Une petite présence. Un caractère qui prend de la place.": [
+    "A little presence. A personality that takes up space.",
+    "小さな存在。でも、存在感は大きめ。"
+  ],
+  "Un peu d’attention, des cœurs à entretenir et des lettres à découvrir au fil des jours. Ses menus et ses textes existent en français, anglais et japonais ; sa voix facultative reste japonaise.": [
+    "A little attention, hearts to look after and letters to discover as the days go by. Her menus and text are available in French, English and Japanese; her optional voice stays Japanese.",
+    "少しの気づかい、育んでいくハート、日々届く手紙。メニューとテキストはフランス語・英語・日本語に対応。任意の音声は日本語です。"
+  ],
+  "Gratuit, sans achats intégrés.": [
+    "Free, with no in-app purchases.",
+    "無料。アプリ内課金はありません。"
+  ],
+  "Les cœurs se donnent dans l’application, sans paiement.": [
+    "Hearts are given in the app, with no payment.",
+    "ハートはアプリ内で、料金を払わずに贈れます。"
+  ],
+  "Installer Yuki Desktop 2D sur PC Windows": [
+    "Install Yuki Desktop 2D on a Windows PC",
+    "Windows PCにYuki Desktop 2Dをインストール"
+  ],
+  "Ouvrir la fiche Microsoft Store": [
+    "Open the Microsoft Store listing",
+    "Microsoft Storeのページを開く"
+  ],
+  "Clique sur le badge pour télécharger l’installateur officiel Microsoft, puis ouvre-le et suis les étapes de Windows. Sur un autre appareil, consulte la fiche Store.": [
+    "Click the badge to download Microsoft’s official installer, then open it and follow the Windows steps. On another device, view the Store listing.",
+    "バッジを押すとMicrosoft公式インストーラーをダウンロードできます。ファイルを開き、Windowsの案内に従ってください。別の端末では、Storeのページをご覧ください。"
+  ],
+  "« Je viens juste surveiller ton bureau. Ce n’est pas une invitation à m’oublier, compris ? »": [
+    "“I’m just here to watch over your desktop. That’s not an invitation to forget about me, got it?”",
+    "「デスクトップを見張りに来ただけよ。だからって、私のことを忘れていいわけじゃないからね？」"
   ]
 };
