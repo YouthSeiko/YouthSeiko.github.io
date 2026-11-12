@@ -88,7 +88,7 @@ async function journey(p,lang){
   const c2=await context();let loads=0;const installerRequests=[];
   await c2.route('https://get.microsoft.com/badge/ms-store-badge.bundled.js',r=>{loads++;return r.fulfill({contentType:'text/javascript',body:'customElements.define("ms-store-badge", class extends HTMLElement {});'});});
   const q=await load(c2);q.on('request',r=>{if(r.url().includes('/installer/'))installerRequests.push(r.url());});
-  assert.equal(loads,0);assert.equal(await q.locator('#latest-news .news-entry').first().getAttribute('id'),'news-yuki-halloween');
+  assert.equal(loads,0);assert.equal(await q.locator('#news-yuki-halloween').getAttribute('id'),'news-yuki-halloween');
   await q.locator('.yuki-launch-strip a').click();await q.locator('#yuki-desktop-install').scrollIntoViewIfNeeded();await q.waitForFunction(()=>!!customElements.get('ms-store-badge'));assert.equal(loads,1);
   const badge=q.locator('ms-store-badge');assert.equal(await badge.getAttribute('productid'),'9NXR6J4HHC0K');assert.equal(await badge.getAttribute('window-mode'),'direct');
   for(const id of ['fr','en','ja']){

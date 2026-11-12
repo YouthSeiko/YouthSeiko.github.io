@@ -363,7 +363,7 @@ async function noOverflow(page, selector = 'html') {
     });
     const p = await load(c);
     assert.equal(await p.locator('#latest-news .news-entry').count(),3);
-    assert.equal(await p.locator('#older-news .news-entry').count(),4);
+    assert.equal(await p.locator('#older-news .news-entry').count(),5);
     await p.locator('#anciennes-actualites > summary').click();
     assert.equal(await p.locator('#older-news .news-entry').last().isVisible(),true);
     await c.close();
@@ -371,7 +371,7 @@ async function noOverflow(page, selector = 'html') {
   await check('Without JavaScript: projects, news, FAQ remain readable, secret controls hidden', async () => {
     const c = await context({javaScriptEnabled:false}); const p = await load(c);
     assert.equal(await p.locator('.project-hook:visible').count(),4);
-    assert.equal(await p.locator('.news-entry:visible').count(),3);
+    assert.equal(await p.locator('.news-entry:visible').count(),4);
     assert.equal(await p.locator('[data-secret-control]:visible').count(),0);
     await p.locator('#yu-repond summary').first().click();
     assert.equal(await p.locator('#yu-repond details[open]').count(),1);

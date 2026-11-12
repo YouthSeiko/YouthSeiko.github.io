@@ -17,8 +17,12 @@ Conserver ces URL stables et accessibles à Googlebot/Googlebot-Image dans
 Google, peut demander plusieurs jours à plusieurs semaines et ne garantit pas
 l’affichage. Référence : https://developers.google.com/search/docs/appearance/favicon-in-search
 
-Le titre public du visual novel reste **PROJECT HEART**. Ne pas révéler son titre
-interne ou ses retournements narratifs dans les images ou les textes du site.
+Le titre public du visual novel est désormais **Les EX de l’haut delà**, conformément
+à l’annonce de YU du 12 novembre 2026. Ne pas révéler ses retournements narratifs.
+La démo ACTE 1 est disponible sur Microsoft Store (`9NKH7Z996H68`) ; trailer officiel
+`mtY2pzi8atQ`. Annonce `#news-acte1-release`, lecteur YouTube sans cookies chargé
+au clic via `assets/js/acte1-release.js`, lien externe de secours toujours présent.
+La date de l’article est celle de l’annonce sur le site, pas une date Store déduite.
 
 ## Modifier
 
@@ -195,3 +199,7 @@ Lors d’une mise à jour CSS ou JavaScript, changer aussi leur paramètre `v=` 
 `index.html` pour que les visiteurs récupèrent ces fichiers sans ancien cache.
 Les APK de développement et la documentation interne de MIRAI ne sont pas publiés
 sur ce site. Ne pas ajouter de lien de téléchargement avant une décision de diffusion.
+
+Miniature officielle du trailer : `assets/img/acte1-trailer.jpg`, source
+`https://i.ytimg.com/vi/mtY2pzi8atQ/maxresdefault.jpg`, récupérée le 12/11/2026
+sans modification (1280 × 720), utilisée uniquement dans l’annonce ACTE 1.

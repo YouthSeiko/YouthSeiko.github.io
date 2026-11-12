@@ -1,0 +1,14 @@
+.acte1-release-news { background: linear-gradient(135deg, #fff0f6, #f0e9ff); }
+.acte1-release-note { font-weight: 800; color: #793f68; }
+.acte1-release-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0; }
+.acte1-release-actions .btn { max-width: 100%; white-space: normal; text-align: center; }
+.acte1-trailer { position: relative; aspect-ratio: 16/9; overflow: hidden; border-radius: 16px; background: #292638; margin-top: 1.25rem; }
+.acte1-trailer-play { display: block; position: relative; width: 100%; height: 100%; padding: 0; border: 0; cursor: pointer; background: #292638; color: white; }
+.acte1-trailer-play img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
+.acte1-trailer-play span { position: absolute; inset: auto 0 0; padding: 1.25rem; font: 800 1rem/1.5 var(--font-display); background: linear-gradient(transparent, #292638); }
+.acte1-trailer-play:focus-visible { outline: 4px solid #ffb6d5; outline-offset: -4px; }
+.acte1-trailer iframe { width: 100%; height: 100%; border: 0; display: block; }
+.acte1-release-caption { font-size: 0.78rem; color: var(--ink-soft); }
+.is-glitched .acte1-release-news { background: #202833; }
+.is-glitched .acte1-release-note { color: #edc0dc; }
+@media(max-width:600px) { .acte1-release-actions { flex-direction: column; align-items: stretch; } }
