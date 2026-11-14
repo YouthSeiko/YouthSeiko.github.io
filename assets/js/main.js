@@ -233,7 +233,7 @@
       var token = playToken;
       needsGesture = false;
       updateVoiceButton();
-      speech.src = currentLine.audio;
+      speech.src = new URL(currentLine.audio, new URL("/", location.href)).href;
       voiceStatus.textContent = "Voix japonaise · sous-titre français";
       var attempt = speech.play();
       if (attempt) attempt.catch(function (error) {

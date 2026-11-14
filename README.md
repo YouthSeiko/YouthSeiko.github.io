@@ -203,3 +203,19 @@ sur ce site. Ne pas ajouter de lien de téléchargement avant une décision de d
 Miniature officielle du trailer : `assets/img/acte1-trailer.jpg`, source
 `https://i.ytimg.com/vi/mtY2pzi8atQ/maxresdefault.jpg`, récupérée le 12/11/2026
 sans modification (1280 × 720), utilisée uniquement dans l’annonce ACTE 1.
+
+
+## Pages indexables — préparation SEO du 14/11/2026
+
+Copie de travail non publiée. Les sources françaises restent dans `index.html` et les
+traductions dans `assets/i18n/catalogue.json`. Après modification, lancer
+`python tools/build_i18n.py` puis `python tools/build_seo.py`. Ce dernier produit les
+pages `/fr/`, `/en/`, `/ja/`, leurs fiches et articles, le sitemap et le dossier presse.
+Ne pas modifier les pages générées comme source principale. La racine historique
+reste compatible avec ses modales, ancres et paramètres de langues ; les URL
+statiques disposent de leurs propres canonical/hreflang et liens de drapeaux.
+
+Vérifier avec `python tools/build_seo.py --check`, `python tools/test_seo.py` et
+`node tools/test_seo_browser.cjs` en complément des tests habituels. Maintenance,
+constat public, limites et étapes Search Console/Bing :
+[docs/SEO_2026-11-14.md](docs/SEO_2026-11-14.md).

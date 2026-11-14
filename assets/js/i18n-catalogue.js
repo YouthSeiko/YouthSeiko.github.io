@@ -1959,5 +1959,29 @@ window.YOUTHSEIKO_I18N = {
   "Le lecteur YouTube se charge uniquement à ta demande.": [
     "The YouTube player loads only when you choose to play it.",
     "YouTubeプレーヤーは、再生ボタンを押すと読み込まれます。"
+  ],
+  "Voir la fiche du jeu ↗": [
+    "Game details ↗",
+    "ゲーム詳細 ↗"
+  ],
+  "Lire l’actualité ↗": [
+    "Read the news ↗",
+    "ニュースを読む ↗"
+  ],
+  "Presse et médias": [
+    "Press and media",
+    "プレス・メディア"
+  ],
+  "Toutes les pages": [
+    "All pages",
+    "サイトマップ"
+  ],
+  "Jeux": [
+    "Games",
+    "ゲーム"
+  ],
+  "Télécharger le dossier de presse": [
+    "Download the press kit",
+    "プレスキットをダウンロード"
   ]
 };

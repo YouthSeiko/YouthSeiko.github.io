@@ -101,7 +101,15 @@
     if (locale) locale.content = { fr: "fr_FR", en: "en_GB", ja: "ja_JP" }[next];
     sourceSchema.forEach(function (schema) { schema.node.textContent = JSON.stringify(updateSchema(schema.data), null, 2); });
     document.documentElement.style.setProperty("--glitch-caption", JSON.stringify(translate("SIGNAL 000 / LA VITRINE A CHANGÉ DE FRÉQUENCE")));
-    switcher.querySelectorAll("[data-language]").forEach(function (button) { button.setAttribute("aria-pressed", String(button.dataset.language === next)); });
+    switcher.querySelectorAll("[data-language]").forEach(function (button) { if (button.tagName === "BUTTON") button.setAttribute("aria-pressed", String(button.dataset.language === next)); });
+    document.querySelectorAll('[data-seo-key]').forEach(function (link) { link.href = '/' + next + '/' + link.dataset.seoKey + '/'; });
+    var alternate = document.querySelector('link[rel="alternate"][hreflang="' + next + '"]');
+    if (alternate) {
+      var canonical = document.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.href = alternate.href;
+      var ogUrl = document.querySelector('meta[property="og:url"]');
+      if (ogUrl) ogUrl.content = alternate.href;
+    }
     if (userChoice) {
       try { localStorage.setItem(storageKey, next); } catch (error) { /* The selected language still works for this visit. */ }
       try {
@@ -125,7 +133,15 @@
   var initial = "fr";
   try { var saved = localStorage.getItem(storageKey); if (allowed.indexOf(saved) !== -1) initial = saved; } catch (error) { /* Optional preference. */ }
   try { var requested = new URL(window.location.href).searchParams.get("lang"); if (allowed.indexOf(requested) !== -1) initial = requested; } catch (error) { /* Use the default. */ }
+  if (document.documentElement.hasAttribute('data-static-language')) initial = document.documentElement.lang;
   switcher.querySelectorAll("[data-language]").forEach(function (button) {
+    if (button.tagName === 'A') {
+      button.addEventListener('click', function () {
+        try { localStorage.setItem(storageKey, button.dataset.language); } catch (error) {}
+        if (document.documentElement.dataset.home === 'true') button.hash = location.hash;
+      });
+      return;
+    }
     button.addEventListener("click", function () { selectLanguage(button.dataset.language, true); });
   });
   selectLanguage(initial, false);

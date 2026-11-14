@@ -5,14 +5,14 @@
 .nav { margin-left: auto; order: 1; }
 .nav-toggle { order: 3; flex-shrink: 0; }
 .language-switcher { display: flex; align-items: center; gap: 0.2rem; flex-shrink: 0; order: 2; }
-.language-switcher button { display: grid; place-items: center; gap: 0.1rem; width: 38px; min-height: 44px; padding: 0.3rem; border: 1px solid #c8b2c9; border-radius: 9px; color: #674361; background: #fff9fc; cursor: pointer; font: 800 0.55rem/1.1 var(--font-body); }
+.language-switcher :is(button, a) { display: grid; place-items: center; gap: 0.1rem; width: 38px; min-height: 44px; padding: 0.3rem; border: 1px solid #c8b2c9; border-radius: 9px; color: #674361; background: #fff9fc; cursor: pointer; font: 800 0.55rem/1.1 var(--font-body); }
 .language-switcher svg { display: block; width: 24px; height: 16px; border-radius: 2px; outline: 1px solid #29263830; overflow: hidden; }
-.language-switcher [aria-pressed="true"] { background: #f6d9eb; border-color: #87456b; box-shadow: inset 0 -2px #87456b; }
-.language-switcher button:hover { border-color: #87456b; }
-.language-switcher button:focus-visible { outline: 3px solid #813e63; outline-offset: 3px; }
-.is-glitched .language-switcher button { color: #e3d0df; background: #202a33; border-color: #819698; }
-.is-glitched .language-switcher [aria-pressed="true"] { background: #52384e; border-color: #dca5c8; box-shadow: inset 0 -2px #dca5c8; }
-.is-glitched .language-switcher button:focus-visible { outline-color: #f2b3d1; }
+.language-switcher  :is([aria-pressed="true"], [aria-current="page"]) { background: #f6d9eb; border-color: #87456b; box-shadow: inset 0 -2px #87456b; }
+.language-switcher :is(button, a):hover { border-color: #87456b; }
+.language-switcher :is(button, a):focus-visible { outline: 3px solid #813e63; outline-offset: 3px; }
+.is-glitched .language-switcher :is(button, a) { color: #e3d0df; background: #202a33; border-color: #819698; }
+.is-glitched .language-switcher  :is([aria-pressed="true"], [aria-current="page"]) { background: #52384e; border-color: #dca5c8; box-shadow: inset 0 -2px #dca5c8; }
+.is-glitched .language-switcher :is(button, a):focus-visible { outline-color: #f2b3d1; }
 html[lang="ja"] { --font-body: "M PLUS Rounded 1c", "Yu Gothic", Meiryo, sans-serif; --font-display: "M PLUS Rounded 1c", "Yu Gothic", Meiryo, sans-serif; line-break: strict; }
 html[lang="ja"] body { line-height: 1.9; }
 html[lang="ja"] .section-head h2, html[lang="ja"] .modal h2, html[lang="ja"] .yu-note h4 { line-height: 1.5; }
@@ -35,8 +35,10 @@ html[lang="ja"] .eyebrow { letter-spacing: 0.05em; }
   .nav-inner > .brand { grid-column: 1; grid-row: 1; }
   .nav-toggle { grid-column: 2; grid-row: 1; }
   .language-switcher { grid-column: 1 / -1; grid-row: 2; justify-self: end; margin-left: 0; }
-  .language-switcher button { width: 36px; }
+  .language-switcher :is(button, a) { width: 36px; }
   .hero { padding-top: 8.7rem; }
   html { scroll-padding-top: 120px; }
   .hero-copy { overflow-wrap: anywhere; }
 }
+
+.language-switcher a { text-decoration: none; }

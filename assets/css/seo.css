@@ -1,0 +1,16 @@
+/* Public pages share the studio palette and typography. */
+.seo-detail-link{display:inline-block;font-weight:800;color:#704461;margin:.65rem 0}
+.yu-note h4 a{color:inherit;text-decoration-thickness:1px;text-underline-offset:.2em}
+.seo-main{max-width:940px;margin:auto;padding:9rem 1.25rem 4rem;overflow-wrap:anywhere}
+.seo-main>nav{font-size:.85rem;color:#796b81;margin-bottom:2rem}
+.seo-main h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2;color:var(--ink,#292638);margin:1.2rem 0}
+.seo-main h2{margin:2rem 0 .7rem;font-size:1.4rem}.seo-main p{line-height:1.85;margin:1rem 0}
+.seo-content{background:#fffdf8;border:1px solid #d9c5dc;border-radius:24px;padding:clamp(1rem,4vw,2.8rem)}
+.seo-content img,.seo-content video{max-width:100%;height:auto}.seo-content .modal-cover{margin:0 0 1.5rem}.seo-content .modal-cover img{max-height:540px;object-fit:contain}
+.seo-content .yu-margin{margin:2rem 0}.seo-content .yu-margin img{max-width:90px}.seo-content .yu-note-cover{max-height:450px;object-fit:contain;width:100%}
+.seo-list{display:grid;gap:.85rem;list-style:none;padding:0;margin:2rem 0}.seo-list a{display:block;padding:1rem 1.25rem;border:1px solid #d9c5dc;border-radius:14px;background:#fff9fc;color:#704461;font-weight:800}
+.seo-nav{display:flex;gap:1rem;margin-left:auto;font-size:.85rem;font-weight:800}.seo-nav a{color:#704461}
+.seo-page .nav-inner{flex-wrap:wrap}.seo-page .site-header{border-bottom:1px solid #d9c5dc}
+@media(max-width:600px){.seo-page .nav-inner{display:flex}.seo-nav{order:3;width:100%;justify-content:space-between;gap:.4rem;font-size:.75rem}.seo-page .language-switcher{margin-left:auto}.seo-main{padding-top:9.5rem}.seo-content{border-radius:15px}}
+
+.seo-press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}.seo-press-grid figure{margin:0;padding:1rem;background:#fffdf8;border:1px solid #d9c5dc;border-radius:16px}.seo-press-grid img{width:100%;height:160px;object-fit:contain}.seo-press-grid figcaption{font-size:.85rem;margin-top:.6rem;color:#704461}
