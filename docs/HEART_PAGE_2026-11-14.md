@@ -24,3 +24,11 @@ Après une modification, exécuter les deux générateurs habituels. Aucun fichi
 ## Contrôles
 
 19 scénarios historiques et 9 scénarios de langues ; contrôles SEO des 48 pages et du kit presse ; Edge parcourt les 48 avec/sans JavaScript. Cas spécifiques : aucune requête MP4 à l’arrivée, changement de langue sans lecture, sélection de personnage, arrêt des mouvements, galerie au clavier et focus ; mobile japonais et bureau français inspectés. Trois MP4 entièrement décodés, codecs et durée 90 s vérifiés, moov avant mdat ; cinq originaux PNG contrôlés par empreinte. Pas d’installation ni de diffusion lancée.
+
+
+Encart Yuki Desktop 2D : petit bloc avant la conclusion, chibi existant cliquable et
+texte FR/EN/JA, gratuit sans achats intégrés. Destination de la même langue :
+`/fr/actualites/yuki-desktop-halloween/` (et EN/JA), présentation existante contenant
+le lien Microsoft Store. L’encart ne lance pas d’installation. Source visuelle
+`assets/media/yuki/chibi-wave.png`, copie du sprite existant wave1, sans modification
+aux sources de l’application ou au pack OBS. Ancre `#yuki-desktop` sur la fiche.

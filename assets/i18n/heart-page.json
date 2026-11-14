@@ -99,6 +99,26 @@
       "Réactiver les animations",
       "Enable motion",
       "アニメーションを有効にする"
+    ],
+    "yuki_promo_title": [
+      "Yuki vous accompagne aussi sur PC.",
+      "Yuki can join you on your PC, too.",
+      "PCでも、ユキと一緒に。"
+    ],
+    "yuki_promo_text": [
+      "Retrouvez-la en version chibi sur votre bureau Windows. Yuki Desktop 2D est gratuit, sans achats intégrés.",
+      "Meet her chibi version on your Windows desktop. Yuki Desktop 2D is free, with no in-app purchases.",
+      "Windowsのデスクトップで、ちびユキに会いましょう。Yuki Desktop 2Dは無料、アプリ内課金なし。"
+    ],
+    "yuki_promo_link": [
+      "Découvrir Yuki Desktop 2D",
+      "Discover Yuki Desktop 2D",
+      "Yuki Desktop 2Dを見る"
+    ],
+    "yuki_promo_alt": [
+      "Yuki chibi vous fait signe",
+      "Chibi Yuki waves to you",
+      "手を振るちびユキ"
     ]
   },
   "characters": [

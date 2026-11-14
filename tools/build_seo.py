@@ -137,7 +137,7 @@ PRESS={
 def page(route,lang):
  title=title_for(route,lang);url=BASE+link(route,lang);graph=[];image='/assets/img/og-image.png';kind='website'
  game=next((key for key,slug,_ in GAMES if route=='jeux/'+slug),'')
- theme='<link rel="stylesheet" href="/assets/css/game-pages.css?v=20261114-1">' if game else ''
+ theme='<link rel="stylesheet" href="/assets/css/game-pages.css?v=20261114-2">' if game else ''
  if game=='heart':theme+='<script src="/assets/js/heart-page.js?v=20261114-1" defer></script>'
  body_class='seo-page'+(' game-page' if game else '')+(' ex-page' if game=='heart' else '')
  if route in PUBLIC:

@@ -20,3 +20,6 @@ sur la page décrivent les actions visuelles et signalent les extraits sans son.
 Il n’y a aucune synthèse, génération ni nouvelle animation créée pour ces vidéos.
 L’ensemble des cinq médias pèse environ 986 Kio ; seuls les fichiers demandés
 par la lecture sont chargés. Les vidéos n’ont ni autoplay ni boucle imposée.
+
+
+14/11/2026 : `chibi-wave.png`, sprite existant de Yuki Desktop 2D repris depuis la copie de ressources du pack OBS (wave1.png), sans retouche. Utilisé dans l’encart de la fiche des EX ; clic vers la présentation Yuki dans la même langue. Aucun fichier de l’application ou du pack OBS modifié.
