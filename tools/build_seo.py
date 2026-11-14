@@ -201,7 +201,9 @@ def build():
  with zipfile.ZipFile(kit,'w',zipfile.ZIP_DEFLATED) as archive:
   selected=['assets/img/studio-mark.svg','assets/img/studio-mark.png','assets/img/og-image.png','assets/img/project-mirai-1200.webp','assets/img/project-heart-1200.webp','assets/img/acte1-trailer.jpg','assets/img/gameplay-heart-1.jpg','assets/img/gameplay-heart-2.jpg','assets/img/gameplay-heart-3.jpg']
   for source in selected:
-   info=zipfile.ZipInfo(Path(source).name,date_time=(2026,11,14,0,0,0));archive.writestr(info,(ROOT/source).read_bytes())
+   info=zipfile.ZipInfo(Path(source).name,date_time=(2026,11,14,0,0,0));payload=(ROOT/source).read_bytes()
+   if source.endswith('.svg'):payload=payload.replace(b'\r\n',b'\n')
+   archive.writestr(info,payload)
   for lang in LANGS:
    text='Youthseiko — W1 · 2026–2027\n\n'+'\n\n'.join(PRESS[lang])+'\n\n'+ '\n'.join(BASE+link('jeux/'+s,lang) for _,s,_ in GAMES)+'\nhttps://apps.microsoft.com/detail/9NKH7Z996H68\nhttps://youtu.be/mtY2pzi8atQ\nContact: youthseiko@gmail.com\n'
    archive.writestr(zipfile.ZipInfo('facts-'+lang+'.txt',date_time=(2026,11,14,0,0,0)),text.encode('utf-8'))
@@ -212,7 +214,9 @@ if __name__=='__main__':
  for name,data in outputs.items():
   dest=ROOT/name
   if args.check:
-   if not dest.exists() or dest.read_bytes()!=data:stale.append(name)
+   actual=dest.read_bytes() if dest.exists() else None
+   if actual is not None and dest.suffix in ('.html','.xml'):actual=actual.replace(b'\r\n',b'\n')
+   if actual!=data:stale.append(name)
   else:dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(data)
  if stale:raise SystemExit('Regenerate SEO pages: '+', '.join(stale))
  print(f'{len(LANGS)*len(ROUTES)} static pages, sitemap and press kit '+('current' if args.check else 'generated'))
