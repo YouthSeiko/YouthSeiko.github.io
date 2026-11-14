@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-14",
+  "capture_version": "0.2.13-dev",
+  "captures": [
+    {
+      "key": "heroines",
+      "source": "Image ChatGPT 14 nov. 2026, 18_10_38.png",
+      "sha256": "ce1a1c80ef815c3be43a9ba2ef2f73c58334e5b021eeb73e391e72a2d5d1d490",
+      "width": 1738,
+      "height": 977
+    },
+    {
+      "key": "hana",
+      "source": "Image ChatGPT 14 nov. 2026, 18_10_46.png",
+      "sha256": "06c2289a1b9b7cc5ac3048a228459f253d984d85b7e346b46aca4c4e0da94fcc",
+      "width": 1738,
+      "height": 977
+    },
+    {
+      "key": "rei",
+      "source": "Image ChatGPT 14 nov. 2026, 18_10_52.png",
+      "sha256": "5000b9f90b6731b78d4a53ffb2fa2b0f3e02f71ff14f710f68feebfd74b56489",
+      "width": 1738,
+      "height": 977
+    },
+    {
+      "key": "boutique",
+      "source": "Image ChatGPT 14 nov. 2026, 18_10_58.png",
+      "sha256": "842c3ab70b4dc2a93884d6b6fdb0ed94597aab90a397f330211fd9ffb8a2ca87",
+      "width": 1738,
+      "height": 977
+    },
+    {
+      "key": "mystere",
+      "source": "Image ChatGPT 14 nov. 2026, 18_11_04.png",
+      "sha256": "5197736952295cda69deb77fef9b6219aefe31de9442c3e07cddc8374f2cb28f",
+      "width": 1738,
+      "height": 977
+    }
+  ],
+  "characters": [
+    {
+      "name": "yuki",
+      "source": "yuki_neutre.png",
+      "sha256": "db6fcc0054ee95f5e2031e0fc5afde6b690b84a9ed5058f3013a8a47d13f03f1",
+      "width": 480,
+      "height": 748
+    },
+    {
+      "name": "hana",
+      "source": "hana_lecture.png",
+      "sha256": "dab3805020adefc2fdda26d88296c3ec625488739d99292b3b0578deec81fa78",
+      "width": 480,
+      "height": 744
+    },
+    {
+      "name": "rei",
+      "source": "rei_determinee.png",
+      "sha256": "b0e02b49954e336d4c09fcbdc5e7af0acae1faf27a81f40c858e06819a07b26d",
+      "width": 480,
+      "height": 772
+    },
+    {
+      "name": "mio",
+      "source": "mio_appareil.png",
+      "sha256": "c77805a3c5b57d6a6e46074888b7d62489332970000caad400003d3d92b0dc73",
+      "width": 480,
+      "height": 766
+    }
+  ],
+  "trailers": [
+    {
+      "language": "fr",
+      "source": "LesEXHautDela-Trailer-FR-1080p.mp4",
+      "source_sha256": "e344a85ca7ad183223f540e6318994c050ad6236e4601dc4119da10dc5444ddd",
+      "bytes": 7982377,
+      "sha256": "99e99fd465bde224dda82c50a4a8b3f56a51461ad7fae51c5f14c8560d936004",
+      "duration": 90.0,
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "faststart": true
+    },
+    {
+      "language": "en",
+      "source": "LesEXHautDela-Trailer-EN-1080p.mp4",
+      "source_sha256": "61372a56607a68f4a5a9141e56c064dcb75032d7516a2feb3dd29aa3c5e576b6",
+      "bytes": 7968359,
+      "sha256": "07cabce53d1f4655188f74469e4e8b918835478c70ac8c1ae93dc0c567d54436",
+      "duration": 90.0,
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "faststart": true
+    },
+    {
+      "language": "ja",
+      "source": "LesEXHautDela-Trailer-JA-1080p.mp4",
+      "source_sha256": "dbd055a3fa741e1ef954c8f00d8596f9d55d587128c16fd04e7276f49a177824",
+      "bytes": 7976681,
+      "sha256": "c142b7d5483cc4a2e2209a692b978021c98ac150cba2359b8294736e3ba2e38f",
+      "duration": 90.0,
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 720
+        },
+        {
+          "codec_name": "aac"
+        }
+      ],
+      "faststart": true
+    }
+  ]
+}

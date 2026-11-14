@@ -219,3 +219,9 @@ Vérifier avec `python tools/build_seo.py --check`, `python tools/test_seo.py` e
 `node tools/test_seo_browser.cjs` en complément des tests habituels. Maintenance,
 constat public, limites et étapes Search Console/Bing :
 [docs/SEO_2026-11-14.md](docs/SEO_2026-11-14.md).
+
+
+La fiche personnalisée des EX est rendue par `tools/heart_page.py`, avec les textes
+FR/EN/JA de `assets/i18n/heart-page.json`. Ses captures et trailers sont dans
+`assets/media/les-ex/` ; ne pas modifier les sources du jeu pour changer cette page.
+Détails et contrôles : [docs/HEART_PAGE_2026-11-14.md](docs/HEART_PAGE_2026-11-14.md).

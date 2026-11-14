@@ -1,0 +1,225 @@
+{
+  "copy": {
+    "eyebrow": [
+      "W1 · 2026–2027 · Visual novel romantique",
+      "W1 · 2026–2027 · Romance visual novel",
+      "W1 · 2026–2027 · 恋愛ビジュアルノベル"
+    ],
+    "tagline": [
+      "Et si trouver l’amour était finalement la partie la plus facile ?",
+      "What if finding love was the easy part?",
+      "恋を見つけることが、いちばん簡単だったとしたら？"
+    ],
+    "intro": [
+      "Quatre personnalités. Des liens à construire. Des choix qui laissent une trace.",
+      "Four personalities. Bonds to build. Choices that leave a mark.",
+      "4つの個性。育んでいく絆。心に跡を残す選択。"
+    ],
+    "demo": [
+      "Jouer à la démo ACTE 1",
+      "Play the ACT 1 demo",
+      "ACTE 1体験版をプレイ"
+    ],
+    "free": [
+      "Gratuit · PC Windows · Microsoft Store",
+      "Free · Windows PC · Microsoft Store",
+      "無料 · Windows PC · Microsoft Store"
+    ],
+    "watch": [
+      "Voir les trailers",
+      "Watch the trailers",
+      "トレーラーを見る"
+    ],
+    "choose": [
+      "Rencontrer les héroïnes",
+      "Meet the heroines",
+      "ヒロインたちに出会う"
+    ],
+    "trailer_title": [
+      "Une première rencontre, en trois langues.",
+      "A first encounter, in three languages.",
+      "3つの言語で、最初の出会いを。"
+    ],
+    "trailer_intro": [
+      "Les bandes-annonces officielles en français, anglais et japonais. Choisissez votre version, puis lancez la lecture.",
+      "The official French, English and Japanese trailers. Choose a version, then press play.",
+      "フランス語・英語・日本語の公式トレーラー。言語を選んで再生してください。"
+    ],
+    "video_fallback": [
+      "Ouvrir la vidéo",
+      "Open the video",
+      "動画を開く"
+    ],
+    "screens_title": [
+      "Des rencontres. Des défis. Et ce petit doute.",
+      "Encounters. Challenges. And that lingering doubt.",
+      "出会い。挑戦。そして、消えない小さな違和感。"
+    ],
+    "version": [
+      "Captures réelles de la 0.2.13-dev. Certains visuels peuvent différer de la démo publique.",
+      "Actual screenshots from 0.2.13-dev. Some visuals may differ from the public demo.",
+      "0.2.13-devの実際のゲーム画面です。一部のビジュアルは公開体験版と異なる場合があります。"
+    ],
+    "view": [
+      "Agrandir la capture",
+      "Enlarge screenshot",
+      "ゲーム画面を拡大"
+    ],
+    "close": [
+      "Fermer la capture",
+      "Close screenshot",
+      "画像を閉じる"
+    ],
+    "previous": [
+      "Capture précédente",
+      "Previous screenshot",
+      "前の画像"
+    ],
+    "next": [
+      "Capture suivante",
+      "Next screenshot",
+      "次の画像"
+    ],
+    "last_title": [
+      "Le premier chapitre de votre histoire ?",
+      "The first chapter of your story?",
+      "あなたの物語の、最初の章。"
+    ],
+    "last_text": [
+      "La démo ACTE 1 vous attend sur Microsoft Store. Entrez à Aozora, faites vos premières rencontres et laissez vos choix parler.",
+      "The ACT 1 demo awaits on Microsoft Store. Step into Aozora, meet the cast and let your choices speak.",
+      "Microsoft StoreでACTE 1体験版を配信中。青空へ足を踏み入れ、出会いを重ね、あなた自身の選択で進んでください。"
+    ],
+    "motion": [
+      "Réduire les animations",
+      "Reduce motion",
+      "アニメーションを減らす"
+    ],
+    "motion_off": [
+      "Réactiver les animations",
+      "Enable motion",
+      "アニメーションを有効にする"
+    ]
+  },
+  "characters": [
+    {
+      "key": "yuki",
+      "name": [
+        "Yuki",
+        "Yuki",
+        "ユキ"
+      ],
+      "note": [
+        "Un caractère bien à elle.",
+        "A personality all her own.",
+        "彼女だけの個性。"
+      ]
+    },
+    {
+      "key": "hana",
+      "name": [
+        "Hana",
+        "Hana",
+        "ハナ"
+      ],
+      "note": [
+        "Une histoire qui mérite d’être écoutée.",
+        "A story worth listening to.",
+        "耳を傾ける価値のある物語。"
+      ]
+    },
+    {
+      "key": "rei",
+      "name": [
+        "Rei",
+        "Rei",
+        "レイ"
+      ],
+      "note": [
+        "Une énergie qui ne tient pas en place.",
+        "An energy that cannot sit still.",
+        "じっとしていられないエネルギー。"
+      ]
+    },
+    {
+      "key": "mio",
+      "name": [
+        "Mio",
+        "Mio",
+        "ミオ"
+      ],
+      "note": [
+        "Un autre regard sur le quotidien.",
+        "Another way to see everyday life.",
+        "日常を見つめる、もうひとつの視点。"
+      ]
+    }
+  ],
+  "screens": [
+    {
+      "key": "heroines",
+      "title": [
+        "Les héroïnes",
+        "The heroines",
+        "ヒロインたち"
+      ],
+      "caption": [
+        "Quatre personnalités. Des liens à construire. Des choix qui laissent une trace.",
+        "Four personalities. Bonds to build. Choices that leave a mark.",
+        "4つの個性。育んでいく絆。心に跡を残す選択。"
+      ]
+    },
+    {
+      "key": "hana",
+      "title": [
+        "Hana",
+        "Hana",
+        "ハナ"
+      ],
+      "caption": [
+        "Derrière chaque sourire, une histoire qui mérite d’être écoutée.",
+        "Behind every smile is a story worth listening to.",
+        "笑顔の向こうには、耳を傾ける価値のある物語がある。"
+      ]
+    },
+    {
+      "key": "rei",
+      "title": [
+        "Le défi de Rei",
+        "Rei’s challenge",
+        "レイの挑戦"
+      ],
+      "caption": [
+        "Un ballon couronné. Une rivale survoltée. Votre premier défi au tour par tour.",
+        "A crowned basketball. An electrifying rival. Your first turn-based challenge.",
+        "王冠をかぶったボール。元気いっぱいのライバル。初めてのターン制チャレンジ。"
+      ]
+    },
+    {
+      "key": "boutique",
+      "title": [
+        "La boutique",
+        "The shop",
+        "ショップ"
+      ],
+      "caption": [
+        "Une épée pour aller en cours ? À Aozora, mieux vaut être prêt à tout.",
+        "A sword for class? At Aozora, it pays to be ready for anything.",
+        "授業に剣を持っていく？青空では、何にでも備えておいたほうがいい。"
+      ]
+    },
+    {
+      "key": "mystere",
+      "title": [
+        "Le mystère",
+        "The mystery",
+        "謎"
+      ],
+      "caption": [
+        "Et si votre ombre n’était plus la seule ?",
+        "What if yours was no longer the only shadow?",
+        "もし、影があなたのものだけではなくなっていたら？"
+      ]
+    }
+  ]
+}

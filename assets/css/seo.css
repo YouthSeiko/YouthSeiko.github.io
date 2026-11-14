@@ -14,3 +14,5 @@
 @media(max-width:600px){.seo-page .nav-inner{display:flex}.seo-nav{order:3;width:100%;justify-content:space-between;gap:.4rem;font-size:.75rem}.seo-page .language-switcher{margin-left:auto}.seo-main{padding-top:9.5rem}.seo-content{border-radius:15px}}
 
 .seo-press-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin:2rem 0}.seo-press-grid figure{margin:0;padding:1rem;background:#fffdf8;border:1px solid #d9c5dc;border-radius:16px}.seo-press-grid img{width:100%;height:160px;object-fit:contain}.seo-press-grid figcaption{font-size:.85rem;margin-top:.6rem;color:#704461}
+
+.heart-capture{margin:0;min-width:0}.heart-capture:first-child{grid-column:1/-1}.heart-capture .gallery-item{display:block;width:100%;aspect-ratio:1738/977}.heart-capture figcaption{padding:.7rem .2rem;font-size:.85rem}.heart-capture figcaption p{font-size:.8rem;margin:.25rem 0}.heart-capture-version{font-size:.8rem;color:#715d6b}

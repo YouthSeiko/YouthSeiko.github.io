@@ -46,10 +46,10 @@ class SeoTests(unittest.TestCase):
  def test_structured_data_is_accurate_without_invented_ratings(self):
   for lang in ['fr','en','ja']:
    p=Page(ROOT/lang/'jeux/les-ex-de-lhaut-dela/index.html');game=next(g for g in p.schemas if g['@type']=='VideoGame')
-   self.assertFalse(any('modal-body' in a.get('class','').split() for _,a in p.tags));self.assertEqual(sum(t=='a' and 'gallery-item' in a.get('class','').split() for t,a in p.tags),3);self.assertEqual(game['offers']['price'],'0');self.assertEqual(game['gamePlatform'],'PC');self.assertNotIn('aggregateRating',game)
+   self.assertFalse(any('modal-body' in a.get('class','').split() for _,a in p.tags));self.assertEqual(sum('data-ex-lightbox' in a for t,a in p.tags),5);self.assertEqual(game['offers']['price'],'0');self.assertEqual(game['gamePlatform'],'PC');self.assertNotIn('aggregateRating',game)
    for slug in ['project-babylone','project-century']:
     page=Page(ROOT/lang/'jeux'/slug/'index.html');game=next(g for g in page.schemas if g['@type']=='VideoGame');self.assertNotIn('offers',game);self.assertNotIn('operatingSystem',game)
  def test_press_kit_has_public_assets_and_three_fact_sheets_only(self):
   with zipfile.ZipFile(ROOT/'assets/press/youthseiko-press-kit.zip') as z:
-   self.assertEqual(len(z.namelist()),12);self.assertTrue({'facts-fr.txt','facts-en.txt','facts-ja.txt'}<=set(z.namelist()));self.assertTrue(all('/' not in n for n in z.namelist()))
+   self.assertEqual(len(z.namelist()),14);self.assertTrue({'facts-fr.txt','facts-en.txt','facts-ja.txt'}<=set(z.namelist()));self.assertTrue(all('/' not in n for n in z.namelist()))
 if __name__=='__main__':unittest.main(verbosity=2)
