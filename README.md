@@ -205,9 +205,9 @@ Miniature officielle du trailer : `assets/img/acte1-trailer.jpg`, source
 sans modification (1280 × 720), utilisée uniquement dans l’annonce ACTE 1.
 
 
-## Pages indexables — préparation SEO du 14/11/2026
+## Pages indexables — publication SEO du 14/11/2026
 
-Copie de travail non publiée. Les sources françaises restent dans `index.html` et les
+Publication autorisée par YU le 14/11/2026. Les sources françaises restent dans `index.html` et les
 traductions dans `assets/i18n/catalogue.json`. Après modification, lancer
 `python tools/build_i18n.py` puis `python tools/build_seo.py`. Ce dernier produit les
 pages `/fr/`, `/en/`, `/ja/`, leurs fiches et articles, le sitemap et le dossier presse.

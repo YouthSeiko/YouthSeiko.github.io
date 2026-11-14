@@ -1,6 +1,6 @@
 # Fiche Les EX personnalisée — 14 novembre 2026
 
-Suite de la préparation SEO, toujours sans publication. Branche `feat/seo-pages-20261114`, copie `studio-site-seo` uniquement. Page : `/fr/jeux/les-ex-de-lhaut-dela/`, équivalents EN/JA.
+Suite de la préparation SEO, publiée après autorisation de YU le 14/11/2026. Branche `feat/seo-pages-20261114`, copie `studio-site-seo` uniquement. Page : `/fr/jeux/les-ex-de-lhaut-dela/`, équivalents EN/JA.
 
 ## Résultat
 
