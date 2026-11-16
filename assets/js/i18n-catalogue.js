@@ -2027,5 +2027,13 @@ window.YOUTHSEIKO_I18N = {
   "Captures réelles de la 0.2.13-dev. Certains visuels peuvent différer de la démo publique.": [
     "Actual screenshots from 0.2.13-dev. Some visuals may differ from the public demo.",
     "0.2.13-devの実際のゲーム画面です。一部のビジュアルは公開体験版と異なる場合があります。"
+  ],
+  "Mon espace": [
+    "My space",
+    "マイスペース"
+  ],
+  "Newsletter et espace joueur": [
+    "Newsletter and player space",
+    "ニュースレター・プレイヤースペース"
   ]
 };

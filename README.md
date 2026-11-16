@@ -225,3 +225,13 @@ La fiche personnalisée des EX est rendue par `tools/heart_page.py`, avec les te
 FR/EN/JA de `assets/i18n/heart-page.json`. Ses captures et trailers sont dans
 `assets/media/les-ex/` ; ne pas modifier les sources du jeu pour changer cette page.
 Détails et contrôles : [docs/HEART_PAGE_2026-11-14.md](docs/HEART_PAGE_2026-11-14.md).
+
+
+## Préparation newsletter et comptes — 16/11/2026
+
+Branche isolée `feat/community-20261116`, aucune publication. Guide :
+[docs/COMMUNAUTE_2026-11-16.md](docs/COMMUNAUTE_2026-11-16.md).
+Pages FR/EN/JA générées par `python tools/build_community.py`.
+Inscription et connexion désactivées tant que les services ne sont pas raccordés.
+Tests locaux : `node tools/test_community.cjs`, `node tools/test_community_delete.cjs`.
+Les secrets Supabase/Brevo/SMTP restent côté serveur, jamais dans le site statique.
