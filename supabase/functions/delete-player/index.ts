@@ -12,15 +12,17 @@ Deno.serve(async (request: Request) => {
   const bearer = request.headers.get('authorization') ?? '';
   if (!bearer.startsWith('Bearer ')) return reply(401, 'unauthorized');
   const url = Deno.env.get('SUPABASE_URL');
-  const key = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY');
+  let key: string | undefined;
+  try { key = JSON.parse(Deno.env.get('SUPABASE_SECRET_KEYS') ?? '{}').default || Deno.env.get('SUPABASE_SERVICE_ROLE_KEY'); }
+  catch { return reply(503, 'unavailable'); }
   if (!url || !key) return reply(503, 'unavailable');
   try {
-    const verified = await fetch(`${url}/auth/v1/user`, { headers: { apikey: key, Authorization: bearer } });
+    const verified = await fetch(`${url}/auth/v1/user`, { headers: { apikey: key, Authorization: bearer }, signal: AbortSignal.timeout(15000) });
     if (!verified.ok) return reply(401, 'unauthorized');
     const user = await verified.json();
     if (!user.id || !user.email_confirmed_at) return reply(401, 'unauthorized');
     const deletion = await fetch(`${url}/auth/v1/admin/users/${encodeURIComponent(user.id)}`, {
-      method: 'DELETE', headers: { apikey: key, Authorization: `Bearer ${key}` }, signal: AbortSignal.timeout(15000)
+      method: 'DELETE', headers: key.startsWith('sb_secret_') ? { apikey: key } : { apikey: key, Authorization: `Bearer ${key}` }, signal: AbortSignal.timeout(15000)
     });
     return deletion.ok ? reply(200) : reply(502, 'delete_failed');
   } catch { return reply(502, 'unavailable'); }

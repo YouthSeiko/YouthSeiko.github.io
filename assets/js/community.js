@@ -4,7 +4,10 @@
   const text = JSON.parse($('community-text').textContent);
   const config = window.YOUTHSEIKO_COMMUNITY || {};
   const lang = document.documentElement.lang;
+  const welcomeRequests = new Set();
   const names = { yuki: 'Yuki', hana: 'Hana', rei: 'Rei', mio: 'Mio' };
+  const captchaRequired = Boolean(config.turnstileSiteKey);
+  let captchaToken = '', captchaWidget, captchaLoading = false;
   let avatar = 'yuki', client, user, profile, email, busy = false, cooldown = 0, generation = 0;
   const message = (key) => { $('status').textContent = text[key] || ''; };
   const https = (value) => { try { const u = new URL(value); return u.protocol === 'https:' && !u.username && !u.password ? u : null; } catch { return null; } };
@@ -23,17 +26,36 @@
     $('newsletter-unavailable').hidden = true;
   }
   const controls = () => {
-    $('login-form').querySelector('button').disabled = !client || busy || Date.now() < cooldown;
+    $('login-form').querySelector('button').disabled = !client || busy || Date.now() < cooldown || (captchaRequired && !captchaToken);
     $('otp-form').querySelector('button').disabled = busy;
     $('profile-form').querySelector('button').disabled = busy;
     $('confirm-delete').disabled = busy;
+  };
+  const ensureCaptcha = () => {
+    if (!captchaRequired || captchaWidget !== undefined || captchaLoading) return;
+    captchaLoading = true; $('captcha-note').hidden = false;
+    const render = () => {
+      try {
+        captchaWidget = window.turnstile.render('#login-captcha', {
+          sitekey: config.turnstileSiteKey, language: lang === 'ja' ? 'ja' : lang,
+          callback: token => { captchaToken = token; controls(); },
+          'expired-callback': () => { captchaToken = ''; controls(); },
+          'error-callback': () => { captchaToken = ''; controls(); message('captchaFailure'); }
+        });
+      } catch { message('captchaFailure'); }
+    };
+    if (window.turnstile) render();
+    else {
+      const script = document.createElement('script'); script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      script.onload = render; script.onerror = () => message('captchaFailure'); document.head.append(script);
+    }
   };
   const signedOut = () => {
     generation++; user = undefined; profile = undefined;
     $('login-form').hidden = false; $('otp-form').hidden = true;
     $('profile-form').hidden = true; $('account-actions').hidden = true;
     $('reload-profile').hidden = true; $('nickname').value = '';
-    $('profile-label').textContent = text.preview; pick('yuki');
+    $('profile-label').textContent = text.preview; pick('yuki'); ensureCaptcha();
   };
   const loadProfile = async () => {
     const request = ++generation;
@@ -41,6 +63,11 @@
     if (request !== generation) return;
     if (error || !data.user) { signedOut(); return; }
     user = data.user;
+    if (config.welcomeEnabled === true && !welcomeRequests.has(user.id)) {
+      welcomeRequests.add(user.id);
+      // Delivery is optional to the sign-in flow and deduplicated on the server.
+      client.functions.invoke('welcome-player', { body: { language: lang } }).catch(() => {});
+    }
     $('login-form').hidden = true; $('otp-form').hidden = true;
     $('account-actions').hidden = false; $('profile-form').hidden = true;
     const result = await client.from('player_profiles').select('id,display_name,avatar_id,language,updated_at').eq('id', user.id).maybeSingle();
@@ -61,8 +88,12 @@
   };
   $('login-form').addEventListener('submit', guarded(async () => {
     if (Date.now() < cooldown) return;
+    if (captchaRequired && !captchaToken) { message('captchaFailure'); return; }
     email = $('email').value.trim();
-    const { error } = await client.auth.signInWithOtp({ email });
+    let result;
+    try { result = await client.auth.signInWithOtp({ email, ...(captchaRequired ? { options: { captchaToken } } : {}) }); }
+    finally { if (captchaRequired) { captchaToken = ''; window.turnstile?.reset(captchaWidget); } }
+    const { error } = result;
     if (error) { message('failure'); return; }
     cooldown = Date.now() + 60000; setTimeout(controls, 60100);
     $('otp-form').hidden = false; $('otp').value = ''; $('otp').focus(); message('sent');
@@ -107,7 +138,7 @@
   }));
   const key = config.publishableKey || '';
   // Accept the modern public key only: no privileged credential in static files.
-  if (https(config.supabaseUrl) && key.startsWith('sb_publishable_') && window.supabase?.createClient) {
+  if (config.authEnabled === true && https(config.supabaseUrl) && key.startsWith('sb_publishable_') && window.supabase?.createClient) {
     try {
       client = window.supabase.createClient(config.supabaseUrl, key, { auth: { detectSessionInUrl: false } });
       $('configuration-note').hidden = true; controls();
@@ -115,7 +146,7 @@
         if (event === 'SIGNED_OUT') signedOut();
         else if (event === 'SIGNED_IN' && session?.user?.id !== user?.id) setTimeout(() => loadProfile().catch(() => message('failure')), 0);
       });
-      client.auth.getSession().then(({ data }) => { if (data.session) return loadProfile(); }).catch(() => message('failure'));
+      client.auth.getSession().then(({ data }) => { if (data.session) return loadProfile(); ensureCaptcha(); }).catch(() => message('failure'));
     } catch { client = undefined; controls(); message('failure'); }
   }
 })();

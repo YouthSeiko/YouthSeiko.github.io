@@ -1,7 +1,7 @@
 (() => {
   'use strict';
   const config = window.YOUTHSEIKO_COMMUNITY || {};
-  if (!config.publishableKey?.startsWith('sb_publishable_')) return;
+  if (config.authEnabled !== true || !config.publishableKey?.startsWith('sb_publishable_')) return;
   let url;
   try { url = new URL(config.supabaseUrl); if (url.protocol !== 'https:') return; } catch { return; }
   const entry = document.querySelector('.community-entry');
@@ -10,14 +10,18 @@
   script.src = '/assets/vendor/supabase/supabase-2.119.0.js';
   script.onload = async () => {
     const client = window.supabase.createClient(url.href, config.publishableKey, { auth: { detectSessionInUrl: false } });
+    let epoch = 0;
     const refresh = async () => {
+      const request = ++epoch;
       try {
         const { data } = await client.auth.getSession();
-        entry.querySelector('img')?.remove();
-        if (!data.session) return;
+        if (request !== epoch) return;
+        if (!data.session) { entry.querySelector('img')?.remove(); return; }
         const verified = await client.auth.getUser();
         if (!verified.data.user) return;
         const result = await client.from('player_profiles').select('avatar_id').eq('id', verified.data.user.id).maybeSingle();
+        if (request !== epoch) return;
+        entry.querySelector('img')?.remove();
         const avatar = result.data?.avatar_id;
         if (!['yuki', 'hana', 'rei', 'mio'].includes(avatar)) return;
         const image = document.createElement('img'); image.src = `/assets/media/les-ex/characters/${avatar}.webp`;

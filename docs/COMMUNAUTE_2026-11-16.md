@@ -21,49 +21,43 @@ Sources : tools/build_community.py, assets/i18n/community.json, assets/js/commun
 community-config.js, community-nav.js, assets/css/community.css. Après toute modification :
 python tools/build_community.py ; pour le site existant : build_i18n.py puis build_seo.py.
 
-## Raccordement restant — comptes du studio requis
+## Raccordement réel — état du 17/11/2026
 
-1. Se connecter à Supabase et Brevo. Les deux onglets sont ouverts à l’écran de connexion.
-   Ne pas envoyer de mot de passe, clé de service ou secret SMTP dans le chat ou le dépôt.
-2. Choisir un projet Supabase dédié au site, distinct des jeux, idéalement région UE.
-   Réviser puis appliquer supabase/migrations/202611160001_player_profiles.sql. RLS par
-   auth.uid(), droits limités, suppression en cascade liée au compte. À tester réellement
-   avec deux identités : A ne lit/modifie pas B ; visiteur anonyme sans accès au profil.
-3. Auth : autoriser l’origine publique et les retours utiles, conserver la confirmation
-   email. Modèle de mail OTP avec {{ .Token }}. Configurer un SMTP de production : le
-   SMTP Supabase par défaut ne convient pas à une ouverture générale aux joueurs.
-   Vérifier l’expéditeur et son domaine ; ne pas présenter gmail.com comme domaine du studio.
-   Vérifier limites SMTP, quotas et protection anti-abus avant ouverture publique.
-4. Déployer la fonction delete-player, qui valide elle-même le bearer token auprès de
-   Supabase Auth avant suppression de cette identité vérifiée. SUPABASE_SERVICE_ROLE_KEY
-   reste uniquement dans l’environnement serveur. CORS limité au site ; ajouter localhost
-   explicitement via ALLOWED_ORIGINS pour un essai de développement si nécessaire.
-5. Créer trois formulaires Brevo FR/EN/JA : double opt-in, CAPTCHA, choix de langue/liste,
-   information de confidentialité exacte et lien de désinscription. Renseigner leurs URL
-   HTTPS dans newsletterUrls. Brouillons de mails illustrés : docs/newsletter/ (3 langues),
-   footer {{ unsubscribe }} Brevo ; renseigner la véritable adresse du studio dans le
-   paramètre STUDIO_POSTAL_ADDRESS et contrôler le rendu dans l’éditeur avant tout envoi.
-   Aucun envoi automatique après une nouvelle GitHub Pages n’est configuré.
-6. Dans assets/js/community-config.js : seulement supabaseUrl et clé publique moderne
-   sb_publishable_… ; aucune clé admin/service/SMTP/API Brevo. Sans cette configuration,
-   la connexion reste désactivée et l’aperçu des avatars ne crée aucun compte.
-7. Ajouter les informations exactes du studio sur le traitement des données avant
-   activation (prestataires, usages, conservation et exercice des droits) ; ne pas publier
-   une politique inventée. Export de profil prévu, suppression de compte avec confirmation ;
-   désinscription newsletter indépendante rappelée dans l’interface.
-8. Essai réel complet avec l’adresse de test autorisée du studio : réception code,
-   connexion/reconnexion, avatar dans l’en-tête, RLS entre deux comptes, export, suppression,
-   inscription confirmée newsletter et désinscription. Vérifier coûts/quotas des offres.
-   N’ouvrir au public qu’après ces contrôles et accord sur la version prête.
+Projet dédié youthseiko-site, lvauatwuqhevzvjdbuan, région eu-west-1, Free/Nano.
+Migration player_profiles appliquée, RLS réelle vérifiée avec deux identités synthétiques
+et rollback ; lecture anonyme REST refusée (401/42501). OTP reçu par l'adresse studio,
+connexion réelle réussie, profil YU/Hana sauvegardé et conservé au rechargement.
+SMTP Brevo enregistré avec une clé dédiée, expéditeur vérifié youthseiko@gmail.com ;
+ce domaine Gmail n'est pas un domaine propre au studio. Limites observées : Auth 30/h,
+Brevo 300/jour partagés. Modèles OTP FR/EN/JA dans supabase/templates/email-otp.html.
+Ne jamais publier de secret SMTP/admin/API dans le site.
 
-## Vérifications et limites
+Fonction delete-player déployée : validation explicite du JWT par Auth, origine exacte,
+identité cible issue du token ; clé serveur moderne ou héritée seulement côté Supabase.
+Vérifications réelles des requêtes sans JWT/invalide/origine étrangère et prévol passent.
+Aucune suppression réelle du compte YU. ALLOWED_ORIGINS : site public et 127.0.0.1:8769 ;
+ajouter localhost:8769 pour les prochains essais protégés. Tests Node auth, suppression,
+welcome et navigation passent ; correction des réponses concurrentes d'avatar testée en VM,
+à recontrôler visuellement. Rendu mobile 390px non attesté (viewport ignoré auparavant).
 
-Tests Node isolés : test_community.cjs (SDK simulé), test_community_delete.cjs (serveur
-simulé, TypeScript transformé par Node), syntaxe JS ; générateurs communauté/i18n/SEO et
-4 groupes SEO sur 48 pages. Ils n’attestent pas une réception email ou un déploiement Supabase.
-Parcours local FR/EN/JA et sélection d’avatar inspectés dans le navigateur, images chargées.
-Le réglage de viewport navigateur n’a pas pris la largeur mobile demandée : le rendu 390px
-n’est donc pas encore validé par ce contrôle. Aucun secret, profil réel ou contact collecté.
+Quatre widgets Turnstile créés après accord explicite : Site Auth et Newsletter FR/EN/JA.
+Protection HEART existante intacte. Auth enregistrée dans Supabase, clé publique seule
+intégrée au client. Hôtes Auth : youthseiko.github.io et localhost ; utiliser localhost,
+127.0.0.1 n'étant pas accepté dans la liste Cloudflare. Parcours OTP réel protégé réussi le 17/11 via localhost. Clés privées conservées uniquement dans les services/runtime de transfert.
+
+Brevo : formulaire FR id 6afad1cf1e8207dca056a832, conception et consentement requis
+préparés ; Turnstile FR renseigné, sauvegarde/étapes listes, double opt-in et URL à vérifier.
+Formulaires EN/JA et leurs protections pas encore raccordés. Les trois newsletterUrls restent
+vides. Adresse postale studio, informations exactes de confidentialité et essai DOI/
+désinscription à terminer avant ouverture. Aucun abonnement ou campagne envoyé.
+Le retrait initial du CAPTCHA a été refusé par l'auto-review ; bloc conservé, voie sûre
+Turnstile choisie et autorisée. Ne pas contourner ce refus.
+
+Nouveau mail de bienvenue demandé le 17/11 : image générée, hébergée Brevo, modèles FR/EN/JA,
+migration et tests SQL réels réussis, fonction activée dans l’aperçu : une bienvenue studio marquée Délivré par Brevo,
+rechargements sans doublon vérifiés. Voir BIENVENUE_2026-11-17.md pour la validation.
+Aucune nouvelle publication du site. Travail isolé dans studio-site-community,
+branche feat/community-20261116 ; HEART et autres copies préservés.
 
 Sources officielles consultées le 16/11 :
 - https://supabase.com/docs/guides/auth/auth-email-passwordless

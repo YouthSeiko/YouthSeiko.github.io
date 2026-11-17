@@ -37,7 +37,9 @@
     "deleted": "Votre compte a été supprimé.",
     "profilefailure": "Votre connexion est active, mais le profil n’a pas pu être chargé. Réessayez avant de modifier votre avatar.",
     "retry": "Recharger mon profil",
-    "loading": "Chargement…"
+    "loading": "Chargement…",
+    "captcha": "Vérification anti-robots fournie par Cloudflare.",
+    "captchaFailure": "La vérification anti-robots n’est pas prête. Réessayez ou autorisez son chargement."
   },
   "en": {
     "page": "The Youthseiko circle",
@@ -77,7 +79,9 @@
     "deleted": "Your account has been deleted.",
     "profilefailure": "You are signed in, but your profile could not be loaded. Try again before editing your avatar.",
     "retry": "Reload my profile",
-    "loading": "Loading…"
+    "loading": "Loading…",
+    "captcha": "Bot protection provided by Cloudflare.",
+    "captchaFailure": "Bot verification is not ready. Try again or allow it to load."
   },
   "ja": {
     "page": "Youthseikoのサークル",
@@ -117,6 +121,8 @@
     "deleted": "アカウントを削除しました。",
     "profilefailure": "ログイン済みですが、プロフィールを読み込めませんでした。アバターを変更する前に、もう一度お試しください。",
     "retry": "プロフィールを再読み込み",
-    "loading": "読み込み中…"
+    "loading": "読み込み中…",
+    "captcha": "Cloudflareによるボット対策認証。",
+    "captchaFailure": "ボット対策認証の準備ができていません。再試行するか、読み込みを許可してください。"
   }
 }

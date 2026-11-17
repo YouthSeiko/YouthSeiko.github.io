@@ -2,3 +2,7 @@
 verify_jwt = false
 # The function validates the bearer token against /auth/v1/user itself,
 # including when a modern publishable key is used by the browser.
+
+[functions.welcome-player]
+verify_jwt = false
+# Identity is verified against Auth before claiming a delivery.
