@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-17",
+  "unsubscribeUrl": "https://6f425d74.sibforms.com/serve/MUIFAOd5GSYo0NOi8mIipOIPFQ0iuKxaaX1hhEVxlFxZ9rZ3eDB1ex5s9Mnz1Z14CYT-eO9p5Lq-v6wSZqIrxmodmyWdlp5eWSM6k0r-KXNbMDdWaPhx3LrP0RVN7VFM1aFDRZSrz8CnAdHF2TRVOOlduwQn7VyqjtqfpkkpbLUH21e60bv1E_lSTyPPklY3mahyOWUq-GdzMryw6g==",
+  "subscribeForms": {
+    "fr": "6afad1cf1e8207dca056a832",
+    "en": "6afc52e50cb5eca1c3eec16d",
+    "ja": "6afc547e21a255498551e063"
+  },
+  "unsubscribeForm": "6afc562c21a255498551e0e5",
+  "lists": {
+    "fr": 5,
+    "en": 6,
+    "ja": 7
+  },
+  "templates": {
+    "fr": 5,
+    "en": 6,
+    "ja": 7
+  },
+  "languageLinksMatch": true,
+  "mainAddressConfirmedThreeLists": true,
+  "testAliasMarketingBlocked": true,
+  "testAliasTransactionalSubscribed": true
+}

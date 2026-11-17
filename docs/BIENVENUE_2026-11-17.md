@@ -33,9 +33,9 @@ http://127.0.0.1:8769/docs/newsletter/welcome-fr.html.
 
 ## Suite communauté
 
-Aucun push/publication. Terminer newsletter FR/EN/JA (listes, DOI, URL, confidentialité
-exacte et désinscription) avant proposer publication. Bienvenue fonctionnelle dans
-l'aperçu ; aucun abonnement newsletter créé. Livraison réelle FR seulement.
+Aucun push/publication. Newsletter FR/EN/JA terminée et inscriptions réelles confirmées,
+désinscription isolée vérifiée : voir newsletter/VALIDATION_2026-11-17.md. Bienvenue
+fonctionnelle dans l'aperçu ; elle n'abonne pas à la newsletter. Livraison réelle FR seulement.
 
 Le premier message est envoyé à la première connexion observée après activation
 pour un compte sans livraison déjà enregistrée (y compris compte de test existant).

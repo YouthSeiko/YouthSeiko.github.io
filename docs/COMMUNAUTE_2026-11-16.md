@@ -35,8 +35,7 @@ Ne jamais publier de secret SMTP/admin/API dans le site.
 Fonction delete-player déployée : validation explicite du JWT par Auth, origine exacte,
 identité cible issue du token ; clé serveur moderne ou héritée seulement côté Supabase.
 Vérifications réelles des requêtes sans JWT/invalide/origine étrangère et prévol passent.
-Aucune suppression réelle du compte YU. ALLOWED_ORIGINS : site public et 127.0.0.1:8769 ;
-ajouter localhost:8769 pour les prochains essais protégés. Tests Node auth, suppression,
+Aucune suppression réelle du compte YU. ALLOWED_ORIGINS : site public, 127.0.0.1:8769 et localhost:8769. Tests Node auth, suppression,
 welcome et navigation passent ; correction des réponses concurrentes d'avatar testée en VM,
 à recontrôler visuellement. Rendu mobile 390px non attesté (viewport ignoré auparavant).
 
@@ -45,11 +44,14 @@ Protection HEART existante intacte. Auth enregistrée dans Supabase, clé publiq
 intégrée au client. Hôtes Auth : youthseiko.github.io et localhost ; utiliser localhost,
 127.0.0.1 n'étant pas accepté dans la liste Cloudflare. Parcours OTP réel protégé réussi le 17/11 via localhost. Clés privées conservées uniquement dans les services/runtime de transfert.
 
-Brevo : formulaire FR id 6afad1cf1e8207dca056a832, conception et consentement requis
-préparés ; Turnstile FR renseigné, sauvegarde/étapes listes, double opt-in et URL à vérifier.
-Formulaires EN/JA et leurs protections pas encore raccordés. Les trois newsletterUrls restent
-vides. Adresse postale studio, informations exactes de confidentialité et essai DOI/
-désinscription à terminer avant ouverture. Aucun abonnement ou campagne envoyé.
+Brevo : trois formulaires FR/EN/JA, listes #5/#6/#7 et modèles DOI #5/#6/#7 terminés.
+Consentement requis décoché, Turnstile distinct, informations concrètes d'usage/droits/contact,
+messages localisés. Trois URL publiques dans newsletterUrls, liens locaux vérifiés par langue.
+Trois confirmations réelles studio reçues et validées par utilisateur ; présence dans chaque
+liste vérifiée. Désinscription isolée sur alias : campagnes bloquées, transactionnel autorisé,
+adresse principale intacte. Sources et limites : docs/newsletter/VALIDATION_2026-11-17.md.
+Avant première campagne : adresse postale réelle des brouillons, lien unsubscribe et liste
+à vérifier ; aucun envoi marketing de masse, aucune publication de l'espace joueur.
 Le retrait initial du CAPTCHA a été refusé par l'auto-review ; bloc conservé, voie sûre
 Turnstile choisie et autorisée. Ne pas contourner ce refus.
 
