@@ -11,10 +11,10 @@ browser=await chromium.launch({channel:process.env.BROWSER_CHANNEL||'msedge',hea
 async function context(js,width,motion="reduce"){const c=await browser.newContext({javaScriptEnabled:js,viewport:{width,height:900},reducedMotion:motion});await c.route('**/*',r=>r.request().url().startsWith(base)?r.continue():r.abort());c.on('page',p=>p.on('pageerror',e=>errors.push(e.message)));return c;}
 const nojs=await context(false,390),p=await nojs.newPage();
 for(const route of urls){const r=await p.goto(base+route,{waitUntil:'load'});assert.equal(r.status(),200,route);assert.equal(await p.locator('html').getAttribute('lang'),route.split('/')[1]);assert.equal(await p.locator('h1').count(),1,route);assert(await p.locator('h1').isVisible(),route);assert(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route+' overflows');}
-console.log('PASS 48 static pages readable at 390px without JavaScript');await nojs.close();
+console.log(`PASS ${urls.length} static pages readable at 390px without JavaScript`);await nojs.close();
 const c=await context(true,390);await c.addInitScript(()=>{try{localStorage.setItem('youthseiko.language','fr')}catch{}});const page=await c.newPage();
 for(const route of urls){await page.goto(base+route,{waitUntil:'load'});await page.waitForFunction(()=>!!window.YouthseikoI18n);assert.equal(await page.locator('html').getAttribute('lang'),route.split('/')[1]);}
-console.log('PASS 48 generated pages execute without page errors');
+console.log(`PASS ${urls.length} generated pages execute without page errors`);
 for(const route of ['/en/','/ja/','/fr/jeux/project-mirai/','/en/jeux/les-ex-de-lhaut-dela/','/ja/jeux/project-century/','/en/carnet/un-masque-plusieurs-univers/','/ja/actualites/demo-acte-1-microsoft-store/','/en/presse/']){
  await page.goto(base+route,{waitUntil:'load'});await page.waitForFunction(()=>!!window.YouthseikoI18n);assert.equal(await page.locator('html').getAttribute('lang'),route.split('/')[1]);assert(await page.locator('[data-language="en"]').isVisible());assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),route+' JS overflow');
  if(shots){fs.mkdirSync(shots,{recursive:true});await page.screenshot({path:path.join(shots,route.replace(/\//g,'_')+'.png'),fullPage:false});}

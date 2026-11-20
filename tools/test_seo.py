@@ -22,7 +22,7 @@ class SeoTests(unittest.TestCase):
  def setUpClass(cls):
   cls.urls=[e.text for e in ET.parse(ROOT/'sitemap.xml').iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')]
  def test_unique_pages_have_matching_canonical_and_reciprocal_languages(self):
-  self.assertEqual(len(self.urls),48);titles=set()
+  self.assertEqual(len(self.urls),51);titles=set()
   for url in self.urls:
    route=urlsplit(url).path;p=Page(ROOT/route.lstrip('/')/'index.html');lang=route.split('/')[1]
    self.assertEqual(p.h1,1,url)
@@ -52,4 +52,15 @@ class SeoTests(unittest.TestCase):
  def test_press_kit_has_public_assets_and_three_fact_sheets_only(self):
   with zipfile.ZipFile(ROOT/'assets/press/youthseiko-press-kit.zip') as z:
    self.assertEqual(len(z.namelist()),14);self.assertTrue({'facts-fr.txt','facts-en.txt','facts-ja.txt'}<=set(z.namelist()));self.assertTrue(all('/' not in n for n in z.namelist()))
+ def test_itch_demo_and_store_are_available_in_three_languages(self):
+  itch='https://youthseiko.itch.io/les-ex-de-lhaut-del-fr-demo-acte1'
+  for lang,label in [('fr','Télécharger sur itch.io'),('en','Download on itch.io'),('ja','itch.ioでダウンロード')]:
+   for route in ['', 'actualites/demo-itch-io', 'jeux/les-ex-de-lhaut-dela']:
+    file=ROOT/lang/route/'index.html';page=Page(file)
+    links=[a.get('href','') for tag,a in page.tags if tag=='a']
+    self.assertIn(itch,links)
+    self.assertTrue(any(h.startswith('https://apps.microsoft.com/detail/9NKH7Z996H68') for h in links))
+    self.assertIn(label,file.read_text(encoding='utf-8'))
+   article=Page(ROOT/lang/'actualites/demo-itch-io/index.html')
+   self.assertTrue(any(s.get('datePublished')=='2026-11-20' for s in article.schemas))
 if __name__=='__main__':unittest.main(verbosity=2)

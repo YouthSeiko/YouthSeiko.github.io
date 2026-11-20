@@ -2035,5 +2035,29 @@ window.YOUTHSEIKO_I18N = {
   "Newsletter et espace joueur": [
     "Newsletter and player space",
     "ニュースレター・プレイヤースペース"
+  ],
+  "Télécharger sur itch.io": [
+    "Download on itch.io",
+    "itch.ioでダウンロード"
+  ],
+  "La démo arrive aussi sur itch.io !": [
+    "The demo is now on itch.io too!",
+    "体験版がitch.ioにも登場！"
+  ],
+  "20 novembre 2026": [
+    "20 November 2026",
+    "2026年11月20日"
+  ],
+  "Retrouve Les EX de l’haut delà sur itch.io : l’acte I complet et le premier chapitre de l’acte II en bonus, sur PC Windows.": [
+    "Discover Les EX de l’haut delà on itch.io: the complete Act I and the first chapter of Act II as a bonus, for Windows PC.",
+    "Les EX de l’haut delàの体験版をitch.ioで公開しました。Windows PCで第I幕全編と、おまけの第II幕第1章を楽しめます。"
+  ],
+  "Fais connaissance avec Yuki, Hana, Rei et Mio : choix, promesses, mini-jeux et carnet de souvenirs accompagnent tes premières rencontres.": [
+    "Meet Yuki, Hana, Rei and Mio: choices, promises, minigames and a memory notebook accompany your first encounters.",
+    "ユキ、ハナ、レイ、ミオとの出会いを、選択や約束、ミニゲーム、思い出の手帳とともに楽しもう。"
+  ],
+  "Gratuite, avec don facultatif sur itch.io · Textes en français, anglais et japonais · Également sur Microsoft Store": [
+    "Free, with optional donations on itch.io · French, English and Japanese text · Also on Microsoft Store",
+    "itch.ioでは無料・任意の寄付に対応 · フランス語・英語・日本語のテキスト · Microsoft Storeでも配信中"
   ]
 };

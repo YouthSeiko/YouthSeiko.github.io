@@ -21,9 +21,9 @@
       "ACTE 1体験版をプレイ"
     ],
     "free": [
-      "Gratuit · PC Windows · Microsoft Store",
-      "Free · Windows PC · Microsoft Store",
-      "無料 · Windows PC · Microsoft Store"
+      "Gratuit · PC Windows · Microsoft Store et itch.io",
+      "Free · Windows PC · Microsoft Store and itch.io",
+      "無料 · Windows PC · Microsoft Store / itch.io"
     ],
     "watch": [
       "Voir les trailers",
@@ -119,6 +119,11 @@
       "Yuki chibi vous fait signe",
       "Chibi Yuki waves to you",
       "手を振るちびユキ"
+    ],
+    "itch": [
+      "Télécharger sur itch.io",
+      "Download on itch.io",
+      "itch.ioでダウンロード"
     ]
   },
   "characters": [
